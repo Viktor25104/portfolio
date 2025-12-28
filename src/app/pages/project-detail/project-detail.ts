@@ -1,162 +1,113 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, Output, PLATFORM_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  Output,
+  PLATFORM_ID,
+  ViewChild
+} from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
+import { CdkPortal, PortalModule } from '@angular/cdk/portal';
 import { LangPipe } from '../../core/pipes/lang-pipe';
+import { ScrollLockService } from '../../core/services/scroll-lock.service';
 import { TranslationsService } from '../../core/services/translations.service';
-import { isPlatformBrowser } from '@angular/common';
-
-interface ProjectLink {
-  github?: string;
-  demo?: string;
-  additional?: Array<{url: string, label: string}>;
-}
-
-interface Project {
-  id: string;
-  title: any;
-  category: string;
-  thumbnail: string;
-  description?: any;
-  role?: any;
-  duration?: string;
-  images: string[];
-  techStack?: {
-    frontend?: string[];
-    backend?: string[];
-    other?: string[];
-  };
-  keyFeatures?: any[];
-  achievements?: any[];
-  links?: ProjectLink;
-  hasFullPage?: boolean;
-}
+import { ModalShellComponent } from './components/modal-shell/modal-shell';
+import { ProjectModalHeaderComponent } from './components/project-modal-header/project-modal-header';
+import { ProjectTechStackComponent } from './components/project-tech-stack/project-tech-stack';
+import { ProjectLinksComponent } from './components/project-links/project-links';
+import { Project } from './project-detail.types';
 
 @Component({
   selector: 'app-project-modal',
   standalone: true,
-  imports: [CommonModule, LangPipe],
+  imports: [
+    CommonModule,
+    PortalModule,
+    OverlayModule,
+    LangPipe,
+    ModalShellComponent,
+    ProjectModalHeaderComponent,
+    ProjectTechStackComponent,
+    ProjectLinksComponent
+  ],
   template: `
-    <div class="modal-overlay" *ngIf="project" (click)="onClose()">
-      <div class="modal-content" (click)="$event.stopPropagation()">
-        <!-- Close Button -->
-        <button class="close-btn" (click)="onClose()" aria-label="Close">×</button>
+    <ng-template cdk-portal>
+      <app-modal-shell *ngIf="project" (close)="onClose()">
+        <app-project-modal-header
+          [title]="getProjectTitle()"
+          [categoryKey]="getCategoryTranslation()"
+          [role]="getProjectRole()"
+          [duration]="project?.duration"
+          [description]="getProjectDescription()">
+        </app-project-modal-header>
 
-        <!-- Project Header -->
-        <div class="project-header">
-          <h2 class="project-title">{{ getProjectTitle() }}</h2>
-          <div class="project-meta">
-            <span class="project-category">{{ getCategoryTranslation() | lang }}</span>
-            <span class="project-role" *ngIf="project.role">{{ getProjectRole() }}</span>
-            <span class="project-duration" *ngIf="project.duration">{{ project.duration }}</span>
-          </div>
-          <p class="project-description" *ngIf="project.description">{{ getProjectDescription() }}</p>
-        </div>
+        @defer (on idle) {
+          <div class="image-carousel" *ngIf="project?.images?.length">
+            <img
+              [src]="project?.images?.[currentImageIndex]"
+              [alt]="getProjectTitle()"
+              class="carousel-image">
 
-        <!-- Image Carousel -->
-        <div class="image-carousel" *ngIf="project.images.length">
-          <img
-            [src]="project.images[currentImageIndex]"
-            [alt]="getProjectTitle()"
-            class="carousel-image">
-
-          <div class="carousel-controls" *ngIf="project.images.length > 1">
-            <button (click)="prevImage()" class="carousel-btn prev" [disabled]="project.images.length <= 1">‹</button>
-            <div class="carousel-indicators">
-      <span
-        *ngFor="let image of project.images; let i = index"
-        class="indicator"
-        [class.active]="i === currentImageIndex"
-        (click)="currentImageIndex = i">
-      </span>
-            </div>
-            <button (click)="nextImage()" class="carousel-btn next" [disabled]="project.images.length <= 1">›</button>
-          </div>
-        </div>
-
-
-        <!-- Content Grid -->
-        <div class="content-grid">
-          <!-- Technologies -->
-          <div class="section" *ngIf="project.techStack">
-            <h3>{{ 'TECHNOLOGIES_USED' | lang }}</h3>
-            <div class="tech-categories">
-              <div class="tech-category" *ngIf="project.techStack.frontend?.length">
-                <h4>{{ 'FRONTEND' | lang }}</h4>
-                <div class="tech-tags">
-                  <span *ngFor="let tech of project.techStack.frontend" class="tech-tag frontend">{{ tech }}</span>
-                </div>
+            <div class="carousel-controls" *ngIf="project?.images?.length > 1">
+              <button (click)="prevImage()" class="carousel-btn prev" [disabled]="project?.images?.length <= 1">‹</button>
+              <div class="carousel-indicators">
+                <span
+                  *ngFor="let image of project?.images; let i = index"
+                  class="indicator"
+                  [class.active]="i === currentImageIndex"
+                  (click)="currentImageIndex = i">
+                </span>
               </div>
-              <div class="tech-category" *ngIf="project.techStack.backend?.length">
-                <h4>{{ 'BACKEND' | lang }}</h4>
-                <div class="tech-tags">
-                  <span *ngFor="let tech of project.techStack.backend" class="tech-tag backend">{{ tech }}</span>
-                </div>
-              </div>
-              <div class="tech-category" *ngIf="project.techStack.other?.length">
-                <h4>{{ 'OTHER_TOOLS' | lang }}</h4>
-                <div class="tech-tags">
-                  <span *ngFor="let tech of project.techStack.other" class="tech-tag other">{{ tech }}</span>
-                </div>
-              </div>
+              <button (click)="nextImage()" class="carousel-btn next" [disabled]="project?.images?.length <= 1">›</button>
             </div>
           </div>
+        } @placeholder {
+          <div class="image-carousel placeholder" *ngIf="project?.images?.length"></div>
+        }
 
-          <!-- Key Features -->
-          <div class="section" *ngIf="project.keyFeatures?.length">
-            <h3>{{ 'KEY_FEATURES' | lang }}</h3>
-            <ul class="features-list">
-              <li *ngFor="let feature of project.keyFeatures">{{ getTranslatedText(feature) }}</li>
-            </ul>
+        @defer (on idle) {
+          <div class="content-grid">
+            <div class="section" *ngIf="project?.techStack">
+              <app-project-tech-stack [techStack]="project?.techStack"></app-project-tech-stack>
+            </div>
+
+            <div class="section" *ngIf="project?.keyFeatures?.length">
+              <h3>{{ 'KEY_FEATURES' | lang }}</h3>
+              <ul class="features-list">
+                <li *ngFor="let feature of project?.keyFeatures">{{ getTranslatedText(feature) }}</li>
+              </ul>
+            </div>
+
+            <div class="section" *ngIf="project?.achievements?.length">
+              <h3>{{ 'KEY_ACHIEVEMENTS' | lang }}</h3>
+              <ul class="achievements-list">
+                <li *ngFor="let achievement of project?.achievements">{{ getTranslatedText(achievement) }}</li>
+              </ul>
+            </div>
           </div>
+        } @placeholder {
+          <div class="content-grid placeholder"></div>
+        }
 
-          <!-- Achievements -->
-          <div class="section" *ngIf="project.achievements?.length">
-            <h3>{{ 'KEY_ACHIEVEMENTS' | lang }}</h3>
-            <ul class="achievements-list">
-              <li *ngFor="let achievement of project.achievements">{{ getTranslatedText(achievement) }}</li>
-            </ul>
+        @defer (on idle) {
+          <app-project-links [links]="project?.links"></app-project-links>
+
+          <div class="full-details-section" *ngIf="project?.hasFullPage">
+            <button class="full-details-btn" (click)="viewFullProject()">
+              <span>{{ 'VIEW_FULL_PROJECT' | lang }}</span>
+              <span class="arrow">→</span>
+            </button>
           </div>
-        </div>
-
-        <!-- Project Links -->
-        <div class="project-links" *ngIf="project.links">
-          <div class="links-container">
-            <a *ngIf="project.links.github"
-               [href]="project.links.github"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="link-btn github">
-              <span class="link-icon">⚡</span>
-              {{ 'VIEW_CODE' | lang }}
-            </a>
-            <a *ngIf="project.links.demo"
-               [href]="project.links.demo"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="link-btn demo">
-              <span class="link-icon">🚀</span>
-              {{ 'LIVE_DEMO' | lang }}
-            </a>
-            <a *ngFor="let link of project.links.additional"
-               [href]="link.url"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="link-btn additional">
-              <span class="link-icon">🔗</span>
-              {{ link.label }}
-            </a>
-          </div>
-        </div>
-
-        <!-- Full Details Button -->
-        <div class="full-details-section" *ngIf="project.hasFullPage">
-          <button class="full-details-btn" (click)="viewFullProject()">
-            <span>{{ 'VIEW_FULL_PROJECT' | lang }}</span>
-            <span class="arrow">→</span>
-          </button>
-        </div>
-      </div>
-    </div>
+        }
+      </app-modal-shell>
+    </ng-template>
   `,
   styles: [`
     @keyframes slideInDown {
@@ -168,7 +119,9 @@ interface Project {
         opacity: 1;
         transform: translateY(0);
       }
-    }/* Epic Project Modal */
+    }
+
+    /* Epic Project Modal */
     .modal-overlay {
       position: fixed;
       top: 0;
@@ -1036,29 +989,47 @@ interface Project {
   `],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProjectModalComponent implements OnChanges {
+export class ProjectModalComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() project: Project | null = null;
   @Output() close = new EventEmitter<void>();
 
   currentImageIndex = 0;
 
+  @ViewChild(CdkPortal) modalPortal?: CdkPortal;
+
+  private overlayRef: OverlayRef | null = null;
+  private pendingOpen = false;
+
   constructor(
     private router: Router,
     private translations: TranslationsService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    private overlay: Overlay,
+    private scrollLock: ScrollLockService,
+    @Inject(PLATFORM_ID) private platformId: object
   ) {}
 
   ngOnChanges() {
     if (this.project) {
       this.currentImageIndex = 0;
-      this.lockBodyScroll(true);
+      this.openOverlay();
     } else {
-      this.lockBodyScroll(false);
+      this.closeOverlay();
     }
   }
 
+  ngAfterViewInit(): void {
+    if (this.pendingOpen) {
+      this.openOverlay();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.closeOverlay();
+    this.overlayRef?.dispose();
+  }
+
   onClose() {
-    this.lockBodyScroll(false);
+    this.closeOverlay();
     this.close.emit();
   }
 
@@ -1119,11 +1090,38 @@ export class ProjectModalComponent implements OnChanges {
     return text?.[lang] || text?.['en'] || text || '';
   }
 
-  private lockBodyScroll(disableScroll: boolean): void {
+  private openOverlay(): void {
     if (!isPlatformBrowser(this.platformId)) {
       return;
     }
 
-    document.body.style.overflow = disableScroll ? 'hidden' : 'auto';
+    if (!this.modalPortal) {
+      this.pendingOpen = true;
+      return;
+    }
+
+    this.pendingOpen = false;
+    if (!this.overlayRef) {
+      this.overlayRef = this.overlay.create({
+        positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+        scrollStrategy: this.overlay.scrollStrategies.block()
+      });
+    }
+
+    if (!this.overlayRef.hasAttached()) {
+      this.overlayRef.attach(this.modalPortal);
+    }
+    this.scrollLock.lock();
+  }
+
+  private closeOverlay(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    if (this.overlayRef?.hasAttached()) {
+      this.overlayRef.detach();
+    }
+    this.scrollLock.unlock();
   }
 }
