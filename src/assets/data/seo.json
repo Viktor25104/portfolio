@@ -1,17 +1,17 @@
 {
   "HOME_META_TITLE": {
-    "en": "Viktor Marimorich — Modern Portfolio & Cybersecurity Expert",
-    "uk": "Віктор Маріморич — Сучасне портфоліо та експерт з кібербезпеки",
-    "ru": "Виктор Мариморич — Современное портфолио и эксперт по кибербезопасности"
+    "en": "Viktor Marymorych — Backend & Security Systems Engineer",
+    "uk": "Віктор Маріморич — інженер backend та security систем",
+    "ru": "Виктор Мариморич — инженер backend и security систем"
   },
   "HOME_META_DESCRIPTION": {
-    "en": "Full-stack Angular architect and cybersecurity engineer delivering immersive portfolios, secure apps, and automation for high-risk industries.",
-    "uk": "Full-stack Angular архітектор та інженер з кібербезпеки. Створюю сучасні портфоліо, безпечні застосунки та автоматизацію для високоризикових сфер.",
-    "ru": "Full-stack архитектор Angular и инженер по кибербезопасности. Создаю современные портфолио, защищённые приложения и автоматизацию для критичных сфер."
+    "en": "Software engineer focused on backend, systems, and infrastructure. Builds resilient microservices, secure APIs, and automation for high-stakes environments.",
+    "uk": "Інженер програмного забезпечення, фокус на backend, системах та інфраструктурі. Будую стійкі мікросервіси, захищені API та автоматизацію для критичних сфер.",
+    "ru": "Инженер ПО с фокусом на backend, системах и инфраструктуре. Строю устойчивые микросервисы, защищённые API и автоматизацию для критичных сред."
   },
   "HOME_META_KEYWORDS": {
-    "en": "Angular architect, cybersecurity engineer, Viktor Marimorich, portfolio, senior developer",
-    "uk": "Angular архітектор, інженер з кібербезпеки, Віктор Маріморич, портфоліо, senior розробник",
-    "ru": "Архитектор Angular, инженер по кибербезопасности, Виктор Мариморич, портфолио, senior разработчик"
+    "en": "backend engineer, systems engineer, security engineering, Viktor Marymorych, portfolio, senior developer",
+    "uk": "backend інженер, системний інженер, security engineering, Віктор Маріморич, портфоліо, senior розробник",
+    "ru": "backend инженер, системный инженер, security engineering, Виктор Мариморич, портфолио, senior разработчик"
   }
 }

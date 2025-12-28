@@ -289,7 +289,7 @@ export class Contact implements OnInit {
   downloadResume(): void {
     const link = document.createElement('a');
     link.href = 'assets/files/resume.pdf';
-    link.download = 'Viktor_Marimorich_Resume.pdf';
+    link.download = 'Viktor_Marymorych_Resume.pdf';
     link.click();
   }
 

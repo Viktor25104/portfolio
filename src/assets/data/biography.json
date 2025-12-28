@@ -6,9 +6,9 @@
     "ru": "Виктор Мариморич"
   },
   "title": {
-    "en": "Developer",
-    "uk": "Розробник",
-    "ru": "Разработчик"
+    "en": "Software Engineer (Backend & Security Systems)",
+    "uk": "Інженер ПЗ (Backend та Security Systems)",
+    "ru": "Инженер ПО (Backend и Security Systems)"
   },
   "location": {
     "en": "Ukraine",
@@ -26,9 +26,9 @@
     }
   },
   "longBio": {
-    "en": "Hi! I'm Viktor — a full stack security engineer and red team strategist. I work at the intersection of software development, cybersecurity, and system architecture. Over the past few years, I've audited enterprise banks, broken and protected blockchain infrastructures, and built real-time monitoring platforms. I believe security isn't just about defense — it's about understanding systems so deeply you can break them... and then make them stronger. But beyond all that — I simply love programming. I enjoy writing clean backend logic, integrating APIs, and building useful products, even when security isn't the focus. My style is calm, precise, and quietly confident. I love what I do — and I build things that are hard to break.",
-    "uk": "Привіт! Я Віктор — full stack інженер безпеки та стратег Red Team. Працюю на перетині розробки, кібербезпеки та архітектури систем. За останні роки я проводив аудит банків, атакував і захищав блокчейн-інфраструктури та створював платформи моніторингу в реальному часі. Я вважаю, що безпека — це не лише захист, а й глибоке розуміння системи, яке дозволяє її зламати... і зробити кращею. Але понад усе — я просто люблю програмувати. Мені подобається писати чисту логіку бекенду, інтегрувати API та створювати корисні продукти, навіть коли безпека — не головна мета. Мій стиль — спокійний, точний і впевнений. Я люблю те, що роблю — і створюю системи, які важко зламати.",
-    "ru": "Привет! Я Виктор — full stack инженер по безопасности и стратег Red Team. Работаю на стыке разработки, кибербезопасности и архитектуры. За последние годы я проводил аудит банков, ломал и защищал блокчейн-решения и строил платформы мониторинга в реальном времени. Я верю, что безопасность — это не просто защита, а глубокое понимание систем, которое позволяет их сломать... и сделать сильнее. Но помимо всего — я просто обожаю программировать. Мне нравится писать чистую backend-логику, интегрировать API и создавать полезные продукты, даже когда безопасность — не в приоритете. Мой стиль — спокойный, точный и уверенный. Я люблю свою работу — и строю то, что трудно сломать."
+    "en": "Hi! I'm Viktor — a software engineer focused on backend, systems, and infrastructure, with a strong security background. I build scalable microservices, robust APIs, and automation that keep complex platforms reliable under load. My experience in offensive and defensive security helps me design software that is secure by default, but development is always the core: clean logic, clear architecture, and dependable delivery. I enjoy solving hard engineering problems and turning them into stable products that teams can trust.",
+    "uk": "Привіт! Я Віктор — інженер ПЗ з фокусом на backend, системи та інфраструктуру, з сильним бекграундом у безпеці. Будую масштабовані мікросервіси, надійні API та автоматизацію для складних платформ. Досвід оффенсиву й захисту допомагає проєктувати безпечне ПЗ, але ядро — це розробка: чиста логіка, зрозуміла архітектура та стабільна доставка. Люблю складні інженерні задачі й перетворюю їх на продукти, яким довіряють.",
+    "ru": "Привет! Я Виктор — инженер ПО с фокусом на backend, системы и инфраструктуру, с сильным бэкграундом в безопасности. Строю масштабируемые микросервисы, надёжные API и автоматизацию для сложных платформ. Опыт оффенсива и защиты помогает проектировать безопасное ПО, но ядро — это разработка: чистая логика, понятная архитектура и стабильная доставка. Люблю сложные инженерные задачи и превращаю их в продукты, которым доверяют."
   },
   "sections": [
     {

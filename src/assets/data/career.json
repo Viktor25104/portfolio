@@ -7,24 +7,46 @@
   "timeline": [
     {
       "date": {
-        "en": "2025 (Jan) – Present",
-        "uk": "2025 (січ.) – дотепер",
-        "ru": "2025 (янв.) – настоящее время"
+        "en": "2025 (May) – 2025 (Oct)",
+        "uk": "2025 (трав.) – 2025 (жовт.)",
+        "ru": "2025 (май) – 2025 (окт.)"
       },
       "title": {
-        "en": "Cybersecurity Retainer & Incident Response Specialist",
-        "uk": "Фахівець з кібербезпеки та реагування на інциденти",
-        "ru": "Специалист по кибербезопасности и реагированию на инциденты"
+        "en": "Python Developer",
+        "uk": "Python розробник",
+        "ru": "Python разработчик"
+      },
+      "company": {
+        "en": "EON PLUS",
+        "uk": "EON PLUS",
+        "ru": "EON PLUS"
+      },
+      "description": {
+        "en": "Built and maintained a containerized microservice platform using Python and FastAPI for an enterprise client. Implemented the backend for an AI consultation chat with a vector database. Delivered a document-flow service for secure processing, signing, and storage, including integration with the national Diia e-signature platform. Built a notifications service with Telegram bots, TurboSMS, and SMTP2Go for async alerts. Developed the finance microservice API, maintained OpenAPI specs (auto-generated and custom with $ref), and operated Docker-based deployments.",
+        "uk": "Побудував і підтримував контейнеризовану мікросервісну платформу на Python і FastAPI для корпоративного клієнта. Реалізував бекенд AI‑чату з векторною БД. Створив сервіс документообігу для безпечної обробки, підпису та зберігання, включно з інтеграцією з державною платформою Дія для електронного підпису. Розробив сервіс сповіщень із Telegram, TurboSMS та SMTP2Go для асинхронних повідомлень. Розробив фінансовий API, підтримував OpenAPI‑специфікації (авто та кастомні з $ref) і забезпечував розгортання в Docker.",
+        "ru": "Построил и поддерживал контейнеризованную микросервисную платформу на Python и FastAPI для корпоративного клиента. Реализовал backend AI‑чата с векторной БД. Создал сервис документооборота для безопасной обработки, подписания и хранения, включая интеграцию с государственной платформой Дія для электронной подписи. Разработал сервис уведомлений с Telegram, TurboSMS и SMTP2Go для асинхронных оповещений. Разработал финансовый API, поддерживал OpenAPI‑спецификации (авто и кастомные с $ref) и обеспечивал деплой в Docker."
+      }
+    },
+    {
+      "date": {
+        "en": "2025 (Jan) – 2025 (Oct)",
+        "uk": "2025 (січ.) – 2025 (жовт.)",
+        "ru": "2025 (янв.) – 2025 (окт.)"
+      },
+      "title": {
+        "en": "Senior Software Engineer (Security Automation)",
+        "uk": "Senior Software Engineer (Security Automation)",
+        "ru": "Senior Software Engineer (Security Automation)"
       },
       "company": {
         "en": "Multiple US-based Clients (under NDA)",
-        "uk": "Кілька клієнтів з США (NDA)",
+        "uk": "Кілька клієнтів зі США (NDA)",
         "ru": "Несколько клиентов из США (NDA)"
       },
       "description": {
-        "en": "Providing ongoing cybersecurity coverage for six US-based organizations under retainer contracts. Perform monthly audits, infrastructure testing, and microservice threat modeling. Act as an emergency responder in case of attacks, conducting live mitigation, forensic analysis, and defensive hardening. Operate as the last line of defense — ensuring immediate reaction to active breaches and APT-like behavior.",
-        "uk": "Надаю постійне покриття з кібербезпеки для шести компаній з США за контрактом на обслуговування. Виконую щомісячні перевірки, тестування інфраструктури та моделювання загроз для мікросервісів. Виступаю екстреним реагентом під час атак: нейтралізую, аналізую сліди, зміцнюю захист. Працюю як останній рубіж оборони — забезпечую миттєву реакцію на активні злами та поведінку рівня APT.",
-        "ru": "Оказываю постоянную киберзащиту для шести компаний из США по контракту на удержание. Провожу ежемесячные аудиты, тестирование инфраструктуры и моделирование угроз для микросервисов. Выступаю в роли экстренного реагента при атаках: устраняю, анализирую, усиливаю защиту. Я — последний рубеж обороны: моментально реагирую на активные взломы и поведение уровня APT."
+        "en": "Architected and maintained a proprietary automation framework of 15+ utilities in Go, Python, and Rust. The framework automates most audit, forensic, and hardening workflows, cutting manual time drastically. Built modules for infrastructure testing, microservice threat modeling, and incident mitigation, and integrated AI components for structured reports. Served as the escalation point during active incidents and supervised framework-driven response.",
+        "uk": "Спроєктував і підтримував пропрієтарний фреймворк автоматизації з 15+ утиліт на Go, Python і Rust. Фреймворк автоматизує більшість аудитів, форензіки та hardening‑процесів, радикально зменшуючи ручну роботу. Побудував модулі для тестування інфраструктури, моделювання загроз для мікросервісів і реагування на інциденти, інтегрував AI‑компоненти для структурованих звітів. Виконував роль ескалації під час активних інцидентів і контролював автоматизовану відповідь.",
+        "ru": "Спроектировал и поддерживал проприетарный фреймворк автоматизации из 15+ утилит на Go, Python и Rust. Фреймворк автоматизирует большую часть аудитов, форензики и hardening‑процессов, резко сокращая ручной труд. Построил модули для тестирования инфраструктуры, моделирования угроз микросервисов и реагирования на инциденты, интегрировал AI‑компоненты для структурированных отчетов. Выступал точкой эскалации во время активных инцидентов и контролировал автоматизированную реакцию."
       }
     },
     {
@@ -35,84 +57,18 @@
       },
       "title": {
         "en": "Full Stack Security Engineer",
-        "uk": "Інженер з безпеки та повного стеку",
+        "uk": "Інженер з безпеки та full stack",
         "ru": "Инженер по безопасности и full stack"
       },
       "company": {
-        "en": "Stealth Startup",
-        "uk": "Стартап (секретно)",
-        "ru": "Стартап (секретно)"
+        "en": "Stealth Startup (under NDA)",
+        "uk": "Стартап (NDA)",
+        "ru": "Стартап (NDA)"
       },
       "description": {
-        "en": "Designed and implemented the full security architecture of a real-time network monitoring platform. Built a Zero Trust backend infrastructure with encrypted WebSocket channels, role-based access control (RBAC), and service segmentation. Developed secure agents running in Docker, capable of sending isolated telemetry (CPU, RAM, ports, processes) over hardened protocols. Architected encrypted data flows, integrated multi-level user isolation, and enforced frontend-level access boundaries. Combined offensive knowledge with secure design to prevent MITM, injection, and access abuse.",
-        "uk": "Спроєктував і реалізував повну архітектуру безпеки платформи моніторингу в реальному часі. Побудував Zero Trust бекенд із шифрованими WebSocket-каналами, рольовим доступом (RBAC) і сервісною ізоляцією. Розробив безпечні Docker-агенти, які передають ізольовану телеметрію (CPU, RAM, порти, процеси) через захищені протоколи. Побудував потоки зашифрованих даних, реалізував багаторівневу ізоляцію користувачів і захист на фронтенді. Поєднав знання атак з безпечним проєктуванням для протидії MITM, інʼєкціям і зловживанню правами.",
-        "ru": "Спроектировал и реализовал полную архитектуру безопасности платформы мониторинга в реальном времени. Построил инфраструктуру Zero Trust с зашифрованными WebSocket-каналами, ролевым доступом (RBAC) и сервисной изоляцией. Разработал безопасные Docker-агенты, передающие изолированную телеметрию (CPU, RAM, порты, процессы) по защищённым протоколам. Организовал потоки зашифрованных данных, многоуровневую изоляцию пользователей и frontend-защиту. Совместил оффенсив-опыт с безопасным проектированием для защиты от MITM, инъекций и злоупотреблений."
-      }
-    },
-    {
-      "date": {
-        "en": "2024 (Sep) – 2024 (Nov)",
-        "uk": "2024 (вер.) – 2024 (лист.)",
-        "ru": "2024 (сен.) – 2024 (ноя.)"
-      },
-      "title": {
-        "en": "Blockchain Security Engineer",
-        "uk": "Інженер безпеки блокчейну",
-        "ru": "Инженер по безопасности блокчейна"
-      },
-      "company": {
-        "en": "Web3 Security Group",
-        "uk": "Web3 команда безпеки",
-        "ru": "Web3 группа безопасности"
-      },
-      "description": {
-        "en": "Worked as part of a high-intensity audit team targeting Solana-based systems in collaboration with a top-tier blockchain security partner. Over two months, tested 24 different projects, from token smart contracts to backend services. Discovered critical vulnerabilities including reentrancy, privilege escalation, traffic injection, and persistent backdoors. Delivered PoC exploits and hardened runtime logic through both manual and automated methods. Operated as an offensive security specialist leading a compact Red Team squad under NDA.",
-        "uk": "Працював у складі інтенсивної Red Team-групи, яка займалася тестуванням Solana-проєктів у співпраці з провідним аудитором Web3. За два місяці перевірили 24 системи — від смарт-контрактів до бекендів. Виявлено критичні вразливості: reentrancy, ескалація привілеїв, інʼєкції в трафік і закладені бекдори. Створював PoC-експлойти та зміцнював захист на рівні коду та логіки. Працював як хакер, який очолює свою міні-команду під NDA.",
-        "ru": "Работал в составе ударной Red Team, проводившей аудит Solana-проектов в сотрудничестве с ведущим Web3-аудитором. За два месяца протестировал 24 проекта: от токенов до серверных систем. Выявлены уязвимости: reentrancy, эскалация привилегий, внедрение в трафик, постоянные бэкдоры. Писал PoC-эксплойти, укреплял runtime-защиту. Работал как оффенсив-инженер, возглавляя собственную мини-команду под NDA."
-      }
-    },
-    {
-      "date": {
-        "en": "2024 (Jun) – 2024 (Aug)",
-        "uk": "2024 (черв.) – 2024 (серп.)",
-        "ru": "2024 (июнь) – 2024 (авг.)"
-      },
-      "title": {
-        "en": "Gameplay Engineer (AAA Horror Title)",
-        "uk": "Інженер геймплею (AAA гра жахів)",
-        "ru": "Инженер геймплея (AAA хоррор-игра)"
-      },
-      "company": {
-        "en": "Stealth Studio",
-        "uk": "Студія (секретно)",
-        "ru": "Студия (секретно)"
-      },
-      "description": {
-        "en": "Contributed to the development of an official expansion for a globally known asymmetrical horror title. Worked on quest and gameplay behavior for a Castlevania-inspired chapter, released as part of a major DLC. Used Unreal Engine 5 with Blueprints and C++ to script in-game logic, events, and character interactions. Participated in internal code reviews and collaborated with international teams under NDA.",
-        "uk": "Брав участь у створенні офіційного доповнення для відомої асиметричної гри жахів. Працював над логікою завдань і геймплею для глави, натхненної Castlevania, яка вийшла у складі великого DLC. Використовував Unreal Engine 5, Blueprints і C++ для скриптингу логіки, подій та взаємодій. Співпрацював з міжнародною командою під NDA.",
-        "ru": "Участвовал в разработке официального дополнения к глобально известной асимметричной хоррор-игре. Работал над поведением квестов и геймплея в главе, вдохновлённой Castlevania, которая вышла в составе крупного DLC. Использовал Unreal Engine 5, Blueprints и C++ для написания логики, событий и взаимодействий персонажей. Сотрудничал с международной командой в рамках NDA."
-      }
-    },
-    {
-      "date": {
-        "en": "2024 (Jan) – 2024 (May)",
-        "uk": "2024 (січ.) – 2024 (трав.)",
-        "ru": "2024 (янв.) – 2024 (май)"
-      },
-      "title": {
-        "en": "Mobile App Developer (iOS)",
-        "uk": "Розробник мобільних додатків (iOS)",
-        "ru": "Разработчик мобильных приложений (iOS)"
-      },
-      "company": {
-        "en": "Stealth Startup",
-        "uk": "Стартап (секретно)",
-        "ru": "Стартап (секретно)"
-      },
-      "description": {
-        "en": "Worked on a rapid-delivery iOS application under NDA. Focused on building the mobile data storage layer, optimizing memory use, and shaping the overall application architecture. Integrated external UI and logic modules from teammates into a cohesive app structure. Communication was mainly with the product lead, ensuring module compliance and delivery flow.",
-        "uk": "Працював над NDA iOS-додатком із швидким релізом. Займався побудовою сховища даних, оптимізацією памʼяті та архітектурою мобільного застосунку. Інтегрував зовнішні модулі UI та логіки від інших учасників у єдину структуру. Спілкувався переважно з продакт-менеджером, забезпечуючи узгодженість модулів та хід розробки.",
-        "ru": "Работал над NDA iOS-приложением с быстрым запуском. Отвечал за построение слоя хранения данных, оптимизацию памяти и общую архитектуру мобильного приложения. Интегрировал внешние модули UI и логики от других участников в единую структуру. Взаимодействовал в основном с продактом, контролируя соответствие модулей и ход сдачи."
+        "en": "Built the backend for a real‑time network monitoring platform. Implemented a Zero Trust architecture with Go (Gin) WebSocket channels, Python (FastAPI) analytics, and Java (Spring Boot) enterprise services. Developed secure Go/Rust agents for containerized telemetry, enforced RBAC and multi‑tenant isolation, and engineered encrypted data flows end‑to‑end.",
+        "uk": "Побудував бекенд платформи моніторингу в реальному часі. Реалізував Zero Trust архітектуру з Go (Gin) WebSocket‑каналами, Python (FastAPI) аналітикою та Java (Spring Boot) сервісами enterprise‑класу. Розробив безпечні агенти на Go/Rust для контейнеризованої телеметрії, впровадив RBAC і мульти‑тенантну ізоляцію, реалізував шифровані потоки даних end‑to‑end.",
+        "ru": "Построил backend платформы мониторинга в реальном времени. Реализовал Zero Trust архитектуру с Go (Gin) WebSocket‑каналами, аналитикой на Python (FastAPI) и сервисами на Java (Spring Boot). Разработал безопасные Go/Rust агенты для контейнеризованной телеметрии, внедрил RBAC и изоляцию арендаторов, обеспечил шифрованные потоки данных end‑to‑end."
       }
     },
     {
@@ -132,21 +88,87 @@
         "ru": "Инфраструктура банка (NDA)"
       },
       "description": {
-        "en": "Led the security audit and hardening of a large-scale core banking system with 100+ microservices and legacy components. Assessed existing Zero Trust architecture, performed compliance gap analysis (PCI DSS, ISO 27001, NBU), and implemented major enhancements in threat detection, cryptographic infrastructure, and BCP/DR readiness. Integrated new container security policies, extended IAM and PAM coverage, and restructured SIEM pipelines for performance and forensic traceability. Delivered a full executive-level security report and coordinated incident simulations with internal and third-party teams.",
-        "uk": "Керував аудитом і посиленням безпеки масштабної банківської системи з понад 100 мікросервісами та компонентами спадщини. Оцінив існуючу архітектуру Zero Trust, провів аналіз відповідності стандартам (PCI DSS, ISO 27001, НБУ) та впровадив поліпшення виявлення загроз, криптоінфраструктури та готовності до BCP/DR. Додав нові політики захисту контейнерів, розширив IAM і PAM, реорганізував потоки SIEM для продуктивності та трасування. Підготував повний звіт на рівні CISO та провів симуляції інцидентів з внутрішніми й зовнішніми командами.",
-        "ru": "Руководил аудитом и усилением безопасности крупной банковской системы с более чем 100 микросервисами и легаси-компонентами. Оценил текущую Zero Trust-архитектуру, провёл анализ соответствия (PCI DSS, ISO 27001, НБУ), усилил системы обнаружения угроз, криптоинфраструктуру и готовность к BCP/DR. Внедрил политику контейнерной безопасности, расширил IAM/PAM, перестроил SIEM-пайплайны для скорости и отслеживаемости. Подготовил полный отчёт для руководства и провёл симуляции атак совместно с внешними подрядчиками."
+        "en": "Led engineering work to secure a core banking system with 100+ microservices and legacy components. Developed and deployed secure Go/Java services, hardened existing systems, and built TeamCity CI/CD pipelines for container scanning and delivery (including custom Rust scanners). Implemented compliance‑driven changes for PCI DSS, ISO 27001, and NBU, and optimized SIEM pipelines for high‑volume logging and forensic traceability.",
+        "uk": "Керував інженерною роботою з захисту core‑банкінгу з 100+ мікросервісами та legacy‑компонентами. Розробляв і впроваджував безпечні Go/Java сервіси, посилював наявні системи та будував CI/CD у TeamCity для сканування контейнерів і деплою (з кастомним Rust‑сканером). Реалізував зміни під PCI DSS, ISO 27001 та НБУ і оптимізував SIEM‑пайплайни для високого навантаження й форензічної трасованості.",
+        "ru": "Руководил инженерной работой по защите core‑банкинга с 100+ микросервисами и legacy‑компонентами. Разрабатывал и внедрял безопасные Go/Java сервисы, усиливал существующие системы и строил CI/CD в TeamCity для сканирования контейнеров и деплоя (с кастомными Rust‑сканерами). Реализовал изменения под PCI DSS, ISO 27001 и НБУ, оптимизировал SIEM‑пайплайны для высокой нагрузки и форензической трассируемости."
       }
     },
     {
       "date": {
-        "en": "2023 (Mar) – 2024 (Sep)",
-        "uk": "2023 (бер.) – 2024 (вер.)",
-        "ru": "2023 (мар.) – 2024 (сен.)"
+        "en": "2024 (Sep) – 2024 (Nov)",
+        "uk": "2024 (вер.) – 2024 (лист.)",
+        "ru": "2024 (сен.) – 2024 (ноя.)"
       },
       "title": {
-        "en": "Enterprise Security Architect",
-        "uk": "Архітектор безпеки підприємства",
-        "ru": "Архитектор корпоративной безопасности"
+        "en": "Blockchain Security Tools Developer (R&D)",
+        "uk": "Розробник інструментів безпеки блокчейну (R&D)",
+        "ru": "Разработчик инструментов безопасности блокчейна (R&D)"
+      },
+      "company": {
+        "en": "Web3 Security Group (under NDA)",
+        "uk": "Web3 Security Group (NDA)",
+        "ru": "Web3 Security Group (NDA)"
+      },
+      "description": {
+        "en": "Performed security audits for Solana‑based projects and started R&D on an automation toolkit to reduce manual audit effort. Built early versions of a framework in Python, Go, and Rust that detects reentrancy, privilege escalation, and injection patterns. This research laid the foundation for a toolset that later automated most audit workflows.",
+        "uk": "Проводив аудити безпеки Solana‑проєктів і запустив R&D для автоматизації аудиту. Створив перші версії фреймворку на Python, Go та Rust для виявлення reentrancy, ескалації привілеїв і інʼєкцій. Дослідження стало основою набору інструментів, який згодом автоматизував більшість аудиторських процесів.",
+        "ru": "Проводил аудиты безопасности Solana‑проектов и запустил R&D по автоматизации аудита. Создал ранние версии фреймворка на Python, Go и Rust для обнаружения reentrancy, эскалации привилегий и инъекций. Исследование стало основой набора инструментов, который позже автоматизировал большую часть аудиторских процессов."
+      }
+    },
+    {
+      "date": {
+        "en": "2024 (Jun) – 2024 (Aug)",
+        "uk": "2024 (черв.) – 2024 (серп.)",
+        "ru": "2024 (июнь) – 2024 (авг.)"
+      },
+      "title": {
+        "en": "Gameplay Engineer (AAA Horror Title)",
+        "uk": "Інженер геймплею (AAA хоррор‑проєкт)",
+        "ru": "Инженер геймплея (AAA хоррор‑проект)"
+      },
+      "company": {
+        "en": "Stealth Studio (under NDA)",
+        "uk": "Stealth Studio (NDA)",
+        "ru": "Stealth Studio (NDA)"
+      },
+      "description": {
+        "en": "Contributed to an official expansion for a globally known AAA horror title. Scripted gameplay logic, quests, and character interactions using Unreal Engine 5 (C++ and Blueprints). Participated in internal code reviews and collaborated with international teams under NDA.",
+        "uk": "Працював над офіційним доповненням до відомого AAA‑хоррор‑тайтлу. Скриптував ігрову логіку, квести й взаємодії персонажів в Unreal Engine 5 (C++ і Blueprints). Брав участь у внутрішніх code‑review та співпрацював з міжнародними командами під NDA.",
+        "ru": "Работал над официальным дополнением к известному AAA‑хоррор‑тайтлу. Скриптовал игровую логику, квесты и взаимодействия персонажей в Unreal Engine 5 (C++ и Blueprints). Участвовал во внутренних code‑review и взаимодействовал с международными командами под NDA."
+      }
+    },
+    {
+      "date": {
+        "en": "2024 (Jan) – 2024 (May)",
+        "uk": "2024 (січ.) – 2024 (трав.)",
+        "ru": "2024 (янв.) – 2024 (май)"
+      },
+      "title": {
+        "en": "Mobile App Developer (iOS)",
+        "uk": "Розробник мобільних додатків (iOS)",
+        "ru": "Разработчик мобильных приложений (iOS)"
+      },
+      "company": {
+        "en": "Stealth Startup (under NDA)",
+        "uk": "Стартап (NDA)",
+        "ru": "Стартап (NDA)"
+      },
+      "description": {
+        "en": "Engineered the mobile data storage layer for a rapid‑delivery iOS app. Focused on architecture design, memory optimization, and stable module integration. Collaborated closely with the product lead to ensure delivery flow and technical alignment.",
+        "uk": "Побудував шар зберігання даних для iOS‑додатку зі швидким релізом. Фокус на архітектурі, оптимізації памʼяті та стабільній інтеграції модулів. Працював напряму з продакт‑лідом для узгодження технічного напрямку й темпу доставки.",
+        "ru": "Построил слой хранения данных для iOS‑приложения с быстрым релизом. Сфокусировался на архитектуре, оптимизации памяти и устойчивой интеграции модулей. Работал напрямую с продакт‑лидом для согласования технического направления и скорости поставки."
+      }
+    },
+    {
+      "date": {
+        "en": "2023 (Mar) – 2023 (Sep)",
+        "uk": "2023 (бер.) – 2023 (вер.)",
+        "ru": "2023 (мар.) – 2023 (сен.)"
+      },
+      "title": {
+        "en": "Lead Backend Engineer (Infrastructure)",
+        "uk": "Lead Backend Engineer (Infrastructure)",
+        "ru": "Lead Backend Engineer (Infrastructure)"
       },
       "company": {
         "en": "Major Digital Bank (under NDA)",
@@ -154,9 +176,9 @@
         "ru": "Цифровой банк (NDA)"
       },
       "description": {
-        "en": "Designed and led the full security architecture for a top-tier digital banking platform. Built a multilayered Zero Trust infrastructure with over 70 integrated components including EDR, SIEM, PAM, IAM, DDoS, HSM, secure DevOps, and runtime cryptography. Architected secure communication layers, regulatory reporting chains, and containerized microservices for core banking, fraud detection, risk analytics, and AML compliance. Integrated real-time security orchestration (SOAR), user behavior analytics (UEBA), and dynamic threat response. Delivered full infrastructure-as-code with observability and automated audit trails. Collaborated directly with CISO and compliance officers to meet PCI DSS, ISO 27001, and national regulatory standards.",
-        "uk": "Спроєктував і очолив повну архітектуру безпеки для провідної цифрової банківської платформи. Побудував багаторівневу інфраструктуру Zero Trust із понад 70 компонентів, включаючи EDR, SIEM, PAM, IAM, DDoS, HSM, secure DevOps та криптографію на рівні виконання. Розробив захищені шари комунікації, ланцюги регуляторної звітності та мікросервіси для core banking, виявлення шахрайства, аналітики ризиків та AML. Інтегрував SOAR, UEBA та динамічну відповідь на загрози. Реалізував повну інфраструктуру як код із моніторингом і аудитом. Працював безпосередньо з CISO та офіцерами з комплаєнсу відповідно до стандартів PCI DSS, ISO 27001 та національних вимог.",
-        "ru": "Спроектировал и возглавил архитектуру безопасности для ведущей цифровой банковской платформы. Построил многослойную Zero Trust-инфраструктуру с более чем 70 компонентами, включая EDR, SIEM, PAM, IAM, DDoS-защиту, HSM, secure DevOps и криптографию на уровне исполнения. Реализовал защищённые коммуникации, цепочки регуляторной отчётности и микросервисы для core banking, антифрода, риск-аналитики и AML. Интегрировал SOAR, UEBA и динамическое реагирование на угрозы. Автоматизировал инфраструктуру как код с полным мониторингом и логированием. Работал напрямую с CISO и офицерами комплаенса под стандарты PCI DSS, ISO 27001 и национальные регуляторы."
+        "en": "Led backend development for a secure digital banking platform. Designed and delivered Go/Java microservices for core banking, fraud detection, and AML compliance. Implemented infrastructure‑as‑code with audit trails and observability. Integrated a multi‑layer Zero Trust stack across 70+ components (EDR, SIEM, PAM, IAM, HSM, SOAR/UEBA) to ensure secure operations at scale.",
+        "uk": "Очолив бекенд‑розробку безпечної цифрової банківської платформи. Спроєктував і реалізував Go/Java мікросервіси для core banking, антифроду та AML. Впровадив infrastructure‑as‑code з аудит‑трейлами та observability. Інтегрував багаторівневий Zero Trust стек із 70+ компонентів (EDR, SIEM, PAM, IAM, HSM, SOAR/UEBA) для стабільної безпеки в масштабі.",
+        "ru": "Возглавил backend‑разработку безопасной цифровой банковской платформы. Спроектировал и реализовал Go/Java микросервисы для core banking, антифрода и AML. Внедрил infrastructure‑as‑code с аудит‑трейлами и observability. Интегрировал многоуровневый Zero Trust стек из 70+ компонентов (EDR, SIEM, PAM, IAM, HSM, SOAR/UEBA) для надежной безопасности в масштабе."
       }
     },
     {
@@ -167,8 +189,8 @@
       },
       "title": {
         "en": "Red Team Lead & Offensive Security Engineer",
-        "uk": "Керівник Red Team та інженер з атакуючої безпеки",
-        "ru": "Лидер Red Team и специалист по атакующей безопасности"
+        "uk": "Керівник Red Team та інженер атакуючої безпеки",
+        "ru": "Лидер Red Team и инженер атакующей безопасности"
       },
       "company": {
         "en": "FortiNet",
@@ -176,9 +198,9 @@
         "ru": "FortiNet"
       },
       "description": {
-        "en": "Joined as a junior analyst and grew into Red Team Lead within 3 months. Spearheaded offensive security operations, including in-depth penetration testing, reverse engineering, social engineering, and traffic analysis using Wireshark. Designed red team strategies, audited complex infrastructures, and studied real-world attack vectors using custom C++ socket payloads and Python-based network probes. Explored low-level security with assembly and disassemblers. Led a tight-knit 7-person team through highly impactful test engagements.",
-        "uk": "Почав як молодший аналітик та за 3 місяці виріс до керівника Red Team. Керував атаками на інфраструктуру, включно з глибоким пентестингом, реверс-інжинірингом, соціальною інженерією та аналізом трафіку через Wireshark. Створював стратегії Red Team, проводив аудити складних інфраструктур, досліджував реальні вектори атак з використанням кастомних payload на C++ та Python-сканерів. Освоїв асемблер та дизасемблювання. Очолював згуртовану команду з 7 осіб у потужних тестуваннях.",
-        "ru": "Начал как младший аналитик и за 3 месяца стал лидером Red Team. Руководил атаками на инфраструктуру, включая глубокий пентестинг, реверс-инжиниринг, социальную инженерию и анализ трафика через Wireshark. Разрабатывал стратегии Red Team, проводил аудит сложных инфраструктур, изучал реальные векторы атак, используя кастомные payload'ы на C++ и сетевые сканеры на Python. Освоил ассемблер и дизассемблирование. Возглавлял сплочённую команду из 7 человек на мощных проектах."
+        "en": "Promoted from junior analyst to Red Team lead in three months. Developed low‑level security tooling in C++ and Python for network simulation and automated infrastructure analysis. Led penetration testing engagements and reverse engineering tasks, applying findings to harden systems and improve secure software design.",
+        "uk": "За три місяці виріс із junior‑аналітика до лідера Red Team. Розробляв низькорівневі інструменти безпеки на C++ і Python для симуляції мережі та автоматичного аналізу інфраструктури. Керував пентест‑проєктами й задачами реверсу, використовуючи результати для посилення систем і поліпшення безпечного дизайну ПЗ.",
+        "ru": "За три месяца вырос из junior‑аналитика до лидера Red Team. Разрабатывал низкоуровневые инструменты безопасности на C++ и Python для симуляции сети и автоматизированного анализа инфраструктуры. Руководил пентест‑проектами и задачами реверса, применяя результаты для усиления систем и улучшения безопасного дизайна ПО."
       }
     },
     {
@@ -198,9 +220,31 @@
         "ru": "PerfectLine"
       },
       "description": {
-        "en": "Joined as a junior and quickly gained responsibility over core backend and frontend modules. Built modular systems using Java Spring and Python frameworks. Developed web interfaces with Angular and containerized environments via Docker. In the final months, initiated secure Docker architecture and wrote internal documentation on safe deployments — marking the beginning of my transition into security.",
-        "uk": "Почав як джуніор і швидко отримав відповідальність за ключові бекенд і фронтенд модулі. Побудував модульну систему на Java Spring та Python фреймворках. Розробляв веб-інтерфейси з Angular і контейнеризовані середовища через Docker. В останні місяці ініціював побудову безпечної Docker-архітектури та написав внутрішню документацію по захищеному розгортанню — це стало стартом мого переходу в сферу безпеки.",
-        "ru": "Начал как джуниор и быстро получил ответственность за ключевые backend и frontend модули. Построил модульную систему на Java Spring и Python-фреймворках. Разрабатывал веб-интерфейсы с использованием Angular и контейнеризовал окружения через Docker. В последние месяцы начал внедрять защищённую Docker-архитектуру и писал внутреннюю документацию по безопасному развёртыванию — с этого начался мой переход в сферу безопасности."
+        "en": "Grew from junior to owning key backend and frontend modules. Built modular services with Java (Spring Boot) and Python (FastAPI/Flask), developed Angular interfaces, and containerized deployments with Docker. Introduced secure container architecture patterns and internal deployment guidelines.",
+        "uk": "Виріс із junior до відповідальності за ключові бекенд і фронтенд модулі. Будував модульні сервіси на Java (Spring Boot) і Python (FastAPI/Flask), розробляв Angular‑інтерфейси та контейнеризував деплой у Docker. Запровадив патерни безпечної контейнерної архітектури й внутрішні гайди з деплою.",
+        "ru": "Вырос из junior до ответственности за ключевые backend и frontend модули. Строил модульные сервисы на Java (Spring Boot) и Python (FastAPI/Flask), разрабатывал Angular‑интерфейсы и контейнеризовал деплой через Docker. Внедрил паттерны безопасной контейнерной архитектуры и внутренние гайды по деплою."
+      }
+    },
+    {
+      "date": {
+        "en": "2019 (Nov) – 2021 (Sep)",
+        "uk": "2019 (лист.) – 2021 (вер.)",
+        "ru": "2019 (ноя.) – 2021 (сен.)"
+      },
+      "title": {
+        "en": "Software Developer (Trainee / Junior)",
+        "uk": "Розробник ПЗ (Trainee / Junior)",
+        "ru": "Разработчик ПО (Trainee / Junior)"
+      },
+      "company": {
+        "en": "Stealth Company (under NDA)",
+        "uk": "Stealth Company (NDA)",
+        "ru": "Stealth Company (NDA)"
+      },
+      "description": {
+        "en": "Built foundational backend skills in a professional R&D environment. Worked extensively with Python and Java, improving core engineering practices, code quality, and delivery discipline.",
+        "uk": "Отримав базовий комерційний досвід у бекенд‑розробці в R&D‑середовищі. Багато працював із Python і Java, покращуючи інженерні практики, якість коду та дисципліну доставки.",
+        "ru": "Получил базовый коммерческий опыт в backend‑разработке в R&D‑среде. Много работал с Python и Java, улучшая инженерные практики, качество кода и дисциплину поставки."
       }
     }
   ]
