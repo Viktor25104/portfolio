@@ -121,6 +121,73 @@
   },
   "projects": [
 	  {
+		  "id": "adr-zoom-automation",
+		  "title": {
+			  "en": "Zoom SDK Automation Platform",
+			  "uk": "Платформа автоматизації Zoom SDK",
+			  "ru": "Платформа автоматизации Zoom SDK"
+		  },
+		  "category": "Web",
+		  "thumbnail": "assets/images/projects/zoom-adr/logo.png",
+		  "description": {
+			  "en": "A WebSocket-driven Zoom Web SDK automation app that accepts commands from an external server, supports configuring the server endpoint inside the app, and can auto-join meetings with required data.",
+			  "uk": "Додаток автоматизації Zoom Web SDK на основі WebSocket: приймає команди від зовнішнього сервера, дозволяє налаштовувати endpoint у додатку та може автоматично підключатися до зустрічей з потрібними даними.",
+			  "ru": "Приложение автоматизации Zoom Web SDK на WebSocket: принимает команды от внешнего сервера, позволяет настраивать endpoint внутри приложения и умеет автоматически подключаться к встречам с нужными данными."
+		  },
+		  "role": {
+			  "en": "Software Engineer & Architecture Owner",
+			  "uk": "Software Engineer та власник архітектури",
+			  "ru": "Software Engineer и владелец архитектуры"
+		  },
+		  "duration": "R&D",
+		  "images": [
+			  "assets/images/projects/zoom-adr/logo.png"
+		  ],
+		  "techStack": {
+			  "frontend": ["Angular", "TypeScript", "SCSS"],
+			  "backend": ["Node.js", "WebSocket"],
+			  "other": ["Zoom Web SDK", "JWT", "DRAI", "ADR", "DOM Driver", "MutationObserver"]
+		  },
+		  "keyFeatures": [
+			  {
+				  "en": "WebSocket command dispatcher with structured responses and typed errors",
+				  "uk": "Диспетчер WebSocket‑команд зі структурованими відповідями та типізованими помилками",
+				  "ru": "Диспетчер WebSocket‑команд со структурированными ответами и типизированными ошибками"
+			  },
+			  {
+				  "en": "Configurable server endpoint inside the client application",
+				  "uk": "Налаштовуваний server endpoint безпосередньо в клієнтському додатку",
+				  "ru": "Настраиваемый server endpoint прямо в клиентском приложении"
+			  },
+			  {
+				  "en": "Auto-join meeting flow with runtime validation and fallback checks",
+				  "uk": "Автоматичний вхід у зустріч із runtime‑валідацією та fallback‑перевірками",
+				  "ru": "Автовход в встречу с runtime‑валидацией и fallback‑проверками"
+			  },
+			  {
+				  "en": "DOM driver for deterministic Zoom UI control when public APIs are limited",
+				  "uk": "DOM‑драйвер для детермінованого керування Zoom UI, коли публічних API недостатньо",
+				  "ru": "DOM‑драйвер для детерминированного управления Zoom UI, когда публичных API недостаточно"
+			  }
+		  ],
+		  "achievements": [
+			  {
+				  "en": "Improved automation observability via structured events and log snapshots",
+				  "uk": "Покращив спостережуваність автоматизації через структуровані події та знімки логів",
+				  "ru": "Повысил наблюдаемость автоматизации за счет структурированных событий и снимков логов"
+			  },
+			  {
+				  "en": "Delivered a JWT signature helper for fast test meeting setup",
+				  "uk": "Додав інструмент JWT‑підпису для швидкого запуску тестових зустрічей",
+				  "ru": "Добавил инструмент JWT‑подписи для быстрого запуска тестовых встреч"
+			  }
+		  ],
+		  "links": {
+			  "github": "https://github.com/Viktor25104/angular_zoom_sdk"
+		  },
+		  "hasFullPage": true
+	  },
+	  {
 		  "id": "sentrigram",
 		  "title": {
 			  "en": "SentriGram - Telegram Mini App Monitor",
