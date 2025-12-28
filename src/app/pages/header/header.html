@@ -14,9 +14,13 @@
       <div class="photo-container primary">
         <div class="photo-frame">
           <img
-            [src]="photos[0].url"
+            ngOptimizedImage
+            [ngSrc]="photos[0].url"
             [alt]="photos[0].alt"
+            width="400"
+            height="500"
             class="profile-photo main-photo"
+            priority
             (error)="$event.target.src='https://via.placeholder.com/400x500/4CC1F0/FFFFFF?text=Profile'"
             style="border: 2px solid red;">
           <div class="frame-border"></div>
@@ -26,8 +30,11 @@
       <div class="photo-container secondary">
         <div class="photo-frame">
           <img
-            [src]="photos[1].url"
+            ngOptimizedImage
+            [ngSrc]="photos[1].url"
             [alt]="photos[1].alt"
+            width="350"
+            height="450"
             class="profile-photo secondary-photo"
             (error)="$event.target.src='https://via.placeholder.com/350x450/8B5CF6/FFFFFF?text=Side'"
             style="border: 2px solid blue;">

@@ -11,7 +11,7 @@ import {
   PLATFORM_ID,
   ViewChild
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
 import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
@@ -31,6 +31,7 @@ import { Project } from './project-detail.types';
     CommonModule,
     PortalModule,
     OverlayModule,
+    NgOptimizedImage,
     LangPipe,
     ModalShellComponent,
     ProjectModalHeaderComponent,
@@ -51,8 +52,11 @@ import { Project } from './project-detail.types';
         @defer (on idle) {
           <div class="image-carousel" *ngIf="project?.images?.length">
             <img
-              [src]="project?.images?.[currentImageIndex]"
+              ngOptimizedImage
+              [ngSrc]="project?.images?.[currentImageIndex]"
               [alt]="getProjectTitle()"
+              width="1200"
+              height="800"
               class="carousel-image">
 
             <div class="carousel-controls" *ngIf="project?.images?.length > 1">

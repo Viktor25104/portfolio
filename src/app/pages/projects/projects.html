@@ -44,8 +44,11 @@
         [attr.data-index]="i">
 
         <img
-          [src]="project.thumbnail"
+          ngOptimizedImage
+          [ngSrc]="project.thumbnail"
           [alt]="getProjectTitle(project)"
+          width="600"
+          height="360"
           class="project-thumbnail"
           (error)="$event.target.src='assets/images/placeholder.jpg'">
 

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { gsap } from 'gsap';
 import { DataService } from '../../core/services/data.service';
@@ -14,7 +14,7 @@ interface Language {
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, LangPipe],
+  imports: [CommonModule, NgOptimizedImage, LangPipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

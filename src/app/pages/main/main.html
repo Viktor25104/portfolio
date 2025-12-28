@@ -1,7 +1,17 @@
 <app-navbar></app-navbar>
 <app-header></app-header>
-<app-about></app-about>
-<app-skills></app-skills>
-<app-projects></app-projects>
-<app-contact></app-contact>
-<app-biography></app-biography>
+@defer (on idle) {
+  <app-about></app-about>
+}
+@defer (on idle) {
+  <app-skills></app-skills>
+}
+@defer (on idle) {
+  <app-projects></app-projects>
+}
+@defer (on idle) {
+  <app-contact></app-contact>
+}
+@defer (on idle) {
+  <app-biography></app-biography>
+}

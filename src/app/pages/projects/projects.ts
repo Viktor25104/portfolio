@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 import { DataService } from '../../core/services/data.service';
 import { TranslationsService } from '../../core/services/translations.service';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, LangPipe, ProjectModalComponent],
+  imports: [CommonModule, NgOptimizedImage, LangPipe, ProjectModalComponent],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
