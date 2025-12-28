@@ -37,9 +37,7 @@ export class Navbar implements OnInit, OnDestroy {
     this.isHomePage = this.isHomeRoute(this.router.url);
 
     // Wait for translations to load
-    this.translations.waitForTranslations().then(() => {
-      console.log('Translations ready in navbar');
-    });
+    this.translations.waitForTranslations();
 
     const routeSub = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
