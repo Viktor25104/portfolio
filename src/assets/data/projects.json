@@ -320,6 +320,71 @@
 		  "hasFullPage": true
 	  },
 	  {
+		  "id": "paf-automation-framework",
+		  "title": {
+			  "en": "Proprietary Automation Framework (PAF)",
+			  "uk": "Proprietary Automation Framework (PAF)",
+			  "ru": "Proprietary Automation Framework (PAF)"
+		  },
+		  "category": "Cybersecurity",
+		  "thumbnail": "assets/images/projects/PAF/PAF.png",
+		  "description": {
+			  "en": "A security automation platform that turns audits, infrastructure analysis, and hardening into reproducible pipelines with an AI reporting layer.",
+			  "uk": "Платформа автоматизації безпеки, що перетворює аудити, аналіз інфраструктури й hardening у відтворювані пайплайни з AI‑шаром звітності.",
+			  "ru": "Платформа автоматизации безопасности, превращающая аудит, анализ инфраструктуры и hardening в воспроизводимые пайплайны с AI‑слоем отчетности."
+		  },
+		  "role": {
+			  "en": "Lead Architect & Core Engineer",
+			  "uk": "Lead Architect та core‑інженер",
+			  "ru": "Lead Architect и core‑инженер"
+		  },
+		  "duration": "NDA / Ongoing",
+		  "images": [
+			  "assets/images/projects/PAF/PAF.png"
+		  ],
+		  "techStack": {
+			  "frontend": [],
+			  "backend": ["Go", "Python", "Rust", "PostgreSQL"],
+			  "other": ["SOA", "API Gateway", "Task Queue", "Object Storage", "Vector DB", "Observability", "Secrets Management"]
+		  },
+		  "keyFeatures": [
+			  {
+				  "en": "SOA platform with 15 services for orchestration, scanning, correlation, and evidence storage",
+				  "uk": "SOA‑платформа з 15 сервісів для оркестрації, сканування, кореляції та зберігання доказів",
+				  "ru": "SOA‑платформа из 15 сервисов для оркестрации, сканирования, корреляции и хранения доказательств"
+			  },
+			  {
+				  "en": "Polyglot execution planes: Go for high‑load scanning, Rust for safe agents, Python for AI reporting",
+				  "uk": "Поліглотні контури: Go для high‑load сканингу, Rust для безпечних агентів, Python для AI‑звітності",
+				  "ru": "Полиглотные контуры: Go для high‑load сканинга, Rust для безопасных агентов, Python для AI‑отчетности"
+			  },
+			  {
+				  "en": "Correlation, deduplication, and risk scoring with machine‑readable evidence packs",
+				  "uk": "Кореляція, дедуплікація та risk‑scoring з machine‑readable evidence‑пакетами",
+				  "ru": "Корреляция, дедупликация и risk‑scoring с machine‑readable evidence‑пакетами"
+			  },
+			  {
+				  "en": "Deterministic pipelines with idempotency, rate limits, and auditability",
+				  "uk": "Детерміновані пайплайни з ідемпотентністю, rate‑limit і аудитом",
+				  "ru": "Детерминированные пайплайны с идемпотентностью, rate‑limit и аудитом"
+			  }
+		  ],
+		  "achievements": [
+			  {
+				  "en": "Reduced manual audit work by turning checks into reproducible pipelines",
+				  "uk": "Скоротив ручну роботу, перетворивши перевірки на відтворювані пайплайни",
+				  "ru": "Сократил ручную работу, превратив проверки в воспроизводимые пайплайны"
+			  },
+			  {
+				  "en": "Established a secure agent runtime with strict input/output contracts",
+				  "uk": "Побудував безпечний runtime агентів зі строгими контрактами входу/виходу",
+				  "ru": "Построил безопасный runtime агентов со строгими контрактами входа/выхода"
+			  }
+		  ],
+		  "links": {},
+		  "hasFullPage": true
+	  },
+	  {
 		  "id": "sentrigram",
 		  "title": {
 			  "en": "SentriGram - Telegram Mini App Monitor",
