@@ -2,147 +2,147 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/en</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en"/>
+    <loc>https://marymorych.site/en</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en"/>
   </url>
   <url>
-    <loc>https://example.com/uk</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en"/>
+    <loc>https://marymorych.site/uk</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en"/>
   </url>
   <url>
-    <loc>https://example.com/ru</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en"/>
+    <loc>https://marymorych.site/ru</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en"/>
   </url>
   <url>
-    <loc>https://example.com/en/project/sentrigram</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/sentrigram"/>
+    <loc>https://marymorych.site/en/project/nebulax-security</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/nebulax-security"/>
   </url>
   <url>
-    <loc>https://example.com/uk/project/sentrigram</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/sentrigram"/>
+    <loc>https://marymorych.site/uk/project/nebulax-security</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/nebulax-security"/>
   </url>
   <url>
-    <loc>https://example.com/ru/project/sentrigram</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/sentrigram"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/sentrigram"/>
+    <loc>https://marymorych.site/ru/project/nebulax-security</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/nebulax-security"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/nebulax-security"/>
   </url>
   <url>
-    <loc>https://example.com/en/project/solisec-audit</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/solisec-audit"/>
+    <loc>https://marymorych.site/en/project/phantomhunt-protocol</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/phantomhunt-protocol"/>
   </url>
   <url>
-    <loc>https://example.com/uk/project/solisec-audit</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/solisec-audit"/>
+    <loc>https://marymorych.site/uk/project/phantomhunt-protocol</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/phantomhunt-protocol"/>
   </url>
   <url>
-    <loc>https://example.com/ru/project/solisec-audit</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/solisec-audit"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/solisec-audit"/>
+    <loc>https://marymorych.site/ru/project/phantomhunt-protocol</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/phantomhunt-protocol"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/phantomhunt-protocol"/>
   </url>
   <url>
-    <loc>https://example.com/en/project/phantomhunt-protocol</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/phantomhunt-protocol"/>
+    <loc>https://marymorych.site/en/project/sentrigram</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/sentrigram"/>
   </url>
   <url>
-    <loc>https://example.com/uk/project/phantomhunt-protocol</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/phantomhunt-protocol"/>
+    <loc>https://marymorych.site/uk/project/sentrigram</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/sentrigram"/>
   </url>
   <url>
-    <loc>https://example.com/ru/project/phantomhunt-protocol</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/phantomhunt-protocol"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/phantomhunt-protocol"/>
+    <loc>https://marymorych.site/ru/project/sentrigram</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/sentrigram"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/sentrigram"/>
   </url>
   <url>
-    <loc>https://example.com/en/project/nebulax-security</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/nebulax-security"/>
+    <loc>https://marymorych.site/en/project/solisec-audit</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/solisec-audit"/>
   </url>
   <url>
-    <loc>https://example.com/uk/project/nebulax-security</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/nebulax-security"/>
+    <loc>https://marymorych.site/uk/project/solisec-audit</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/solisec-audit"/>
   </url>
   <url>
-    <loc>https://example.com/ru/project/nebulax-security</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/nebulax-security"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/nebulax-security"/>
+    <loc>https://marymorych.site/ru/project/solisec-audit</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/solisec-audit"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/solisec-audit"/>
   </url>
   <url>
-    <loc>https://example.com/en/project/vaultline-recovery</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/vaultline-recovery"/>
+    <loc>https://marymorych.site/en/project/vaultline-recovery</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/vaultline-recovery"/>
   </url>
   <url>
-    <loc>https://example.com/uk/project/vaultline-recovery</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/vaultline-recovery"/>
+    <loc>https://marymorych.site/uk/project/vaultline-recovery</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/vaultline-recovery"/>
   </url>
   <url>
-    <loc>https://example.com/ru/project/vaultline-recovery</loc>
-    <lastmod>2025-12-28T17:06:52.790Z</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://example.com/uk/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://example.com/ru/project/vaultline-recovery"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://example.com/en/project/vaultline-recovery"/>
+    <loc>https://marymorych.site/ru/project/vaultline-recovery</loc>
+    <lastmod>2025-12-28T17:38:17.412Z</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marymorych.site/en/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://marymorych.site/uk/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marymorych.site/ru/project/vaultline-recovery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marymorych.site/en/project/vaultline-recovery"/>
   </url>
 </urlset>
