@@ -33,9 +33,7 @@ export class Skills implements OnInit, OnDestroy {
     private dataService: DataService,
     private cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
-
-  ngOnInit() {
+  ) {
     this.skillsSignal = this.dataService.getData<any>('skills');
     effect(() => {
       const data = this.skillsSignal?.();
@@ -48,6 +46,9 @@ export class Skills implements OnInit, OnDestroy {
       this.updateTranslations(data);
       this.cdr.markForCheck();
     });
+  }
+
+  ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.initializeAnimations();
     }

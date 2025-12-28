@@ -41,11 +41,7 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
     private cdr: ChangeDetectorRef,
     private dataService: DataService,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
-
-  ngOnInit() {
-    this.isVisible = true;
-    this.currentLang = this.translations.getCurrentLang();
+  ) {
     this.careerSignal = this.dataService.getData<any>('career');
     effect(() => {
       const data = this.careerSignal?.();
@@ -59,7 +55,11 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
         setTimeout(() => this.initializeAnimations(), 100);
       }
     });
+  }
 
+  ngOnInit() {
+    this.isVisible = true;
+    this.currentLang = this.translations.getCurrentLang();
     const langSub = this.translations.currentLang$.subscribe(lang => {
       this.currentLang = lang;
     });

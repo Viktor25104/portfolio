@@ -32,10 +32,7 @@ export class Biography implements OnInit, OnDestroy {
     private dataService: DataService,
     private scrollLock: ScrollLockService,
     private cdr: ChangeDetectorRef
-  ) {}
-
-  ngOnInit() {
-    this.lang = this.translations.getCurrentLang();
+  ) {
     this.biographySignal = this.dataService.getData<any>('biography');
     effect(() => {
       const data = this.biographySignal?.();
@@ -46,7 +43,10 @@ export class Biography implements OnInit, OnDestroy {
       this.bioData = data;
       this.cdr.markForCheck();
     });
+  }
 
+  ngOnInit() {
+    this.lang = this.translations.getCurrentLang();
     const langSub = this.translations.currentLang$.subscribe(lang => {
       this.lang = lang;
     });

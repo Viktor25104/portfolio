@@ -31,10 +31,7 @@ export class Projects implements OnInit, OnDestroy {
     private dataService: DataService,
     public translations: TranslationsService,
     private cdr: ChangeDetectorRef
-  ) {}
-
-  ngOnInit(): void {
-    // Сразу загружаем проекты
+  ) {
     this.projectsSignal = this.dataService.getData<any>('projects');
     effect(() => {
       const data = this.projectsSignal?.();
@@ -53,7 +50,9 @@ export class Projects implements OnInit, OnDestroy {
       this.filterProjects(this.selectedCategory);
       this.cdr.markForCheck();
     });
+  }
 
+  ngOnInit(): void {
     // И подписываемся на изменения языка
     const langSub = this.translations.currentLang$.subscribe(() => {
       this.updateTranslations();
