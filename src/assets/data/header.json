@@ -1,15 +1,15 @@
 {
-  "title": {
+  "HEADER_NAME": {
     "en": "Viktor Marymorych",
     "uk": "Віктор Мариморич",
     "ru": "Виктор Мариморич"
   },
-  "role": {
+  "HEADER_ROLE": {
     "en": "Software Engineer (Backend & Security Systems)",
     "uk": "Інженер ПЗ (Backend та Security Systems)",
     "ru": "Инженер ПО (Backend и Security Systems)"
   },
-  "tagline": {
+  "HEADER_TAGLINE": {
     "en": "Backend, systems, and infrastructure — built secure by design.",
     "uk": "Backend, системи й інфраструктура — безпека вбудована в дизайн.",
     "ru": "Backend, системы и инфраструктура — безопасность встроена в дизайн."
