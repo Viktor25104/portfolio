@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Signal, effect } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 import { DataService } from '../../core/services/data.service';
@@ -25,6 +25,7 @@ export class Projects implements OnInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
   private projectsLoaded = false;
+  private projectsSignal?: Signal<any | null>;
 
   constructor(
     private dataService: DataService,
@@ -33,7 +34,23 @@ export class Projects implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // Сразу загружаем проекты
-    this.loadProjects();
+    this.projectsSignal = this.dataService.getData<any>('projects');
+    effect(() => {
+      const data = this.projectsSignal?.();
+      if (!data) {
+        return;
+      }
+
+      this.projects = data.projects || [];
+      this.projectsLoaded = true;
+
+      const rawCategories = this.projects.map(p => p.category);
+      const unique = Array.from(new Set(rawCategories));
+      this.categories = unique.map(name => ({ name }));
+
+      this.updateTranslations();
+      this.filterProjects(this.selectedCategory);
+    });
 
     // И подписываемся на изменения языка
     const langSub = this.translations.currentLang$.subscribe(() => {
@@ -48,30 +65,6 @@ export class Projects implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
-  }
-
-  loadProjects(): void {
-    this.dataService.getData<any>('projects').subscribe({
-      next: (data) => {
-        this.projects = data.projects || [];
-        this.projectsLoaded = true;
-
-        // Извлекаем категории
-        const rawCategories = this.projects.map(p => p.category);
-        const unique = Array.from(new Set(rawCategories));
-        this.categories = unique.map(name => ({ name }));
-
-        // Обновляем переводы после загрузки проектов
-        this.updateTranslations();
-        this.filterProjects(this.selectedCategory);
-      },
-      error: (error) => {
-        console.error('Error loading projects:', error);
-        this.projects = [];
-        this.categories = [];
-        this.filteredProjects = [];
-      }
-    });
   }
 
   private updateTranslations() {

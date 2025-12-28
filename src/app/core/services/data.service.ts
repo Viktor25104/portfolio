@@ -1,25 +1,32 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Signal, WritableSignal, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private cache = new Map<string, Observable<any>>();
+  private cache = new Map<string, WritableSignal<unknown>>();
 
   constructor(private http: HttpClient) {}
 
-  getData<T>(endpoint: string): Observable<T> {
-    if (this.cache.has(endpoint)) {
-      return this.cache.get(endpoint) as Observable<T>;
+  getData<T>(endpoint: string): Signal<T | null> {
+    const cached = this.cache.get(endpoint) as WritableSignal<T | null> | undefined;
+    if (cached) {
+      return cached.asReadonly();
     }
 
     const path = `/assets/data/${endpoint}.json`;
-    const request$ = this.http.get<T>(path).pipe(shareReplay(1));
+    const dataSignal = signal<T | null>(null);
 
-    this.cache.set(endpoint, request$);
-    return request$;
+    this.cache.set(endpoint, dataSignal as WritableSignal<unknown>);
+    this.http.get<T>(path).subscribe({
+      next: (data) => dataSignal.set(data),
+      error: (error) => {
+        console.error('Failed to load data:', error);
+        dataSignal.set(null);
+      }
+    });
+
+    return dataSignal.asReadonly();
   }
 }

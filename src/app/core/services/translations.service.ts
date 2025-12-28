@@ -1,26 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, firstValueFrom } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
+import { toObservable } from '@angular/core/rxjs-interop';
 
 @Injectable({ providedIn: 'root' })
 export class TranslationsService {
-  private currentLangSubject = new BehaviorSubject<string>('en');
-  public currentLang$ = this.currentLangSubject.asObservable();
+  private currentLangSignal = signal<string>(this.getStoredLang());
+  public currentLang$ = toObservable(this.currentLangSignal);
   private translations = new Map<string, any>();
   private loadedPromise: Promise<void> | null = null;
 
   constructor(private http: HttpClient) {
-    this.currentLangSubject.next(this.getStoredLang());
     this.loadTranslations();
   }
 
   setLanguage(lang: string): void {
-    this.currentLangSubject.next(lang);
+    this.currentLangSignal.set(lang);
     this.persistLang(lang);
   }
 
   getCurrentLang(): string {
-    return this.currentLangSubject.value;
+    return this.currentLangSignal();
   }
 
   waitForTranslations(): Promise<void> {

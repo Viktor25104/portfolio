@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Signal, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { LangPipe } from '../../core/pipes/lang-pipe';
@@ -26,6 +26,7 @@ export class Skills implements OnInit, OnDestroy {
 
   private animationInitialized = false;
   private subscriptions: Subscription[] = [];
+  private skillsSignal?: Signal<any | null>;
 
   constructor(
     public translations: TranslationsService,
@@ -34,7 +35,17 @@ export class Skills implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.loadSkills();
+    this.skillsSignal = this.dataService.getData<any>('skills');
+    effect(() => {
+      const data = this.skillsSignal?.();
+      if (!data) {
+        return;
+      }
+
+      this.skills = data.skills;
+      this.extractCategories();
+      this.updateTranslations(data);
+    });
     if (isPlatformBrowser(this.platformId)) {
       this.initializeAnimations();
     }
@@ -47,19 +58,6 @@ export class Skills implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscriptions.forEach(sub => sub.unsubscribe());
-  }
-
-  private loadSkills() {
-    this.dataService.getData<any>('skills').subscribe({
-      next: (data) => {
-        this.skills = data.skills;
-        this.extractCategories();
-        this.updateTranslations(data);
-      },
-      error: (err) => {
-        console.error('Error loading skills:', err);
-      }
-    });
   }
 
   private updateTranslations(dataOverride?: any) {

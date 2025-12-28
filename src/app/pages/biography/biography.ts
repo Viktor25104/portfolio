@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit, Signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
@@ -20,6 +20,7 @@ export class Biography implements OnInit, OnDestroy {
   lang = 'en';
 
   private subscriptions: Subscription[] = [];
+  private biographySignal?: Signal<any | null>;
 
   @HostListener('window:keydown.escape')
   handleEscKey() {
@@ -34,7 +35,15 @@ export class Biography implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.lang = this.translations.getCurrentLang();
-    this.loadData();
+    this.biographySignal = this.dataService.getData<any>('biography');
+    effect(() => {
+      const data = this.biographySignal?.();
+      if (!data) {
+        return;
+      }
+
+      this.bioData = data;
+    });
 
     const langSub = this.translations.currentLang$.subscribe(lang => {
       this.lang = lang;
@@ -47,12 +56,6 @@ export class Biography implements OnInit, OnDestroy {
       this.scrollLock.unlock();
     }
     this.subscriptions.forEach(sub => sub.unsubscribe());
-  }
-
-  private loadData() {
-    this.dataService.getData<any>('biography').subscribe(data => {
-      this.bioData = data;
-    });
   }
 
   togglePanel() {

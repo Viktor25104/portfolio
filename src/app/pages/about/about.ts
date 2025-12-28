@@ -8,6 +8,8 @@ import {
   OnDestroy,
   OnInit,
   PLATFORM_ID,
+  Signal,
+  effect,
   ViewChild
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
@@ -32,6 +34,7 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   translatedTimeline: TimelineEntry[] = [];
   currentLang: string = '';
   private subscriptions: Subscription[] = [];
+  private careerSignal?: Signal<any | null>;
 
   constructor(
     public translations: TranslationsService,
@@ -43,11 +46,22 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit() {
     this.isVisible = true;
     this.currentLang = this.translations.getCurrentLang();
-    this.loadTimeline();
+    this.careerSignal = this.dataService.getData<any>('career');
+    effect(() => {
+      const data = this.careerSignal?.();
+      if (!data) {
+        return;
+      }
+
+      this.translatedTimeline = data.timeline;
+      this.cdr.detectChanges();
+      if (isPlatformBrowser(this.platformId)) {
+        setTimeout(() => this.initializeAnimations(), 100);
+      }
+    });
 
     const langSub = this.translations.currentLang$.subscribe(lang => {
       this.currentLang = lang;
-      this.loadTimeline();
     });
     this.subscriptions.push(langSub);
   }
@@ -62,21 +76,6 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
     }
 
     setTimeout(() => this.initializeAnimations(), 500);
-  }
-
-  private loadTimeline() {
-    this.dataService.getData<any>('career').subscribe({
-      next: (data) => {
-        this.translatedTimeline = data.timeline;
-        this.cdr.detectChanges();
-        if (isPlatformBrowser(this.platformId)) {
-          setTimeout(() => this.initializeAnimations(), 100);
-        }
-      },
-      error: (error) => {
-        console.error('Error loading timeline:', error);
-      }
-    });
   }
 
   private initializeAnimations() {
