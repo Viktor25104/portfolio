@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Signal, effect } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Signal, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { LangPipe } from '../../../pipes/lang-pipe';
@@ -31,6 +31,7 @@ export class Skills implements OnInit, OnDestroy {
   constructor(
     public translations: TranslationsService,
     private dataService: DataService,
+    private cdr: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -45,6 +46,7 @@ export class Skills implements OnInit, OnDestroy {
       this.skills = data.skills;
       this.extractCategories();
       this.updateTranslations(data);
+      this.cdr.markForCheck();
     });
     if (isPlatformBrowser(this.platformId)) {
       this.initializeAnimations();
@@ -73,6 +75,7 @@ export class Skills implements OnInit, OnDestroy {
     }));
 
     this.filterSkills(this.selectedCategory);
+    this.cdr.markForCheck();
   }
 
   private extractCategories() {

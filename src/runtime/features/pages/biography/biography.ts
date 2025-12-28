@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, OnDestroy, OnInit, Signal, effect } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy, OnInit, Signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { DataService } from '../../../../infrastructure/http/data.service';
@@ -30,7 +30,8 @@ export class Biography implements OnInit, OnDestroy {
   constructor(
     private translations: TranslationsService,
     private dataService: DataService,
-    private scrollLock: ScrollLockService
+    private scrollLock: ScrollLockService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -43,6 +44,7 @@ export class Biography implements OnInit, OnDestroy {
       }
 
       this.bioData = data;
+      this.cdr.markForCheck();
     });
 
     const langSub = this.translations.currentLang$.subscribe(lang => {

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Signal, effect } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, Signal, effect } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LangPipe } from '../../../pipes/lang-pipe';
 import { DataService } from '../../../../infrastructure/http/data.service';
@@ -29,7 +29,8 @@ export class Projects implements OnInit, OnDestroy {
 
   constructor(
     private dataService: DataService,
-    public translations: TranslationsService
+    public translations: TranslationsService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -50,6 +51,7 @@ export class Projects implements OnInit, OnDestroy {
 
       this.updateTranslations();
       this.filterProjects(this.selectedCategory);
+      this.cdr.markForCheck();
     });
 
     // И подписываемся на изменения языка
@@ -76,6 +78,7 @@ export class Projects implements OnInit, OnDestroy {
     if (this.projectsLoaded) {
       this.filterProjects(this.selectedCategory);
     }
+    this.cdr.markForCheck();
   }
 
   filterProjects(category: string): void {
@@ -83,6 +86,7 @@ export class Projects implements OnInit, OnDestroy {
     this.filteredProjects = category === 'All'
       ? [...this.projects]
       : this.projects.filter(p => p.category === category);
+    this.cdr.markForCheck();
   }
 
   viewProjectDetail(project: any): void {
