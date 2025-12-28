@@ -14,7 +14,6 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { CdkPortal, PortalModule } from '@angular/cdk/portal';
-import { LangPipe } from '../../core/pipes/lang-pipe';
 import { ScrollLockService } from '../../core/services/scroll-lock.service';
 import { ModalShellComponent } from '../project-detail/components/modal-shell/modal-shell';
 import { SkillModalHeaderComponent } from './components/skill-modal-header/skill-modal-header';
@@ -29,7 +28,6 @@ import { Skill } from './skill-detail.types';
     CommonModule,
     OverlayModule,
     PortalModule,
-    LangPipe,
     ModalShellComponent,
     SkillModalHeaderComponent,
     SkillProgressComponent,

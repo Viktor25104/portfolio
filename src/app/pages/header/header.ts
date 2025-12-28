@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { gsap } from 'gsap';
 import { DataService } from '../../core/services/data.service';
 import { TranslationsService } from '../../core/services/translations.service';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 import { isPlatformBrowser } from '@angular/common';
+import { loadGsap } from '../../shared/animations/gsap-loader';
 
 interface Language {
   code: string;
@@ -66,19 +66,25 @@ export class Header implements OnInit, OnDestroy {
       return;
     }
 
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    loadGsap()
+      .then(({ gsap }) => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    tl.from('.text-content', {
-      opacity: 0,
-      y: 30,
-      duration: 1
-    })
-      // Убираем анимации фото из GSAP - теперь они в CSS
-      .from('.language-switcher', {
-        opacity: 0,
-        y: -20,
-        duration: 0.5
-      }, '-=0.3');
+        tl.from('.text-content', {
+          opacity: 0,
+          y: 30,
+          duration: 1
+        })
+          // Убираем анимации фото из GSAP - теперь они в CSS
+          .from('.language-switcher', {
+            opacity: 0,
+            y: -20,
+            duration: 0.5
+          }, '-=0.3');
+      })
+      .catch((error) => {
+        console.error('Failed to load GSAP:', error);
+      });
   }
 
   protected readonly Date = Date;

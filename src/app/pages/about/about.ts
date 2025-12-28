@@ -12,14 +12,11 @@ import {
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DataService } from '../../core/services/data.service';
 import { TranslationsService } from '../../core/services/translations.service';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 import { TimelineEntry } from '../../core/models/biography.model';
-
-gsap.registerPlugin(ScrollTrigger);
+import { loadGsap } from '../../shared/animations/gsap-loader';
 
 @Component({
   selector: 'app-about',
@@ -88,20 +85,27 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
     }
 
     if (this.timelineRef?.nativeElement?.children.length > 0) {
-      gsap.fromTo(this.timelineRef.nativeElement.children,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.2,
-          duration: 0.8,
-          scrollTrigger: {
-            trigger: this.timelineRef.nativeElement,
-            start: 'top center+=100',
-            toggleActions: 'play none none reverse'
-          }
-        }
-      );
+      loadGsap()
+        .then(({ gsap, ScrollTrigger }) => {
+          gsap.registerPlugin(ScrollTrigger);
+          gsap.fromTo(this.timelineRef.nativeElement.children,
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.2,
+              duration: 0.8,
+              scrollTrigger: {
+                trigger: this.timelineRef.nativeElement,
+                start: 'top center+=100',
+                toggleActions: 'play none none reverse'
+              }
+            }
+          );
+        })
+        .catch((error) => {
+          console.error('Failed to load GSAP:', error);
+        });
     }
   }
 

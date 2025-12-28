@@ -1,14 +1,11 @@
 import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 import { DataService } from '../../core/services/data.service';
 import { TranslationsService } from '../../core/services/translations.service';
 import { SkillModalComponent } from '../skill-detail/skill-detail';
-
-gsap.registerPlugin(ScrollTrigger);
+import { loadGsap } from '../../shared/animations/gsap-loader';
 
 @Component({
   selector: 'app-skills',
@@ -141,16 +138,22 @@ export class Skills implements OnInit, OnDestroy {
     if (!isPlatformBrowser(this.platformId) || this.animationInitialized) return;
 
     setTimeout(() => {
-      gsap.fromTo('.skill-card',
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.08,
-          duration: 0.5
-        }
-      );
-      this.animationInitialized = true;
+      loadGsap()
+        .then(({ gsap }) => {
+          gsap.fromTo('.skill-card',
+            { opacity: 0, y: 30 },
+            {
+              opacity: 1,
+              y: 0,
+              stagger: 0.08,
+              duration: 0.5
+            }
+          );
+          this.animationInitialized = true;
+        })
+        .catch((error) => {
+          console.error('Failed to load GSAP:', error);
+        });
     }, 50);
   }
 }

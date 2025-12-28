@@ -45,54 +45,54 @@ import { Project } from './project-detail.types';
           [title]="getProjectTitle()"
           [categoryKey]="getCategoryTranslation()"
           [role]="getProjectRole()"
-          [duration]="project?.duration"
+          [duration]="project.duration"
           [description]="getProjectDescription()">
         </app-project-modal-header>
 
         @defer (on idle) {
-          <div class="image-carousel" *ngIf="project?.images?.length">
+          <div class="image-carousel" *ngIf="project.images.length">
             <img
               ngOptimizedImage
-              [ngSrc]="project?.images?.[currentImageIndex]"
+              [ngSrc]="project.images[currentImageIndex] || project.images[0]"
               [alt]="getProjectTitle()"
               width="1200"
               height="800"
               class="carousel-image">
 
-            <div class="carousel-controls" *ngIf="project?.images?.length > 1">
-              <button (click)="prevImage()" class="carousel-btn prev" [disabled]="project?.images?.length <= 1">‹</button>
+            <div class="carousel-controls" *ngIf="project.images.length > 1">
+              <button (click)="prevImage()" class="carousel-btn prev" [disabled]="project.images.length <= 1">‹</button>
               <div class="carousel-indicators">
                 <span
-                  *ngFor="let image of project?.images; let i = index"
+                  *ngFor="let image of project.images; let i = index"
                   class="indicator"
                   [class.active]="i === currentImageIndex"
                   (click)="currentImageIndex = i">
                 </span>
               </div>
-              <button (click)="nextImage()" class="carousel-btn next" [disabled]="project?.images?.length <= 1">›</button>
+              <button (click)="nextImage()" class="carousel-btn next" [disabled]="project.images.length <= 1">›</button>
             </div>
           </div>
         } @placeholder {
-          <div class="image-carousel placeholder" *ngIf="project?.images?.length"></div>
+          <div class="image-carousel placeholder" *ngIf="project.images.length"></div>
         }
 
         @defer (on idle) {
           <div class="content-grid">
-            <div class="section" *ngIf="project?.techStack">
-              <app-project-tech-stack [techStack]="project?.techStack"></app-project-tech-stack>
+            <div class="section" *ngIf="project.techStack">
+              <app-project-tech-stack [techStack]="project.techStack"></app-project-tech-stack>
             </div>
 
-            <div class="section" *ngIf="project?.keyFeatures?.length">
+            <div class="section" *ngIf="project.keyFeatures?.length">
               <h3>{{ 'KEY_FEATURES' | lang }}</h3>
               <ul class="features-list">
-                <li *ngFor="let feature of project?.keyFeatures">{{ getTranslatedText(feature) }}</li>
+                <li *ngFor="let feature of project.keyFeatures">{{ getTranslatedText(feature) }}</li>
               </ul>
             </div>
 
-            <div class="section" *ngIf="project?.achievements?.length">
+            <div class="section" *ngIf="project.achievements?.length">
               <h3>{{ 'KEY_ACHIEVEMENTS' | lang }}</h3>
               <ul class="achievements-list">
-                <li *ngFor="let achievement of project?.achievements">{{ getTranslatedText(achievement) }}</li>
+                <li *ngFor="let achievement of project.achievements">{{ getTranslatedText(achievement) }}</li>
               </ul>
             </div>
           </div>
@@ -101,9 +101,9 @@ import { Project } from './project-detail.types';
         }
 
         @defer (on idle) {
-          <app-project-links [links]="project?.links"></app-project-links>
+          <app-project-links [links]="project.links"></app-project-links>
 
-          <div class="full-details-section" *ngIf="project?.hasFullPage">
+          <div class="full-details-section" *ngIf="project.hasFullPage">
             <button class="full-details-btn" (click)="viewFullProject()">
               <span>{{ 'VIEW_FULL_PROJECT' | lang }}</span>
               <span class="arrow">→</span>
