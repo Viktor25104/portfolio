@@ -11,6 +11,7 @@
     "generate:types": "tsx src/infrastructure/scripts/generate-types.ts",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "e2e": "playwright test",
     "serve:ssr:modern-portfolio": "node dist/modern-portfolio/server/server.mjs"
   },
   "prettier": {
@@ -44,6 +45,7 @@
     "@angular/build": "^20.3.13",
     "@angular/cli": "^20.3.13",
     "@angular/compiler-cli": "^20.3.15",
+    "@playwright/test": "^1.57.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
