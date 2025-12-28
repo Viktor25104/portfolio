@@ -231,7 +231,7 @@ export class Contact implements OnInit {
 
       for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
         try {
-          const response = await fetch('/api/contact', {
+          const response = await fetch('https://frabjous-begonia-9faff2.netlify.app/.netlify/functions/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(this.formData)
