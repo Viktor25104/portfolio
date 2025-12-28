@@ -88,16 +88,12 @@ export class Contact implements OnInit {
     }
   ];
 
-  private telegramToken = '7001859314:AAGFspxGUEAptoLX9WdBc5RNi9n3mcndVNU';
-  private telegramChatId = '1649458810';
-
   constructor(public translations: TranslationsService) {}
 
   async ngOnInit() {
     try {
       await this.translations.waitForTranslations();
       this.translationsLoaded = true;
-      console.log('✅ Translations loaded for contact component');
     } catch (error) {
       console.error('❌ Failed to load translations:', error);
       this.translationsLoaded = true;
@@ -198,17 +194,6 @@ export class Contact implements OnInit {
       Object.keys(this.errors).length === 0
     );
 
-    console.log('Form validation:', {
-      name: name.length >= 2,
-      email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
-      phone: /^[\+]?[\d\s\-\(\)]{7,15}$/.test(phone.replace(/\s/g, '')),
-      subject: subject.length >= 5,
-      message: message.length >= 10,
-      noErrors: Object.keys(this.errors).length === 0,
-      errors: this.errors,
-      isValid
-    });
-
     return isValid;
   }
 
@@ -233,51 +218,51 @@ export class Contact implements OnInit {
     });
 
     if (!this.isFormValid()) {
-      console.log('Form is invalid, showing errors');
       return;
     }
 
     this.isSubmitting = true;
     this.formMessage = null;
 
-    const text = `
-📥 New Contact Request
-
-👤 Name: ${this.formData.name}
-📧 Email: ${this.formData.email}
-📱 Phone: ${this.formData.phone}
-✈️ Telegram: ${this.formData.telegram || '-'}
-📝 Subject: ${this.formData.subject}
-
-💬 Message:
-${this.formData.message}
-    `.trim();
-
     try {
-      const url = `https://api.telegram.org/bot${this.telegramToken}/sendMessage`;
-      const body = {
-        chat_id: this.telegramChatId,
-        text,
-        parse_mode: 'HTML'
-      };
+      const maxAttempts = 2;
+      let sent = false;
+      let lastError: unknown = null;
 
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body)
-      });
+      for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+        try {
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.formData)
+          });
 
-      if (response.ok) {
+          if (!response.ok) {
+            const payload = await response.json().catch(() => null);
+            throw new Error(payload?.error || 'Failed to send message');
+          }
+
+          sent = true;
+          break;
+        } catch (error) {
+          lastError = error;
+          if (attempt < maxAttempts) {
+            await new Promise(resolve => setTimeout(resolve, 800));
+          }
+        }
+      }
+
+      if (sent) {
         this.formMessage = {
           type: 'success',
           text: this.translations.instant('FORM_SUCCESS')
         };
         this.resetForm();
       } else {
-        throw new Error('Failed to send message');
+        throw lastError || new Error('Failed to send message');
       }
     } catch (error) {
-      console.error('Telegram Error:', error);
+      console.error('Contact request failed:', error);
       this.formMessage = {
         type: 'error',
         text: this.translations.instant('FORM_ERROR')

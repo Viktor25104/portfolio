@@ -5,12 +5,41 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { join } from 'node:path';
+import { existsSync, readFileSync } from 'node:fs';
+import { join, resolve } from 'node:path';
+import { handleContactRequest } from './infrastructure/functions/contact/contact';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
+
+const loadEnvFile = (filePath: string): void => {
+  if (!existsSync(filePath)) {
+    return;
+  }
+
+  const content = readFileSync(filePath, 'utf8');
+  content.split('\n').forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) {
+      return;
+    }
+
+    const separatorIndex = trimmed.indexOf('=');
+    if (separatorIndex === -1) {
+      return;
+    }
+
+    const key = trimmed.slice(0, separatorIndex).trim();
+    const value = trimmed.slice(separatorIndex + 1).trim();
+    if (key && process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  });
+};
+
+loadEnvFile(resolve(process.cwd(), '.env'));
 
 /**
  * Example Express Rest API endpoints can be defined here.
@@ -23,6 +52,9 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
+app.use(express.json({ limit: '200kb' }));
+
+app.post('/api/contact', handleContactRequest);
 
 /**
  * Serve static files from /browser
