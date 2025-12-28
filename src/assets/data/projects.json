@@ -188,6 +188,73 @@
 		  "hasFullPage": true
 	  },
 	  {
+		  "id": "tagmind",
+		  "title": {
+			  "en": "TagMind — Telegram AI Orchestrator",
+			  "uk": "TagMind — Telegram AI оркестратор",
+			  "ru": "TagMind — Telegram AI оркестратор"
+		  },
+		  "category": "Web",
+		  "thumbnail": "assets/images/projects/tagMind/TagMind.png",
+		  "description": {
+			  "en": "A Kubernetes-first backend platform that turns Telegram into a controlled interface for an AI agent, with policies, modes, and audit built in.",
+			  "uk": "Kubernetes-first платформа, що перетворює Telegram на контрольований інтерфейс для AI‑агента з політиками, режимами й аудитом.",
+			  "ru": "Kubernetes-first платформа, превращающая Telegram в контролируемый интерфейс для AI‑агента с политиками, режимами и аудитом."
+		  },
+		  "role": {
+			  "en": "Lead Backend Engineer & Architect",
+			  "uk": "Lead Backend Engineer та архітектор",
+			  "ru": "Lead Backend Engineer и архитектор"
+		  },
+		  "duration": "R&D",
+		  "images": [
+			  "assets/images/projects/tagMind/TagMind.png"
+		  ],
+		  "techStack": {
+			  "frontend": [],
+			  "backend": ["Go", "Java", "Python", "Rust", "PostgreSQL"],
+			  "other": ["Kubernetes", "Docker", "Redis", "Telegram Bot API", "MTProto", "LLM Gateway", "Observability", "NetworkPolicy"]
+		  },
+		  "keyFeatures": [
+			  {
+				  "en": "Dual-plane Telegram integration: Bot API for control, MTProto for user chat events",
+				  "uk": "Двоплощинна інтеграція Telegram: Bot API для керування, MTProto для подій користувачів",
+				  "ru": "Двухплоскостная интеграция Telegram: Bot API для управления, MTProto для событий пользователей"
+			  },
+			  {
+				  "en": "Orchestrator with policy-driven modes, dialog state, and audit trail",
+				  "uk": "Оркестратор з режимами за політиками, станом діалогів та аудитом",
+				  "ru": "Оркестратор с режимами по политикам, состоянием диалогов и аудитом"
+			  },
+			  {
+				  "en": "Retriever + LLM gateway with citations, token control, and safe fallbacks",
+				  "uk": "Retriever + LLM gateway з цитуванням, контролем токенів і безпечними fallback",
+				  "ru": "Retriever + LLM gateway с цитированием, контролем токенов и безопасными fallback"
+			  },
+			  {
+				  "en": "Kubernetes-first isolation with NetworkPolicy, secrets management, and observability",
+				  "uk": "Kubernetes-first ізоляція з NetworkPolicy, керуванням секретами та observability",
+				  "ru": "Kubernetes-first изоляция с NetworkPolicy, управлением секретами и observability"
+			  }
+		  ],
+		  "achievements": [
+			  {
+				  "en": "Designed a polyglot microservice platform with strict access control and traceable decisions",
+				  "uk": "Спроєктував полікодову мікросервісну платформу зі строгим доступом і трасованими рішеннями",
+				  "ru": "Спроектировал полиглотную микросервисную платформу со строгим доступом и трассируемыми решениями"
+			  },
+			  {
+				  "en": "Established reproducible environments and a secure-by-default delivery model",
+				  "uk": "Забезпечив відтворювані середовища та secure-by-default модель доставки",
+				  "ru": "Обеспечил воспроизводимые окружения и secure-by-default модель доставки"
+			  }
+		  ],
+		  "links": {
+			  "github": "https://github.com/Viktor25104/TagMind"
+		  },
+		  "hasFullPage": true
+	  },
+	  {
 		  "id": "sentrigram",
 		  "title": {
 			  "en": "SentriGram - Telegram Mini App Monitor",
