@@ -7,6 +7,7 @@
     "build": "ng build",
     "build:ssr": "ng build --ssr",
     "build:ssg": "ng build --prerender",
+    "generate:sitemap": "tsx src/infrastructure/scripts/generate-sitemap.ts",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:modern-portfolio": "node dist/modern-portfolio/server/server.mjs"
@@ -51,6 +52,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "tsx": "^4.21.0",
     "typescript": "~5.8.2"
   }
 }
