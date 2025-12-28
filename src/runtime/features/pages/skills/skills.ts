@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Signal, effect } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit, PLATFORM_ID, Signal, effect } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { LangPipe } from '../../../pipes/lang-pipe';
@@ -15,7 +15,7 @@ import { loadGsap } from '../../../shared/animations/gsap-loader';
   styleUrl: './skills.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Skills implements OnInit, OnDestroy {
+export class Skills implements OnInit, OnDestroy, AfterViewInit {
   sectionTitle = '';
   sectionSubtitle = '';
   selectedCategory = 'All';
@@ -25,6 +25,7 @@ export class Skills implements OnInit, OnDestroy {
   filteredSkills: any[] = [];
 
   private animationInitialized = false;
+  private viewReady = false;
   private subscriptions: Subscription[] = [];
   private skillsSignal?: Signal<any | null>;
 
@@ -45,18 +46,24 @@ export class Skills implements OnInit, OnDestroy {
       this.extractCategories();
       this.updateTranslations(data);
       this.cdr.markForCheck();
+      this.tryInitializeAnimations();
     });
   }
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      this.initializeAnimations();
+      this.tryInitializeAnimations();
     }
 
     const langSub = this.translations.currentLang$.subscribe(() => {
       this.updateTranslations();
     });
     this.subscriptions.push(langSub);
+  }
+
+  ngAfterViewInit() {
+    this.viewReady = true;
+    this.tryInitializeAnimations();
   }
 
   ngOnDestroy() {
@@ -90,12 +97,11 @@ export class Skills implements OnInit, OnDestroy {
 
   filterSkills(category: string): void {
     this.selectedCategory = category;
-    this.filteredSkills = [];
-    setTimeout(() => {
-      this.filteredSkills = category === 'All'
-        ? [...this.skills]
-        : this.skills.filter(s => s.category === category);
-    }, 0);
+    this.filteredSkills = category === 'All'
+      ? [...this.skills]
+      : this.skills.filter(s => s.category === category);
+    this.cdr.markForCheck();
+    this.tryInitializeAnimations();
   }
 
   viewSkillDetail(skill: any) {
@@ -157,5 +163,12 @@ export class Skills implements OnInit, OnDestroy {
           console.error('Failed to load GSAP:', error);
         });
     }, 50);
+  }
+
+  private tryInitializeAnimations(): void {
+    if (!this.viewReady || this.filteredSkills.length === 0) {
+      return;
+    }
+    this.initializeAnimations();
   }
 }

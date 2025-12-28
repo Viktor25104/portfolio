@@ -290,7 +290,8 @@
 
 .photo-container.primary {
   width: 380px;
-  height: 480px;
+  height: auto;
+  aspect-ratio: 951 / 995;
   top: 0;
   right: 0;
   z-index: 3;
@@ -304,7 +305,8 @@
 
 .photo-container.secondary {
   width: 320px;
-  height: 420px;
+  height: auto;
+  aspect-ratio: 961 / 1280;
   bottom: 0;
   left: 0;
   z-index: 2;

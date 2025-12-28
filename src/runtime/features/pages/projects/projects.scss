@@ -658,6 +658,12 @@
     transition-duration: 0.1s;
   }
 
+  .project-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
   .projects-section::before,
   .title {
     animation: none;
