@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, Output, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 
 interface Skill {
@@ -718,21 +718,14 @@ interface Skill {
 export class SkillModalComponent implements OnChanges {
   @Input() skill: Skill | null = null;
   @Output() close = new EventEmitter<void>();
-
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   ngOnChanges() {
-    if (this.skill) {
-      // Предотвращаем скролл фона
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    this.toggleBodyScroll(this.skill !== null);
   }
-
   onClose() {
-    document.body.style.overflow = 'auto';
+    this.toggleBodyScroll(false);
     this.close.emit();
   }
-
   getSkillLevelPercentage(level: string): number {
     switch (level) {
       case 'Expert': return 100;
@@ -742,4 +735,12 @@ export class SkillModalComponent implements OnChanges {
       default: return 0;
     }
   }
+  private toggleBodyScroll(shouldDisable: boolean): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    document.body.style.overflow = shouldDisable ? 'hidden' : 'auto';
+  }
+
 }
+

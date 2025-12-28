@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { TranslationsService } from '../../core/services/translations.service';
-import { DataService } from '../../core/services/data.service';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 
 @Component({
@@ -24,7 +23,6 @@ export class Navbar implements OnInit, OnDestroy {
 
   constructor(
     public translations: TranslationsService,
-    private dataService: DataService,
     private router: Router
   ) {
     this.availableLanguages = [
@@ -36,7 +34,7 @@ export class Navbar implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.isHomePage = this.router.url === '/';
+    this.isHomePage = this.isHomeRoute(this.router.url);
 
     // Wait for translations to load
     this.translations.waitForTranslations().then(() => {
@@ -46,12 +44,14 @@ export class Navbar implements OnInit, OnDestroy {
     const routeSub = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.isHomePage = event.url === '/';
+      this.isHomePage = this.isHomeRoute(event.urlAfterRedirects || event.url);
+      this.currentLang = this.extractLangFromUrl(event.urlAfterRedirects || event.url) || this.currentLang;
     });
     this.subscriptions.push(routeSub);
 
     const langSub = this.translations.currentLang$.subscribe(lang => {
       this.currentLang = lang;
+      this.isHomePage = this.isHomeRoute(this.router.url);
     });
     this.subscriptions.push(langSub);
   }
@@ -71,8 +71,14 @@ export class Navbar implements OnInit, OnDestroy {
   }
 
   onLanguageChange(lang: string): void {
+    if (lang === this.currentLang) {
+      this.closeMenu();
+      return;
+    }
+
     this.translations.setLanguage(lang);
     this.closeMenu();
+    this.router.navigate(['/', lang], { replaceUrl: false });
   }
 
   scrollToSection(sectionId: string): void {
@@ -84,7 +90,7 @@ export class Navbar implements OnInit, OnDestroy {
         section.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      this.router.navigate(['/']).then(() => {
+      this.router.navigate(['/', this.currentLang]).then(() => {
         setTimeout(() => {
           const section = document.getElementById(sectionId);
           if (section) {
@@ -93,5 +99,18 @@ export class Navbar implements OnInit, OnDestroy {
         }, 100);
       });
     }
+  }
+
+  private isHomeRoute(url: string): boolean {
+    const normalized = (url || '').split('?')[0];
+    const lang = this.extractLangFromUrl(normalized) || this.currentLang;
+    return normalized === `/${lang}` || normalized === `/${lang}/`;
+  }
+
+  private extractLangFromUrl(url: string): string | null {
+    const segments = (url || '').split('?')[0].split('/').filter(Boolean);
+    const candidate = segments[0];
+    const supported = this.availableLanguages.map((lang) => lang.code);
+    return supported.includes(candidate || '') ? candidate : null;
   }
 }

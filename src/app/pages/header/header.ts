@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { gsap } from 'gsap';
 import { DataService } from '../../core/services/data.service';
 import { TranslationsService } from '../../core/services/translations.service';
 import { LangPipe } from '../../core/pipes/lang-pipe';
+import { isPlatformBrowser } from '@angular/common';
 
 interface Language {
   code: string;
@@ -29,7 +30,8 @@ export class Header implements OnInit, OnDestroy {
 
   constructor(
     public translations: TranslationsService,
-    private dataService: DataService
+    private dataService: DataService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.availableLanguages = [
       { code: 'en', name: 'EN' },
@@ -40,7 +42,9 @@ export class Header implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.initializeAnimations();
+    if (isPlatformBrowser(this.platformId)) {
+      this.initializeAnimations();
+    }
 
     const langSub = this.translations.currentLang$.subscribe(lang => {
       this.currentLang = lang;
@@ -58,6 +62,10 @@ export class Header implements OnInit, OnDestroy {
 
   private initializeAnimations() {
     // Убираем GSAP анимации для фото, чтобы они не конфликтовали с CSS
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
     tl.from('.text-content', {

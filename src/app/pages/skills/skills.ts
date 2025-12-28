@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -32,12 +32,15 @@ export class Skills implements OnInit, OnDestroy {
 
   constructor(
     public translations: TranslationsService,
-    private dataService: DataService
+    private dataService: DataService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
     this.loadSkills();
-    this.initializeAnimations();
+    if (isPlatformBrowser(this.platformId)) {
+      this.initializeAnimations();
+    }
 
     const langSub = this.translations.currentLang$.subscribe(() => {
       this.updateTranslations();
@@ -135,7 +138,7 @@ export class Skills implements OnInit, OnDestroy {
   }
 
   private initializeAnimations(): void {
-    if (this.animationInitialized) return;
+    if (!isPlatformBrowser(this.platformId) || this.animationInitialized) return;
 
     setTimeout(() => {
       gsap.fromTo('.skill-card',

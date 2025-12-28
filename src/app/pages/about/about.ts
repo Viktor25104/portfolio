@@ -4,11 +4,13 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
+  Inject,
   OnDestroy,
   OnInit,
+  PLATFORM_ID,
   ViewChild
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -37,7 +39,8 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   constructor(
     public translations: TranslationsService,
     private cdr: ChangeDetectorRef,
-    private dataService: DataService
+    private dataService: DataService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
@@ -57,6 +60,10 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     setTimeout(() => this.initializeAnimations(), 500);
   }
 
@@ -65,7 +72,9 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
       next: (data) => {
         this.translatedTimeline = data.timeline;
         this.cdr.detectChanges();
-        setTimeout(() => this.initializeAnimations(), 100);
+        if (isPlatformBrowser(this.platformId)) {
+          setTimeout(() => this.initializeAnimations(), 100);
+        }
       },
       error: (error) => {
         console.error('Error loading timeline:', error);
@@ -74,6 +83,10 @@ export class About implements OnInit, OnDestroy, AfterViewInit {
   }
 
   private initializeAnimations() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     if (this.timelineRef?.nativeElement?.children.length > 0) {
       gsap.fromTo(this.timelineRef.nativeElement.children,
         { opacity: 0, y: 30 },

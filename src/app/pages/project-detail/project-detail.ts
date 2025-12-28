@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnChanges, Output, PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { LangPipe } from '../../core/pipes/lang-pipe';
 import { TranslationsService } from '../../core/services/translations.service';
+import { isPlatformBrowser } from '@angular/common';
 
 interface ProjectLink {
   github?: string;
@@ -1043,20 +1044,21 @@ export class ProjectModalComponent implements OnChanges {
 
   constructor(
     private router: Router,
-    private translations: TranslationsService
+    private translations: TranslationsService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnChanges() {
     if (this.project) {
       this.currentImageIndex = 0;
-      document.body.style.overflow = 'hidden';
+      this.lockBodyScroll(true);
     } else {
-      document.body.style.overflow = 'auto';
+      this.lockBodyScroll(false);
     }
   }
 
   onClose() {
-    document.body.style.overflow = 'auto';
+    this.lockBodyScroll(false);
     this.close.emit();
   }
 
@@ -1075,10 +1077,14 @@ export class ProjectModalComponent implements OnChanges {
   }
 
   viewFullProject() {
-    if (this.project) {
-      this.onClose();
-      this.router.navigate(['/project', this.project.id]);
+    if (!this.project) {
+      return;
     }
+
+    this.onClose();
+    this.router.navigate(['/', this.translations.getCurrentLang()], {
+      fragment: 'projects'
+    });
   }
 
   getProjectTitle(): string {
@@ -1111,5 +1117,13 @@ export class ProjectModalComponent implements OnChanges {
     if (typeof text === 'string') return text;
     const lang = this.translations.getCurrentLang();
     return text?.[lang] || text?.['en'] || text || '';
+  }
+
+  private lockBodyScroll(disableScroll: boolean): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    document.body.style.overflow = disableScroll ? 'hidden' : 'auto';
   }
 }

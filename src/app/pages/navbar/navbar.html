@@ -1,12 +1,18 @@
 <nav>
   <div class="navbar-container">
-    <a routerLink="/" class="logo">
+    <a [routerLink]="['/', currentLang]" class="logo">
       <span class="logo-text">VM</span>
     </a>
 
     <div class="nav-links" [class.active]="isMenuOpen">
       <ng-container>
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{ 'home' | lang }}</a>
+        <a
+          [routerLink]="['/', currentLang]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeMenu()">
+          {{ 'home' | lang }}
+        </a>
         <a (click)="scrollToSection('about')" class="nav-link">{{ 'about' | lang }}</a>
         <a (click)="scrollToSection('skills')" class="nav-link">{{ 'skills_h' | lang }}</a>
         <a (click)="scrollToSection('projects')" class="nav-link">{{ 'projects_h' | lang }}</a>
