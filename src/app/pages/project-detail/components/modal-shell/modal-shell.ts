@@ -21,9 +21,9 @@ import { CommonModule } from '@angular/common';
       right: 0;
       bottom: 0;
       background:
-        radial-gradient(circle at 25% 25%, rgba(76, 201, 240, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(58, 12, 163, 0.12) 0%, transparent 50%),
-        rgba(0, 0, 0, 0.88);
+        radial-gradient(circle at 25% 25%, rgba(var(--modal-accent-rgb, 76, 201, 240), 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(var(--modal-secondary-rgb, 58, 12, 163), 0.12) 0%, transparent 50%),
+        var(--modal-overlay-base, rgba(0, 0, 0, 0.88));
       backdrop-filter: blur(25px);
       display: flex;
       align-items: center;
@@ -45,8 +45,8 @@ import { CommonModule } from '@angular/common';
     }
 
     .modal-content {
-      background: linear-gradient(135deg, rgba(13, 27, 42, 0.98), rgba(20, 35, 55, 0.95));
-      border: 2px solid var(--color-neon-blue);
+      background: var(--modal-content-bg, linear-gradient(135deg, rgba(13, 27, 42, 0.98), rgba(20, 35, 55, 0.95)));
+      border: 2px solid var(--modal-accent-color, var(--color-neon-blue));
       border-radius: 25px;
       padding: 3rem;
       max-width: 900px;
@@ -57,7 +57,7 @@ import { CommonModule } from '@angular/common';
       animation: modalSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow:
         0 30px 80px rgba(0, 0, 0, 0.6),
-        0 0 50px rgba(76, 201, 240, 0.3),
+        0 0 50px rgba(var(--modal-accent-rgb, 76, 201, 240), 0.3),
         inset 0 1px 2px rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(20px);
       will-change: transform;
@@ -85,14 +85,14 @@ import { CommonModule } from '@angular/common';
     }
 
     .modal-content::-webkit-scrollbar-thumb {
-      background: linear-gradient(45deg, var(--color-neon-blue), var(--color-purple));
+      background: linear-gradient(45deg, var(--modal-accent-color, var(--color-neon-blue)), var(--modal-secondary-color, var(--color-purple)));
       border-radius: 3px;
       border: 1px solid rgba(13, 27, 42, 0.5);
     }
 
     .modal-content::-webkit-scrollbar-thumb:hover {
-      background: var(--color-neon-blue);
-      box-shadow: 0 0 8px rgba(76, 201, 240, 0.5);
+      background: var(--modal-accent-color, var(--color-neon-blue));
+      box-shadow: 0 0 8px rgba(var(--modal-accent-rgb, 76, 201, 240), 0.5);
     }
 
     .close-btn {
@@ -100,7 +100,7 @@ import { CommonModule } from '@angular/common';
       top: 1.5rem;
       right: 1.5rem;
       background: linear-gradient(135deg, rgba(13, 27, 42, 0.9), rgba(20, 35, 55, 0.8));
-      border: 1px solid rgba(76, 201, 240, 0.4);
+      border: 1px solid rgba(var(--modal-accent-rgb, 76, 201, 240), 0.4);
       color: rgba(255, 255, 255, 0.8);
       font-size: 1.8rem;
       cursor: pointer;
@@ -117,11 +117,11 @@ import { CommonModule } from '@angular/common';
     }
 
     .close-btn:hover {
-      background: linear-gradient(135deg, var(--color-neon-blue), var(--color-purple));
+      background: linear-gradient(135deg, var(--modal-accent-color, var(--color-neon-blue)), var(--modal-secondary-color, var(--color-purple)));
       color: white;
       transform: rotate(90deg) scale(1.1);
-      box-shadow: 0 0 30px rgba(76, 201, 240, 0.6);
-      border-color: var(--color-neon-blue);
+      box-shadow: 0 0 30px rgba(var(--modal-accent-rgb, 76, 201, 240), 0.6);
+      border-color: var(--modal-accent-color, var(--color-neon-blue));
     }
 
     @media (max-width: 768px) {

@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { DataService } from '../../core/services/data.service';
 import { TranslationsService } from '../../core/services/translations.service';
 import { LangPipe } from '../../core/pipes/lang-pipe';
+import { ScrollLockService } from '../../core/services/scroll-lock.service';
 
 @Component({
   selector: 'app-biography',
@@ -27,7 +28,8 @@ export class Biography implements OnInit, OnDestroy {
 
   constructor(
     private translations: TranslationsService,
-    private dataService: DataService
+    private dataService: DataService,
+    private scrollLock: ScrollLockService
   ) {}
 
   ngOnInit() {
@@ -41,6 +43,9 @@ export class Biography implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    if (this.isPanelOpen) {
+      this.scrollLock.unlock();
+    }
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
@@ -52,12 +57,16 @@ export class Biography implements OnInit, OnDestroy {
 
   togglePanel() {
     this.isPanelOpen = !this.isPanelOpen;
-    document.body.style.overflow = this.isPanelOpen ? 'hidden' : 'auto';
+    if (this.isPanelOpen) {
+      this.scrollLock.lock();
+    } else {
+      this.scrollLock.unlock();
+    }
   }
 
   closePanel() {
     this.isPanelOpen = false;
-    document.body.style.overflow = 'auto';
+    this.scrollLock.unlock();
   }
 
   onPanelClick(event: MouseEvent) {
