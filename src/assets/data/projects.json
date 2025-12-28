@@ -385,6 +385,73 @@
 		  "hasFullPage": true
 	  },
 	  {
+		  "id": "cortex-platform",
+		  "title": {
+			  "en": "Cortex — Network Audit Platform",
+			  "uk": "Cortex — платформа мережевого аудиту",
+			  "ru": "Cortex — платформа сетевого аудита"
+		  },
+		  "category": "Cybersecurity",
+		  "thumbnail": "assets/images/projects/cortex/cortex.png",
+		  "description": {
+			  "en": "A distributed platform for asynchronous network scanning, service fingerprinting, and asset change detection with a SOC‑style UI.",
+			  "uk": "Розподілена платформа для асинхронного сканування мереж, ідентифікації сервісів та виявлення змін активів із SOC‑інтерфейсом.",
+			  "ru": "Распределенная платформа для асинхронного сканирования сетей, идентификации сервисов и обнаружения изменений активов с SOC‑интерфейсом."
+		  },
+		  "role": {
+			  "en": "Fullstack Architect & Lead Developer",
+			  "uk": "Fullstack‑архітектор та lead‑розробник",
+			  "ru": "Fullstack‑архитектор и lead‑разработчик"
+		  },
+		  "duration": "MVP+ / Production-ready",
+		  "images": [
+			  "assets/images/projects/cortex/cortex.png"
+		  ],
+		  "techStack": {
+			  "frontend": ["Angular", "TypeScript", "RxJS"],
+			  "backend": ["Go", "PostgreSQL", "Redis"],
+			  "other": ["Gin", "Nginx", "Docker", "Kubernetes", "Terraform", "Swagger"]
+		  },
+		  "keyFeatures": [
+			  {
+				  "en": "Asynchronous scanning via Redis queues with Go worker engine",
+				  "uk": "Асинхронне сканування через Redis‑черги та Go‑воркери",
+				  "ru": "Асинхронное сканирование через Redis‑очереди и Go‑воркеры"
+			  },
+			  {
+				  "en": "Service fingerprinting using nmap-service-probes signatures",
+				  "uk": "Фінгерпринтинг сервісів на базі nmap-service-probes",
+				  "ru": "Фингерпринтинг сервисов на базе nmap-service-probes"
+			  },
+			  {
+				  "en": "Change detection to alert on new ports and altered services",
+				  "uk": "Виявлення змін із алертами на нові порти та змінені сервіси",
+				  "ru": "Обнаружение изменений с алертами на новые порты и измененные сервисы"
+			  },
+			  {
+				  "en": "SOC‑style UI that highlights critical changes and assets",
+				  "uk": "SOC‑інтерфейс із акцентом на критичні зміни та активи",
+				  "ru": "SOC‑интерфейс с акцентом на критические изменения и активы"
+			  }
+		  ],
+		  "achievements": [
+			  {
+				  "en": "High‑throughput scanning with Go routines without blocking the API",
+				  "uk": "Високопродуктивне сканування на Go‑рутинах без блокування API",
+				  "ru": "Высокопроизводительное сканирование на Go‑рутинах без блокировки API"
+			  },
+			  {
+				  "en": "Redesigned UI architecture without losing existing business logic (v6.2)",
+				  "uk": "Редизайн UI‑архітектури без втрати бізнес‑логіки (v6.2)",
+				  "ru": "Редизайн UI‑архитектуры без потери бизнес‑логики (v6.2)"
+			  }
+		  ],
+		  "links": {
+			  "github": "https://github.com/Viktor25104/cortex"
+		  },
+		  "hasFullPage": true
+	  },
+	  {
 		  "id": "sentrigram",
 		  "title": {
 			  "en": "SentriGram - Telegram Mini App Monitor",
