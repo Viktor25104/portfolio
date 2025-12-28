@@ -19,13 +19,16 @@ export class LanguageResolver implements Resolve<string> {
     this.translations.setLanguage(resolvedLang);
     this.seo.applyLanguage(resolvedLang, state.url);
 
-    this.seo.updateMetaTags({
-      lang: resolvedLang,
-      title: this.translations.instant('HOME_META_TITLE'),
-      description: this.translations.instant('HOME_META_DESCRIPTION'),
-      keywords: this.translations.instant('HOME_META_KEYWORDS'),
-      url: state.url
-    });
+    const normalizedUrl = state.url.split('?')[0];
+    if (normalizedUrl === `/${resolvedLang}` || normalizedUrl === `/${resolvedLang}/`) {
+      this.seo.updateMetaTags({
+        lang: resolvedLang,
+        title: this.translations.instant('HOME_META_TITLE'),
+        description: this.translations.instant('HOME_META_DESCRIPTION'),
+        keywords: this.translations.instant('HOME_META_KEYWORDS'),
+        url: state.url
+      });
+    }
 
     return resolvedLang;
   }

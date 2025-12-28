@@ -1057,9 +1057,7 @@ export class ProjectModalComponent implements OnChanges, AfterViewInit, OnDestro
     }
 
     this.onClose();
-    this.router.navigate(['/', this.translations.getCurrentLang()], {
-      fragment: 'projects'
-    });
+    this.router.navigate(['/', this.translations.getCurrentLang(), 'project', this.project.id]);
   }
 
   getProjectTitle(): string {

@@ -44,6 +44,26 @@
     "uk": "Детальніше",
     "ru": "Подробнее"
   },
+  "BACK_TO_PROJECTS": {
+    "en": "Back to projects",
+    "uk": "Назад до проєктів",
+    "ru": "Назад к проектам"
+  },
+  "PROJECT_GALLERY": {
+    "en": "Project gallery",
+    "uk": "Галерея проєкту",
+    "ru": "Галерея проекта"
+  },
+  "PROJECT_NOT_FOUND": {
+    "en": "Project not found",
+    "uk": "Проєкт не знайдено",
+    "ru": "Проект не найден"
+  },
+  "HOME_LABEL": {
+    "en": "Home",
+    "uk": "Головна",
+    "ru": "Главная"
+  },
   "TECHNOLOGIES_USED": {
     "en": "Technologies Used",
     "uk": "Використані технології",
@@ -165,7 +185,7 @@
 		  "links": {
 			  "demo": "https://gorgeous-muffin-6bfab7.netlify.app/"
 		  },
-		  "hasFullPage": false
+		  "hasFullPage": true
 	  },
 	  {
   "id": "solisec-audit",
@@ -235,7 +255,7 @@
     }
   ],
   "links": {},
-  "hasFullPage": false
+  "hasFullPage": true
 },
 	  {
   "id": "phantomhunt-protocol",
@@ -300,7 +320,7 @@
     }
   ],
   "links": {},
-  "hasFullPage": false
+  "hasFullPage": true
 },
 
 
@@ -376,7 +396,7 @@
     }
   ],
   "links": {},
-  "hasFullPage": false
+  "hasFullPage": true
 },
 
 	  {
@@ -450,7 +470,7 @@
     }
   ],
   "links": {},
-  "hasFullPage": false
+  "hasFullPage": true
 }
 
   ]

@@ -71,6 +71,35 @@ export class SeoService {
     this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
   }
 
+  setJsonLd(id: string, data: object): void {
+    if (!this.document?.head) {
+      return;
+    }
+
+    const selector = `script[type="application/ld+json"][data-jsonld-id="${id}"]`;
+    let script = this.document.querySelector<HTMLScriptElement>(selector);
+    if (!script) {
+      script = this.document.createElement('script');
+      script.type = 'application/ld+json';
+      script.setAttribute('data-jsonld-id', id);
+      this.document.head.appendChild(script);
+    }
+
+    script.textContent = JSON.stringify(data);
+  }
+
+  removeJsonLd(id: string): void {
+    if (!this.document?.head) {
+      return;
+    }
+
+    const selector = `script[type="application/ld+json"][data-jsonld-id="${id}"]`;
+    const script = this.document.querySelector<HTMLScriptElement>(selector);
+    if (script) {
+      script.remove();
+    }
+  }
+
   private updateAlternateLinks(activeLang: string, tailPath: string): void {
     const basePath = tailPath.startsWith('/') ? tailPath : `/${tailPath}`;
     const normalizedTail = basePath === '/' ? '' : basePath;

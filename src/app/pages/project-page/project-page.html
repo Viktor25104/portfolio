@@ -1,0 +1,76 @@
+<section class="project-page" *ngIf="project() as item; else projectMissing">
+  <div class="hero">
+    <div class="hero-content">
+      <a class="back-link" [routerLink]="['/', translations.getCurrentLang()]" fragment="projects">
+        ← {{ 'BACK_TO_PROJECTS' | lang }}
+      </a>
+      <h1 class="title">{{ getProjectTitle(item) }}</h1>
+      <p class="summary">{{ getProjectDescription(item) }}</p>
+
+      <div class="meta">
+        <span class="tag">{{ getCategoryTranslationKey(item.category) | lang }}</span>
+        <span class="tag" *ngIf="item.role">{{ getProjectRole(item) }}</span>
+        <span class="tag" *ngIf="item.duration">{{ item.duration }}</span>
+      </div>
+
+      <app-project-links [links]="item.links"></app-project-links>
+    </div>
+
+    <div class="hero-media" *ngIf="projectImage() as heroImage">
+      <img
+        ngOptimizedImage
+        [ngSrc]="heroImage"
+        [alt]="getProjectTitle(item)"
+        width="1200"
+        height="800"
+        priority
+        class="hero-image">
+    </div>
+  </div>
+
+  @defer (on idle) {
+    <div class="details-grid">
+      <div class="panel" *ngIf="item.techStack">
+        <app-project-tech-stack [techStack]="item.techStack"></app-project-tech-stack>
+      </div>
+
+      <div class="panel" *ngIf="item.keyFeatures?.length">
+        <h3>{{ 'KEY_FEATURES' | lang }}</h3>
+        <ul class="list">
+          <li *ngFor="let feature of item.keyFeatures">{{ getTranslatedText(feature) }}</li>
+        </ul>
+      </div>
+
+      <div class="panel" *ngIf="item.achievements?.length">
+        <h3>{{ 'KEY_ACHIEVEMENTS' | lang }}</h3>
+        <ul class="list">
+          <li *ngFor="let achievement of item.achievements">{{ getTranslatedText(achievement) }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery" *ngIf="item.images.length > 1">
+      <h3>{{ 'PROJECT_GALLERY' | lang }}</h3>
+      <div class="gallery-grid">
+        <img
+          *ngFor="let image of item.images"
+          ngOptimizedImage
+          [ngSrc]="image"
+          [alt]="getProjectTitle(item)"
+          width="400"
+          height="260">
+      </div>
+    </div>
+  } @placeholder {
+    <div class="details-grid placeholder"></div>
+  }
+</section>
+
+<ng-template #projectMissing>
+  <section class="project-page empty" *ngIf="notFound()">
+    <h2>{{ 'PROJECT_NOT_FOUND' | lang }}</h2>
+    <a class="back-link" [routerLink]="['/', translations.getCurrentLang()]" fragment="projects">
+      ← {{ 'BACK_TO_PROJECTS' | lang }}
+    </a>
+  </section>
+</ng-template>
