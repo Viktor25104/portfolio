@@ -1,59 +1,51 @@
 # ModernPortfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+Angular 20 portfolio with SSR/SSG, locale-aware routing, project detail pages, and SEO helpers (canonical, hreflang, JSON‑LD).
 
-## Development server
-
-To start a local development server, run:
+## Development
 
 ```bash
-ng serve
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+App runs at `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Build (SSR/SSG)
 
 ```bash
-ng generate component component-name
+npm run build:ssr
+npm run build:ssg
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Serve SSR build:
 
 ```bash
-ng generate --help
+npm run serve:ssr:modern-portfolio
 ```
 
-## Building
+Static output lives in `dist/modern-portfolio/browser`.
 
-To build the project run:
+## Environment
+
+Create `.env` (see `.env.example`) and provide:
+
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
+- `SITE_URL` (used for `sitemap.xml` and `robots.txt`)
+
+## Sitemap + Hreflang
 
 ```bash
-ng build
+npm run generate:sitemap
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Outputs:
 
-## Running unit tests
+- `public/sitemap.xml`
+- `public/robots.txt`
+- `prerendered-routes.json`
+- updates `routes.txt`
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Deploy (Static)
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Deploy the contents of `dist/modern-portfolio/browser` to your static host after `npm run build:ssg`.
