@@ -121,6 +121,71 @@
   },
   "projects": [
 	  {
+		  "id": "modern-portfolio",
+		  "title": {
+			  "en": "Modern Portfolio",
+			  "uk": "Modern Portfolio",
+			  "ru": "Modern Portfolio"
+		  },
+		  "category": "Web",
+		  "thumbnail": "assets/images/projects/sea-fresh.png",
+		  "description": {
+			  "en": "Angular 20 portfolio with SSR/SSG, locale-aware routing, project detail pages, and SEO helpers.",
+			  "uk": "Портфоліо на Angular 20 з SSR/SSG, локалізованими маршрутами, сторінками проєктів і SEO‑допоміжниками.",
+			  "ru": "Портфолио на Angular 20 с SSR/SSG, локализованной маршрутизацией, страницами проектов и SEO‑хелперами."
+		  },
+		  "role": {
+			  "en": "Full Stack Engineer & UI Architect",
+			  "uk": "Full Stack інженер та UI‑архітектор",
+			  "ru": "Full Stack инженер и UI‑архитектор"
+		  },
+		  "duration": "Ongoing",
+		  "images": [
+			  "assets/images/projects/sea-fresh.png"
+		  ],
+		  "techStack": {
+			  "frontend": ["Angular", "TypeScript", "SCSS"],
+			  "backend": ["Node.js"],
+			  "other": ["SSR/SSG", "SEO", "Prerendering", "i18n"]
+		  },
+		  "keyFeatures": [
+			  {
+				  "en": "Locale-aware routing with SEO metadata (canonical, hreflang, JSON‑LD)",
+				  "uk": "Локалізована маршрутизація з SEO‑метаданими (canonical, hreflang, JSON‑LD)",
+				  "ru": "Локализованная маршрутизация с SEO‑метаданными (canonical, hreflang, JSON‑LD)"
+			  },
+			  {
+				  "en": "SSR/SSG build with prerendered routes for static hosting",
+				  "uk": "SSR/SSG‑збірка з пререндером маршрутів для статичного хостингу",
+				  "ru": "SSR/SSG‑сборка с пререндером маршрутов для статического хостинга"
+			  },
+			  {
+				  "en": "Project detail pages with structured data and reusable UI sections",
+				  "uk": "Сторінки проєктів зі структурованими даними та повторно використовуваними секціями UI",
+				  "ru": "Страницы проектов со структурированными данными и переиспользуемыми секциями UI"
+			  },
+			  {
+				  "en": "DRAI-inspired structure for clean separation of runtime, domain, and infrastructure",
+				  "uk": "DRAI‑подібна структура з чітким розділенням runtime, domain та infrastructure",
+				  "ru": "DRAI‑подобная структура с четким разделением runtime, domain и infrastructure"
+			  }
+		  ],
+		  "achievements": [
+			  {
+				  "en": "Static hosting ready with automated sitemap and prerendered routes",
+				  "uk": "Готове до статичного хостингу з автоматичним sitemap і пререндером",
+				  "ru": "Готово к статическому хостингу с автоматическим sitemap и пререндером"
+			  },
+			  {
+				  "en": "Consistent multilingual content and metadata across all sections",
+				  "uk": "Єдиний багатомовний контент і метадані у всіх секціях",
+				  "ru": "Единый многоязычный контент и метаданные во всех секциях"
+			  }
+		  ],
+		  "links": {},
+		  "hasFullPage": true
+	  },
+	  {
 		  "id": "adr-zoom-automation",
 		  "title": {
 			  "en": "Zoom SDK Automation Platform",
