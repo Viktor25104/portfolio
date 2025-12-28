@@ -1,74 +1,123 @@
 # DRAI Migration Plan
 
-Документ описывает текущее состояние и очередность задач по переводу `modern-portfolio` на архитектуру DRAI с SSR/SSG и многоязычным SEO. Любой агент может подхватить работу, ориентируясь на блоки и коммиты ниже.
+Документ фиксирует полный roadmap по переходу `modern-portfolio` на архитектуру DRAI (Domain / Runtime / Infrastructure / API), включая финальную структуру директорий и ожидаемые коммиты. Любой агент может открыть файл, посмотреть последнюю выполненную задачу и продолжить работу без контекста из переписки.
 
-## Цель
-- **Domain**: строгие модели, локализации, бизнес-логика (сигналы, pure трансформации).
-- **Runtime**: standalone компоненты, маршруты `/:lang/...`, `@defer`, SeoService, guards/resolvers.
-- **Infrastructure**: DataService/TranslationsService с TransferState, SSR/SSG конфиги, CI/CD пайплайн, serverless для контактов.
-- **API**: контракты JSON (assets/data), backend endpoints (contact), sitemap/hreflang генератор, документация по взаимодействию.
+---
 
-## Блоки работ
+## Финальная структура проекта
 
-### 1. Локали и маршруты
-- **A1** `feat: add locale-aware routing + guards`
-  - Утвердить список локалей + `lang.config.ts`.
-  - Guard/resolver для `/:lang`.
-  - Редирект `/ -> /<defaultLang>`.
-- **A2** `feat: add locale-aware seo data`
-  - Общий `seo.json` (title/description/OG по страницам).
-  - SeoService читает JSON через DataService + TransferState.
+```
+src/
+├─ domain/                      # Чистая бизнес-логика без Angular
+│   ├─ models/                  # biography.ts, project.ts, skill.ts, seo.ts
+│   ├─ localization/            # lang.config.ts, mapping ключей переводов
+│   ├─ services/                # pure функции форматирования, сигналы без DI
+│   └─ utils/                   # хелперы для сортировок/фильтров
+│
+├─ runtime/                     # Angular Runtime слой
+│   ├─ app/                     # bootstrap, app.config*, app.routes*
+│   ├─ features/                # main, skills, projects, contact, biography ...
+│   │   └─ shared/              # UI-паттерны: ModalShell, TechStackList и т.д.
+│   ├─ seo/                     # SeoService, директивы, компоненты метаданных
+│   ├─ guards/                  # language.guard.ts и др.
+│   ├─ resolvers/               # language.resolver.ts и др.
+│   ├─ pipes/                   # lang.pipe в формате standalone
+│   └─ state/                   # signals/store для UI-состояний
+│
+├─ infrastructure/              # Доступ к данным и окружение
+│   ├─ http/                    # DataService, TranslationsService, interceptors
+│   ├─ server/                  # main.server.ts, server.ts, TransferState утилиты
+│   ├─ scripts/                 # generate-sitemap.ts, hreflang builder, CI helpers
+│   └─ functions/               # serverless API (например, /api/contact)
+│
+└─ api/                         # Контракты и документация
+    ├─ contracts/               # *.d.ts / JSON schema из assets/data/*
+    ├─ endpoints/               # описания REST/Webhook контрактов
+    └─ docs/                    # README, deployment guide, API usage
+```
 
-### 2. SSR/SSG и CI
-- **B1** `chore: configure SSR build artifacts`
-  - Обновить `angular.json`, `package.json`, `tsconfig.*`.
-  - Добавить скрипты `build:ssr`, `build:ssg`, `serve:ssr`.
-- **B2** `chore: add CI pipeline`
-  - GitHub Actions (или аналог): `npm ci`, `npm run test`, `npm run build:ssg`, деплой `dist/.../browser`.
+> При создании коммитов в сообщении желательно указывать слой, например `[runtime] feat: ...`, чтобы отслеживать прогресс по DRAI.
 
-### 3. API / безопасность
-- **C1** `feat: move contact form to serverless`
-  - Бэкенд-эндпоинт (Cloud Function/serverless).
-  - ContactComponent → `HttpClient.post('/api/contact')`.
-- **C2** `chore: add Accept-Language interceptor`
-  - Интерцептор проставляет заголовки и ретраит по 503.
+---
 
-### 4. Компонентная декомпозиция (DRAI)
-- **D1** `refactor: split project modal`
-  - Подкомпоненты `ProjectModalHeader/TechStack/Links`, shared `ModalShell`, `@defer`.
-- **D2** `refactor: split skill modal/biography`
-  - Аналогично навыки/биография + CDK Overlay для управления скроллом.
+## Roadmap и коммиты
 
-### 5. Производительность и DRAI-фичи
-- **E1** `feat: add @defer + ngOptimizedImage`
-  - Hero, Skills, Projects — оптимизированные изображения, lazy блоки.
-- **E2** `chore: trim GSAP`
-  - Динамические импорты, удаление `console.log`, buildOptimizer.
-- **E3** `chore: fix Angular budgets`
-  - Разнести SCSS, lazy-фичи, снизить initial bundle.
+### Блок A — локали и маршруты
+- **A1 `[runtime] feat: add locale-aware routing + guards`**
+  - Создать `domain/localization/lang.config.ts` (массив локалей + fallback).
+  - Перенести все маршруты в `runtime/app/app.routes.ts`, добавить `languageGuard`.
+  - `LanguageResolver` переводит locale в сигнал, редирект `/ -> /<defaultLang>`.
+- **A2 `[runtime] feat: integrate seo data per locale`**
+  - `assets/data/seo.json` + контракт `api/contracts/seo.d.ts`.
+  - SeoService читает данные через `infrastructure/http/DataService`, складывает в `TransferState`.
+  - Обновляет `<html lang>`, canonical, OG/Twitter/hreflang при переходах.
 
-### 6. Состояние, сигналы, типы
-- **F1** `refactor: migrate DataService/Translations to signals`
-  - Signals + TransferState, убрать `Subscription[]`.
-- **F2** `chore: add strict models`
-  - Генерация `*.d.ts` из JSON, удаление `any`, усиление `tsconfig`.
+### Блок B — SSR/SSG и CI
+- **B1 `[infrastructure] chore: configure SSR build artifacts`**
+  - Обновить `angular.json`, `package.json`, `tsconfig.*` под server/browser/prerender.
+  - Добавить `routes.txt`, `app.config.server.ts`, `main.server.ts`, `server.ts`.
+  - Скрипты `build:ssr`, `build:ssg`, `serve:ssr`.
+- **B2 `[infrastructure] chore: add CI pipeline`**
+  - GitHub Actions (или аналог): `npm ci`, `npm run test`, `npm run build:ssg`.
+  - Шаг деплоя статического `dist/modern-portfolio/browser`.
 
-### 7. SEO / контент
-- **G1** `feat: project detail pages + structured data`
-  - Роуты `/lang/project/:id`, SSR контент, JSON-LD Project.
-- **G2** `feat: sitemap & hreflang generator`
-  - Скрипт `scripts/generate-sitemap.ts`, `robots.txt`.
-- **G3** `feat: contact & biography microdata`
-  - JSON-LD Person/ContactPoint, OG/Twitter для каждой страницы.
+### Блок C — API и безопасность
+- **C1 `[infrastructure] feat: serverless contact endpoint`**
+  - Создать `infrastructure/functions/contact` (Express/serverless).
+  - Хранить токены в env, ContactComponent → POST `/api/contact`.
+  - Добавить retry/feedback UI.
+- **C2 `[infrastructure] chore: add Accept-Language interceptor`**
+  - Интерцептор вставляет `Accept-Language`, повторяет запросы при 503.
+  - Регистрируется в `app.config.ts`.
 
-### 8. Тесты и документация
-- **H1** `test: resolver + seo service`
-- **H2** `test: e2e for locale switching`
-- **H3** `docs: README + deployment guide`
-  - Объяснить DRAI-структуру, как добавлять локали, запуск SSR/SSG, переменные окружения, CI/CD.
+### Блок D — декомпозиция UI (Runtime)
+- **D1 `[runtime] refactor: split project modal`**
+  - Вынести `ModalShell`, `ProjectModalHeader`, `ProjectTechStack`, `ProjectLinks` в `runtime/features/projects/components`.
+  - Подключить CDK Overlay, общий ScrollLock service, `@defer` heavy секций.
+- **D2 `[runtime] refactor: split skill modal & biography`**
+  - Аналогично для навыков/биографии, переиспользовать ModalShell и ScrollLock.
+  - Все GSAP/DOM операции через сервис, защищённый `isPlatformBrowser`.
+
+### Блок E — производительность и DRAI фичи
+- **E1 `[runtime] feat: add @defer + ngOptimizedImage`**
+  - Hero/About/Skills/Projects — `ngOptimizedImage`, `priority`, `@defer`.
+- **E2 `[runtime] chore: lazy-load gsap and analytics`**
+  - Общий `runtime/shared/animations`, динамические импорты `import('gsap/ScrollTrigger')`.
+  - Удалить `console.log`, включить `buildOptimizer`, проверить budgets.
+- **E3 `[runtime] chore: reduce bundle budgets`**
+  - Разбить крупные SCSS, вынести переменные, сделать lazy standalone features.
+
+### Блок F — состояние, сигналы, типы
+- **F1 `[domain] refactor: migrate services to signals`**
+  - `domain/services/translations.signal.ts`, `projects.signal.ts` и т.д.
+  - `infrastructure/http/DataService` возвращает сигналы/функции, а не `Observable<any>`.
+- **F2 `[domain/api] chore: add strict models/schemas`**
+  - Скрипт `infrastructure/scripts/generate-types.ts` → `api/contracts/*.d.ts`.
+  - Включить `"strict": true`, `"useDefineForClassFields": true`, убрать `any`.
+
+### Блок G — SEO и контент
+- **G1 `[runtime/api] feat: project detail pages + structured data`**
+  - Роут `/:lang/project/:id`, SSR/Prerender для каждого проекта.
+  - SeoService генерирует JSON-LD Project + breadcrumbs.
+- **G2 `[infrastructure/api] feat: sitemap & hreflang generator`**
+  - Скрипт `generate-sitemap.ts` читает локали/маршруты, создаёт `sitemap.xml`, `robots.txt`, `prerendered-routes.json`.
+  - Запуск в CI перед деплоем.
+- **G3 `[runtime/api] feat: contact & biography microdata`**
+  - JSON-LD Person/ContactPoint/Organization в главной странице.
+  - Уникальные OG/Twitter images для каждой локали.
+
+### Блок H — тесты и документация
+- **H1 `[runtime] test: language resolver + seo service`**
+  - Unit tests на canonical/meta/hreflang.
+- **H2 `[runtime] test: e2e locale switching`**
+  - Cypress/Playwright сценарии с проверкой meta и содержимого.
+- **H3 `[api] docs: README + deployment guide`**
+  - Обновить документацию с финальной структурой DRAI, добавлением локалей, запуском SSR/SSG/CI, env для контактного API.
+
+---
 
 ## Текущее состояние
-- Выполнено: базовый SSR, локаль-ориентированный роутинг, SeoService, модалки/GSAP защищены `isPlatformBrowser`, пререндер `routes.txt`.
-- Следующий шаг: переход к блоку **C** (перенос контактной формы в backend) либо начать декомпозицию модалок (**D**), в зависимости от приоритета безопасности.
+- Выполнено: базовый SSR, маршруты `/:lang`, SeoService, пререндер `routes.txt`, защита модалок `isPlatformBrowser`.
+- Следующий блок: **C** (перенос контактной формы в backend) или **D** (декомпозиция модалок) — в зависимости от приоритета.
 
-Все коммиты должны отражать блоки выше (например, `feat: add project detail page seo`) и поддерживать DRAI разделение: Domain (модели/логика), Runtime (компоненты/guards), Infrastructure (сервисы/SSR/CI), API (контракты/эндоинты/доки).
+Каждый новый коммит должен следовать сообщению из плана (например, `[infrastructure] feat: serverless contact endpoint`). Так другой агент сразу понимает, на какой стадии находится проект и какой слой DRAI затрагивался.
