@@ -1,0 +1,157 @@
+{
+  "LETS_CONNECT": {
+    "en": "Let's connect",
+    "uk": "Зв'яжімося",
+    "ru": "Давайте свяжемся"
+  },
+  "PROJECT_INVITE": {
+    "en": "I'm always open to exciting projects",
+    "uk": "Я завжди відкритий до цікавих проєктів",
+    "ru": "Я всегда открыт для интересных проектов"
+  },
+  "AVAILABLE": {
+    "en": "Available for new work",
+    "uk": "Доступний до нових проєктів",
+    "ru": "Доступен для новых проектов"
+  },
+  "BUSY": {
+    "en": "Currently busy",
+    "uk": "Зараз зайнятий",
+    "ru": "Сейчас занят"
+  },
+  "NAME": {
+    "en": "Name",
+    "uk": "Ім'я",
+    "ru": "Имя"
+  },
+  "EMAIL": {
+    "en": "Email",
+    "uk": "Пошта",
+    "ru": "Почта"
+  },
+  "PHONE": {
+    "en": "Phone",
+    "uk": "Телефон",
+    "ru": "Телефон"
+  },
+  "TELEGRAM": {
+    "en": "Telegram",
+    "uk": "Telegram",
+    "ru": "Telegram"
+  },
+  "SUBJECT": {
+    "en": "Subject",
+    "uk": "Тема",
+    "ru": "Тема"
+  },
+  "MESSAGE": {
+    "en": "Message",
+    "uk": "Повідомлення",
+    "ru": "Сообщение"
+  },
+  "OPTIONAL": {
+    "en": "optional",
+    "uk": "необов'язково",
+    "ru": "необязательно"
+  },
+  "SEND_MESSAGE": {
+    "en": "Send",
+    "uk": "Надіслати",
+    "ru": "Отправить"
+  },
+  "SENDING": {
+    "en": "Sending...",
+    "uk": "Надсилається...",
+    "ru": "Отправка..."
+  },
+  "COPIED": {
+    "en": "Copied!",
+    "uk": "Скопійовано!",
+    "ru": "Скопировано!"
+  },
+  "COPY": {
+    "en": "Copy",
+    "uk": "Копіювати",
+    "ru": "Копировать"
+  },
+  "DOWNLOAD_RESUME": {
+    "en": "Download Resume",
+    "uk": "Завантажити резюме",
+    "ru": "Скачать резюме"
+  },
+  "YOUR_NAME": {
+    "en": "Your name",
+    "uk": "Ваше ім'я",
+    "ru": "Ваше имя"
+  },
+  "YOUR_EMAIL": {
+    "en": "Your email",
+    "uk": "Ваша пошта",
+    "ru": "Ваша почта"
+  },
+  "YOUR_PHONE": {
+    "en": "Your phone",
+    "uk": "Ваш телефон",
+    "ru": "Ваш телефон"
+  },
+  "YOUR_TELEGRAM": {
+    "en": "@username",
+    "uk": "@username",
+    "ru": "@username"
+  },
+  "WHATS_THIS_ABOUT": {
+    "en": "What's this about?",
+    "uk": "Про що мова?",
+    "ru": "О чём это?"
+  },
+  "YOUR_MESSAGE": {
+    "en": "Write your message here",
+    "uk": "Напишіть своє повідомлення тут",
+    "ru": "Напишите ваше сообщение здесь"
+  },
+  "NAME_REQUIRED": {
+    "en": "Name must be at least 2 characters",
+    "uk": "Ім'я має містити мінімум 2 символи",
+    "ru": "Имя должно содержать минимум 2 символа"
+  },
+  "EMAIL_REQUIRED": {
+    "en": "Email is required",
+    "uk": "Пошта обов'язкова",
+    "ru": "Email обязателен"
+  },
+  "EMAIL_INVALID": {
+    "en": "Please enter a valid email",
+    "uk": "Введіть правильну адресу пошти",
+    "ru": "Введите корректный email"
+  },
+  "PHONE_REQUIRED": {
+    "en": "Phone number is required",
+    "uk": "Номер телефону обов'язковий",
+    "ru": "Номер телефона обязателен"
+  },
+  "PHONE_INVALID": {
+    "en": "Please enter a valid phone number",
+    "uk": "Введіть правильний номер телефону",
+    "ru": "Введите корректный номер телефона"
+  },
+  "SUBJECT_REQUIRED": {
+    "en": "Subject must be at least 5 characters",
+    "uk": "Тема має містити мінімум 5 символів",
+    "ru": "Тема должна содержать минимум 5 символов"
+  },
+  "MESSAGE_REQUIRED": {
+    "en": "Message must be at least 10 characters",
+    "uk": "Повідомлення має містити мінімум 10 символів",
+    "ru": "Сообщение должно содержать минимум 10 символов"
+  },
+  "FORM_SUCCESS": {
+    "en": "Thank you! Your message has been sent successfully.",
+    "uk": "Дякую! Ваше повідомлення успішно надіслано.",
+    "ru": "Спасибо! Ваше сообщение успешно отправлено."
+  },
+  "FORM_ERROR": {
+    "en": "Something went wrong. Please try again or contact me directly.",
+    "uk": "Щось пішло не так. Спробуйте ще раз або зв'яжіться зі мною напряму.",
+    "ru": "Что-то пошло не так. Попробуйте еще раз или свяжитесь со мной напрямую."
+  }
+}

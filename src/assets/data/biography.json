@@ -1,0 +1,93 @@
+
+{
+  "name": {
+    "en": "Viktor Marymorych",
+    "uk": "Віктор Мариморич",
+    "ru": "Виктор Мариморич"
+  },
+  "title": {
+    "en": "Developer",
+    "uk": "Розробник",
+    "ru": "Разработчик"
+  },
+  "location": {
+    "en": "Ukraine",
+    "uk": "Україна",
+    "ru": "Украина"
+  },
+  "email": "viktormarimoric@gmail.com",
+  "phone": "+380991342027",
+  "availability": {
+    "status": "available",
+    "message": {
+      "en": "Open to new opportunities",
+      "uk": "Відкритий для нових можливостей",
+      "ru": "Открыт для новых возможностей"
+    }
+  },
+  "longBio": {
+    "en": "Hi! I'm Viktor — a full stack security engineer and red team strategist. I work at the intersection of software development, cybersecurity, and system architecture. Over the past few years, I've audited enterprise banks, broken and protected blockchain infrastructures, and built real-time monitoring platforms. I believe security isn't just about defense — it's about understanding systems so deeply you can break them... and then make them stronger. But beyond all that — I simply love programming. I enjoy writing clean backend logic, integrating APIs, and building useful products, even when security isn't the focus. My style is calm, precise, and quietly confident. I love what I do — and I build things that are hard to break.",
+    "uk": "Привіт! Я Віктор — full stack інженер безпеки та стратег Red Team. Працюю на перетині розробки, кібербезпеки та архітектури систем. За останні роки я проводив аудит банків, атакував і захищав блокчейн-інфраструктури та створював платформи моніторингу в реальному часі. Я вважаю, що безпека — це не лише захист, а й глибоке розуміння системи, яке дозволяє її зламати... і зробити кращею. Але понад усе — я просто люблю програмувати. Мені подобається писати чисту логіку бекенду, інтегрувати API та створювати корисні продукти, навіть коли безпека — не головна мета. Мій стиль — спокійний, точний і впевнений. Я люблю те, що роблю — і створюю системи, які важко зламати.",
+    "ru": "Привет! Я Виктор — full stack инженер по безопасности и стратег Red Team. Работаю на стыке разработки, кибербезопасности и архитектуры. За последние годы я проводил аудит банков, ломал и защищал блокчейн-решения и строил платформы мониторинга в реальном времени. Я верю, что безопасность — это не просто защита, а глубокое понимание систем, которое позволяет их сломать... и сделать сильнее. Но помимо всего — я просто обожаю программировать. Мне нравится писать чистую backend-логику, интегрировать API и создавать полезные продукты, даже когда безопасность — не в приоритете. Мой стиль — спокойный, точный и уверенный. Я люблю свою работу — и строю то, что трудно сломать."
+  },
+  "sections": [
+    {
+      "title": {
+        "en": "Education",
+        "uk": "Освіта",
+        "ru": "Образование"
+      },
+      "content": {
+        "en": "Graduated with a Bachelor's degree in Cybersecurity and System Engineering from Odessa Polytechnic University (2025). My true education, however, came from breaking and protecting real systems under pressure — not from lectures.",
+        "uk": "Закінчив бакалаврат з кібербезпеки та системної інженерії в Одеському політехнічному університеті (2025). Проте справжню освіту я здобув не на парах, а в реальних умовах, захищаючи та зламываючи системи.",
+        "ru": "Закончил бакалавриат по кибербезопасности и системной инженерии в Одесском политехе (2025). Но моё настоящее образование — это защита и взлом реальных систем под давлением, а не лекции."
+      },
+      "extra": {
+        "en": "Independently completed all major CTFs and labs. Read 170+ books on hacking, defense and offensive strategy.",
+        "uk": "Самостійно пройшов усі основні CTF та лабораторії. Прочитав 170+ книг з хакінгу, захисту та Red Team.",
+        "ru": "Самостоятельно прошёл все ключевые CTF и лаборатории. Прочитал 170+ книг по хакингу, защите и Red Team стратегии."
+      }
+    },
+    {
+      "title": {
+        "en": "Certifications & Readiness",
+        "uk": "Сертифікації та готовність",
+        "ru": "Сертификации и готовность"
+      },
+      "content": {
+        "en": "Currently unlicensed due to wartime limitations, but fully qualified to pass OSCP, OSCE, GREM and CISSP. Skill level already proven through real-world pentests, exploit chains, and defensive architecture. Targeting formal certification once conditions allow.",
+        "uk": "Наразі не ліцензований через воєнний стан, але повністю готовий до складання OSCP, OSCE, GREM і CISSP. Рівень підтверджено реальними пентестами, ланцюгами експлойтів та архітектурою захисту. Планую формальну сертифікацію, щойно умови дозволять.",
+        "ru": "В настоящее время не сертифицирован из-за войны, но полностью готов к сдаче OSCP, OSCE, GREM и CISSP. Уровень подтверждён реальными пентестами, цепочками эксплойтов и архитектурой защиты. Планирую официальную сертификацию, как только позволят условия."
+      }
+    },
+    {
+      "title": {
+        "en": "Experience Highlights",
+        "uk": "Ключові досягнення",
+        "ru": "Ключевые достижения"
+      },
+      "content": {
+        "en": "Simulated and executed 24+ advanced exploit chains across real infrastructures, including privilege escalation, oracle poisoning, and race conditions.\n\nSpent over 2,500 hours architecting and deploying two unbreakable enterprise-grade security structures, each tailored for Zero Trust with 70+ components.\n\nMastered disassembly and reverse engineering from scratch — the hardest skill I ever learned.\n\nCompleted every challenge on TryHackMe, HackTheBox and VulnHub — with no hints and full reporting.\n\nRead and analyzed over 170 books on ethical hacking, black/white/grey hats, red teaming and defense theory.\n\nFluent in 4 Linux distros for security: Kali (offensive), Parrot OS (networking), Qubes (isolation), Tails (anonymous ops).\n\nFormed and led a Red Team so feared and precise that our price is 'cosmic' — and still clients line up.",
+        "uk": "Симулював та реалізував понад 24 експлойт-ланцюги в реальних інфраструктурах, включаючи ескалацію привілеїв, отруєння оракулів та гонки.\n\nВитратив понад 2500 годин на архітектуру та впровадження двох непроникних структур безпеки класу enterprise, з 70+ компонентами Zero Trust.\n\nОсвоїв дизасемблювання та реверс-інжиніринг з нуля — найскладніший навик у моєму житті.\n\nПройшов усі челенджі на TryHackMe, HackTheBox і VulnHub — без підказок і з повними звітами.\n\nПрочитав і проаналізував понад 170 книг про етичний хакинг, чорний/білий/сірий капелюх, red teaming та теорію захисту.\n\nВільно працюю з 4 дистрибутивами Linux для безпеки: Kali (атаки), Parrot OS (мережі), Qubes (ізоляція), Tails (анонімна робота).\n\nСформував і очолив Red Team, яку бояться й поважають — наші ціни 'космос', але клієнти все одно в черзі.",
+        "ru": "Симулировал и реализовал более 24 цепочек эксплойтов в реальных инфраструктурах, включая эскалацию привилегий, отравление оракулов и гонки условий.\n\nПотратил более 2500 часов на проектирование и внедрение двух непробиваемых структур безопасности уровня enterprise с архитектурой Zero Trust и 70+ компонентами.\n\nОсвоил дизассемблирование и реверс-инжиниринг с нуля — самый сложный навык, который я изучал.\n\nПрошёл все задания на TryHackMe, HackTheBox и VulnHub — без подсказок, с полными отчётами.\n\nПрочитал и проанализировал более 170 книг по этичному хакингу, черным/белым/серым хакерам, Red Team и теории защиты.\n\nСвободно владею 4 дистрибутивами Linux для безопасности: Kali (атакующая сторона), Parrot OS (сети), Qubes (изоляция), Tails (анонимные операции).\n\nСформировал и возглавил Red Team, которую боятся и уважают — наши цены 'космос', но очередь всё равно стоит."
+      }
+    },
+    {
+      "title": {
+        "en": "My Philosophy",
+        "uk": "Моя філософія",
+        "ru": "Моя философия"
+      },
+      "content": {
+        "en": "I believe real security starts with understanding. I don't panic, I observe. I see the entire system — not just a bug. I value quiet precision over loud claims. My job isn't to play defense or offense. It's to study, outthink, and design. To protect, you must know how to break. And when I break — it's surgical.",
+        "uk": "Я вважаю, що справжня безпека починається з розуміння. Я не панікую, я спостерігаю. Я бачу всю систему, а не лише баг. Я ціную тиху точність, а не гучні заяви. Моя робота — не просто захищати чи атакувати. Я думаю глибше, я проєктую. Щоб захищати — треба знати, як ламати. А коли я ламаю — то хірургічно.",
+        "ru": "Я считаю, что настоящая безопасность начинается с понимания. Я не паникую, я наблюдаю. Я вижу всю систему, а не просто баг. Я ценю тихую точность, а не громкие заявления. Моя задача — не просто защищать или атаковать. Я изучаю, просчитываю и проектирую. Чтобы защищать — нужно уметь ломать. А когда я ломаю — это хирургия."
+      }
+    }
+  ],
+  "languages": [
+    { "language": "Ukrainian", "level": "native" },
+    { "language": "English", "level": "professional" },
+    { "language": "Russian", "level": "native" }
+  ]
+}

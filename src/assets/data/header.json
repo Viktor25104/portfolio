@@ -1,0 +1,17 @@
+{
+  "title": {
+    "en": "Victor Marymorych",
+    "uk": "Віктор Мариморич",
+    "ru": "Виктор Мариморич"
+  },
+  "role": {
+    "en": "Full Stack Security Engineer & Red Team Specialist",
+    "uk": "Інженер з безпеки та повного стеку",
+    "ru": "Инженер по безопасности и full stack"
+  },
+  "tagline": {
+    "en": "Securing and breaking systems to build resilient software.",
+    "uk": "Захищаю та тестую системи для створення надійного ПЗ.",
+    "ru": "Защищаю и атакую системы, чтобы строить надежное ПО."
+  }
+}

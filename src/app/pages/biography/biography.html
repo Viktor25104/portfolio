@@ -1,0 +1,76 @@
+<!-- Toggle Button -->
+<button
+  class="bio-toggle"
+  [class.active]="isPanelOpen"
+  (click)="togglePanel()"
+  aria-label="Toggle biography">
+  <span class="bio-icon">👤</span>
+  <span class="toggle-text">{{ 'BIO' | lang }}</span>
+</button>
+
+<!-- Biography Panel -->
+<div class="bio-panel" [class.open]="isPanelOpen" (click)="onPanelClick($event)">
+  <div class="panel-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closePanel()" aria-label="Close biography panel">×</button>
+
+    <div class="bio-content" *ngIf="bioData">
+      <div class="bio-header">
+        <h2 class="name glow">{{ getText(bioData.name) }}</h2>
+        <p class="title">{{ getText(bioData.title) }}</p>
+        <p class="location">{{ getText(bioData.location) }}</p>
+
+        <div class="availability" [class.available]="bioData.availability.status === 'available'">
+          <span class="status-dot"></span>
+          <span class="status-text">{{ getText(bioData.availability.message) }}</span>
+        </div>
+      </div>
+
+      <p class="long-bio preserve-lines">{{ getText(bioData.longBio) }}</p>
+
+      <div class="bio-sections">
+        <div *ngFor="let section of bioData.sections" class="bio-section">
+          <h3>{{ getText(section.title) }}</h3>
+
+          <!-- Special handling for Experience Highlights -->
+          <div *ngIf="getText(section.title).includes('Experience') || getText(section.title).includes('досягнення') || getText(section.title).includes('достижения'); else regularContent">
+            <div class="achievements-list">
+              <div class="achievement-item" *ngFor="let achievement of getAchievements(section.content); let i = index"
+                   [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="achievement-icon">
+                  <span [innerHTML]="getAchievementIcon(i)"></span>
+                </div>
+                <div class="achievement-content">
+                  <p class="preserve-lines">{{ achievement }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regular content for other sections -->
+          <ng-template #regularContent>
+            <p class="preserve-lines">{{ getText(section.content) }}</p>
+          </ng-template>
+
+          <p *ngIf="section.extra" class="preserve-lines extra-info">{{ getText(section.extra) }}</p>
+        </div>
+      </div>
+
+      <div class="languages-section">
+        <h3>{{ 'LANGUAGES' | lang }}</h3>
+        <div class="languages-grid">
+          <div *ngFor="let lang of bioData.languages" class="language-item">
+            <span class="language">{{ lang.language }}</span>
+            <span class="level">{{ lang.level.toUpperCase() | lang }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info">
+        <a [href]="'mailto:' + bioData.email" class="email-link">✉️ {{ bioData.email }}</a>
+        <a *ngIf="bioData.phone" [href]="'tel:' + bioData.phone" class="phone-link">📱 {{ bioData.phone }}</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>

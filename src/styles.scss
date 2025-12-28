@@ -1,1 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-dark-blue: #0d1b2a;
+  --color-purple: #3a0ca3;
+  --color-neon-blue: #4cc9f0;
+  --color-lemon: #ffea00;
+  --color-orange: #f48c06;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-dark-blue);
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.aurora-bg {
+  background: linear-gradient(
+      45deg,
+      var(--color-dark-blue),
+      var(--color-purple),
+      var(--color-neon-blue)
+  );
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite;
+}
+
+.glow {
+  text-shadow: 0 0 10px var(--color-neon-blue),
+  0 0 20px var(--color-neon-blue),
+  0 0 30px var(--color-neon-blue);
+}
+
+.interactive-title {
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-title:hover {
+  color: var(--color-lemon);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .glow {
+    text-shadow: 0 0 5px var(--color-neon-blue),
+    0 0 10px var(--color-neon-blue),
+    0 0 15px var(--color-neon-blue);
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "PROJECTS_TITLE": {
+    "en": "Featured Projects",
+    "uk": "Обрані проєкти",
+    "ru": "Избранные проекты"
+  },
+  "PROJECTS_SUBTITLE": {
+    "en": "Explore my work across industries and technologies",
+    "uk": "Ознайомтесь з моїми роботами в різних сферах і технологіях",
+    "ru": "Изучите мои работы в различных сферах и технологиях"
+  },
+  "ALL_PROJECTS": {
+    "en": "All Projects",
+    "uk": "Всі проєкти",
+    "ru": "Все проекты"
+  },
+  "WEB_DEVELOPMENT": {
+    "en": "Web Development",
+    "uk": "Веб-розробка",
+    "ru": "Веб-разработка"
+  },
+  "MOBILE_APPS": {
+    "en": "Mobile Apps",
+    "uk": "Мобільні додатки",
+    "ru": "Мобильные приложения"
+  },
+  "GAMES": {
+    "en": "Games",
+    "uk": "Ігри",
+    "ru": "Игры"
+  },
+  "BLOCKCHAIN": {
+    "en": "Blockchain",
+    "uk": "Блокчейн",
+    "ru": "Блокчейн"
+  },
+  "CYBERSECURITY": {
+    "en": "Cybersecurity",
+    "uk": "Кібербезпека",
+    "ru": "Кибербезопасность"
+  },
+  "VIEW_DETAILS": {
+    "en": "View details",
+    "uk": "Детальніше",
+    "ru": "Подробнее"
+  },
+  "TECHNOLOGIES_USED": {
+    "en": "Technologies Used",
+    "uk": "Використані технології",
+    "ru": "Использованные технологии"
+  },
+  "FRONTEND": {
+    "en": "Frontend",
+    "uk": "Фронтенд",
+    "ru": "Фронтенд"
+  },
+  "BACKEND": {
+    "en": "Backend",
+    "uk": "Бекенд",
+    "ru": "Бэкенд"
+  },
+  "OTHER_TOOLS": {
+    "en": "Other Tools",
+    "uk": "Інші інструменти",
+    "ru": "Другие инструменты"
+  },
+  "KEY_FEATURES": {
+    "en": "Key Features",
+    "uk": "Ключові особливості",
+    "ru": "Ключевые особенности"
+  },
+  "KEY_ACHIEVEMENTS": {
+    "en": "Key Achievements",
+    "uk": "Ключові досягнення",
+    "ru": "Ключевые достижения"
+  },
+  "VIEW_CODE": {
+    "en": "View Code",
+    "uk": "Переглянути код",
+    "ru": "Посмотреть код"
+  },
+  "LIVE_DEMO": {
+    "en": "Live Demo",
+    "uk": "Демо версія",
+    "ru": "Демо версия"
+  },
+  "VIEW_FULL_PROJECT": {
+    "en": "View Full Project Details",
+    "uk": "Переглянути повну інформацію",
+    "ru": "Посмотреть полную информацию"
+  },
+  "MY_ROLE": {
+    "en": "My Role",
+    "uk": "Моя роль",
+    "ru": "Моя роль"
+  },
+  "PROJECT_DURATION": {
+    "en": "Duration",
+    "uk": "Тривалість",
+    "ru": "Длительность"
+  },
+  "projects": [
+	  {
+		  "id": "sentrigram",
+		  "title": {
+			  "en": "SentriGram - Telegram Mini App Monitor",
+			  "uk": "SentriGram - Моніторинг Telegram Mini App",
+			  "ru": "SentriGram - Мониторинг Telegram Mini App"
+		  },
+  		  "category": "Cybersecurity",
+		  "thumbnail": "assets/images/projects/sentrigram/sg.png",
+		  "description": {
+			  "en": "A SaaS security platform for Telegram Mini Apps with real-time traffic monitoring, anomaly detection, and encrypted logging.",
+			  "uk": "SaaS-платформа безпеки для Telegram Mini App з моніторингом трафіку в реальному часі, виявленням аномалій та шифрованим логуванням.",
+			  "ru": "SaaS-платформа безопасности для Telegram Mini App с мониторингом трафика в реальном времени, выявлением аномалий и шифрованным логированием."
+		  },
+		  "role": {
+			  "en": "Full-Stack Engineer & Security Architect",
+			  "uk": "Full-Stack інженер і архітектор безпеки",
+			  "ru": "Full-Stack инженер и архитектор безопасности"
+		  },
+		  "duration": "3 month (MVP phase)",
+		  "images": [
+			  "assets/images/projects/sentrigram/sg.png"
+		  ],
+		  "techStack": {
+			  "frontend": ["Angular", "TypeScript", "SCSS"],
+			  "backend": ["Spring Boot", "PostgreSQL", "Redis"],
+			  "other": ["Telegram Mini App API", "Docker", "Vault", "Prometheus", "WebSocket"]
+		  },
+		  "keyFeatures": [
+			  {
+				  "en": "Live traffic monitoring and behavioral analytics",
+				  "uk": "Моніторинг трафіку в реальному часі та поведінковий аналіз",
+				  "ru": "Мониторинг трафика в реальном времени и поведенческая аналитика"
+			  },
+			  {
+				  "en": "Request validation and token signature control",
+				  "uk": "Валідація запитів і контроль підписів токенів",
+				  "ru": "Валидация запросов и контроль подписей токенов"
+			  },
+			  {
+				  "en": "Encrypted logging and per-user access scopes",
+				  "uk": "Шифроване логування та контроль доступу по користувачам",
+				  "ru": "Шифрованное логирование и контроль доступа по пользователям"
+			  },
+			  {
+				  "en": "Real-time alerting and attack simulation tools",
+				  "uk": "Сповіщення в реальному часі та інструменти для симуляції атак",
+				  "ru": "Оповещения в реальном времени и инструменты для симуляции атак"
+			  }
+		  ],
+		  "achievements": [
+			  {
+				  "en": "Built full MVP within 30 days and deployed live on production",
+				  "uk": "Створено повний MVP за 30 днів і розгорнуто в продакшн",
+				  "ru": "Создан полный MVP за 30 дней и развернут в проде"
+			  },
+			  {
+				  "en": "Designed secure WebSocket channel with Vault-backed tokens",
+				  "uk": "Розроблено захищений WebSocket-канал з токенами на базі Vault",
+				  "ru": "Разработан защищённый WebSocket-канал с токенами на Vault"
+			  }
+		  ],
+		  "links": {
+			  "demo": "https://gorgeous-muffin-6bfab7.netlify.app/"
+		  },
+		  "hasFullPage": false
+	  },
+	  {
+  "id": "solisec-audit",
+  "title": {
+    "en": "Solisec – Solana Smart Contract Security Audit",
+    "uk": "Solisec – Аудит безпеки смарт-контрактів Solana",
+    "ru": "Solisec – Аудит безопасности смарт-контрактов Solana"
+  },
+  "category": "Blockchain",
+  "thumbnail": "assets/images/projects/solisec/solisec.png",
+  "description": {
+    "en": "A full-spectrum security audit of 24+ Solana smart contracts including manual code reviews, live attack simulations, and a 4-month defensive roadmap.",
+    "uk": "Комплексний аудит безпеки 24+ смарт-контрактів Solana: ручний аналіз коду, симуляції атак, план захисту на 4 місяці.",
+    "ru": "Комплексный аудит безопасности 24+ смарт-контрактов Solana: ручной анализ кода, симуляции атак, план защиты на 4 месяца."
+  },
+  "role": {
+    "en": "Security Strategist & Red Team Lead",
+    "uk": "Архітектор безпеки та лідер Red Team",
+    "ru": "Архитектор безопасности и лидер Red Team"
+  },
+  "duration": "2 months",
+  "images": [
+    "assets/images/projects/solisec/solisec.png"
+  ],
+  "techStack": {
+    "frontend": [],
+    "backend": ["Rust", "Anchor", "solana-cli", "FastAPI"],
+    "other": ["Vault", "PDF Reporting", "Manual Audits", "Attack Simulation"]
+  },
+  "keyFeatures": [
+    {
+      "en": "Manual contract review and attack vector design",
+      "uk": "Ручний аналіз контрактів і проєктування векторів атак",
+      "ru": "Ручной аудит контрактов и проектирование векторов атак"
+    },
+    {
+      "en": "Simulated active exploit scenarios in Red Team mode",
+      "uk": "Симуляція активних експлойтів у Red Team режимі",
+      "ru": "Симуляция активных эксплойтов в режиме Red Team"
+    },
+    {
+      "en": "Testing Reentrancy, Oracle exploits, and gas racing",
+      "uk": "Тестування Reentrancy, атак на оракули та гонок газу",
+      "ru": "Тестирование Reentrancy, атак на оракулы и гонки газа"
+    },
+    {
+      "en": "Mitigation strategy with a 4-month defensive roadmap",
+      "uk": "Стратегія захисту з 4-місячним планом впровадження",
+      "ru": "Стратегия защиты с 4-месячным планом внедрения"
+    }
+  ],
+  "achievements": [
+    {
+      "en": "Discovered critical logic flaws in 5 major components",
+      "uk": "Виявлено критичні логічні помилки у 5 основних модулях",
+      "ru": "Обнаружены критические логические уязвимости в 5 ключевых модулях"
+    },
+    {
+      "en": "Red Team breach achieved within 2h from zero access",
+      "uk": "Red Team прорив досягнутий за 2 години з нульового доступу",
+      "ru": "Взлом Red Team проведён за 2 часа с нулевого доступа"
+    },
+    {
+      "en": "Formed and led a hybrid team of white-hat testers",
+      "uk": "Сформовано та керовано командою етичних тестерів",
+      "ru": "Сформирована и организована команда этичных тестировщиков"
+    }
+  ],
+  "links": {},
+  "hasFullPage": false
+},
+	  {
+  "id": "phantomhunt-protocol",
+  "title": {
+    "en": "PhantomHunt Protocol – Multiplayer Game Prototype",
+    "uk": "PhantomHunt Protocol – Прототип багатокористувацької гри",
+    "ru": "PhantomHunt Protocol – Прототип многопользовательской игры"
+  },
+  "category": "Games",
+  "thumbnail": "assets/images/projects/phantomhunt/phantomhunt.png",
+  "description": {
+    "en": "A dark multiplayer survival-horror prototype with immersive mechanics, narrative flow, and full Unreal Engine 5 logic design.",
+    "uk": "Темний багатокористувацький survival-horror прототип із занурюючою механікою, сюжетом та повною логікою на Unreal Engine 5.",
+    "ru": "Тёмный многопользовательский survival-horror прототип с погружающей механикой, сюжетом и полной логикой на Unreal Engine 5."
+  },
+  "role": {
+    "en": "Gameplay Developer & Integration Lead",
+    "uk": "Розробник геймплею та лід з інтеграції",
+    "ru": "Разработчик геймплея и лидер интеграции"
+  },
+  "duration": "3 months",
+  "images": [
+    "assets/images/projects/phantomhunt/phantomhunt.png"
+  ],
+  "techStack": {
+    "frontend": [],
+    "backend": [],
+    "other": ["Unreal Engine 5", "Blueprints", "C++", "Behavior Trees", "Multiplayer Replication"]
+  },
+  "keyFeatures": [
+    {
+      "en": "Created full gameplay logic for asymmetric multiplayer",
+      "uk": "Розробив повну логіку геймплею для асиметричного мультиплеєра",
+      "ru": "Разработал полную логику геймплея для асимметричного мультиплеера"
+    },
+    {
+      "en": "Built AI navigation, actor behaviors, and events with Blueprints and C++",
+      "uk": "Побудував AI-навігацію, поведінку акторів та події з Blueprints та C++",
+      "ru": "Построил AI-навигацию, поведение актёров и события с помощью Blueprints и C++"
+    },
+    {
+      "en": "Synchronized game modules with team via Git-based workflow",
+      "uk": "Синхронізував ігрові модулі з командою через Git",
+      "ru": "Синхронизировал игровые модули с командой через Git"
+    },
+    {
+      "en": "Delivered polished prototype for publisher presentation under NDA",
+      "uk": "Зроблено polished-прототип для презентації видавцю під NDA",
+      "ru": "Собран polished-прототип для презентации издателю под NDA"
+    }
+  ],
+  "achievements": [
+    {
+      "en": "Contributed to a licensed horror franchise as part of remote team",
+      "uk": "Брав участь у розробці ліцензованої horror-франшизи у віддаленій команді",
+      "ru": "Участвовал в разработке лицензированной horror-франшизы в удалённой команде"
+    },
+    {
+      "en": "Integrated complex actor behaviors across multiple gameplay scenarios",
+      "uk": "Інтегрував складні поведінки акторів у кількох сценаріях гри",
+      "ru": "Интегрировал сложные поведения актёров в нескольких игровых сценариях"
+    }
+  ],
+  "links": {},
+  "hasFullPage": false
+},
+
+
+
+	  {
+  "id": "nebulax-security",
+  "title": {
+    "en": "NebulaX – Enterprise Security Fabric",
+    "uk": "NebulaX – Інфраструктура безпеки підприємства",
+    "ru": "NebulaX – Инфраструктура безопасности предприятия"
+  },
+  "category": "Cybersecurity",
+  "thumbnail": "assets/images/projects/nebula/nebula.png",
+  "description": {
+    "en": "An enterprise-grade Zero Trust security platform designed for high-throughput financial systems with real-time monitoring, encryption, and policy enforcement.",
+    "uk": "Платформа безпеки рівня підприємства з архітектурою Zero Trust для фінансових систем із моніторингом, шифруванням і політиками в реальному часі.",
+    "ru": "Корпоративная платформа безопасности на базе Zero Trust для высоконагруженных финансовых систем с мониторингом, шифрованием и политиками в реальном времени."
+  },
+  "role": {
+    "en": "Security Architect & Systems Engineer",
+    "uk": "Архітектор безпеки та системний інженер",
+    "ru": "Архитектор безопасности и системный инженер"
+  },
+  "duration": "7 months",
+  "images": [
+    "assets/images/projects/nebula/nebula.png"
+  ],
+  "techStack": {
+    "frontend": [],
+    "backend": ["Spring Boot", "Java", "PostgreSQL", "Kafka"],
+    "other": [
+      "Vault", "CloudHSM", "Prometheus", "Grafana",
+      "Key Management", "API Gateway", "SIEM", "EDR", "WAF", "Zero Trust"
+    ]
+  },
+  "keyFeatures": [
+    {
+      "en": "Zero Trust access control with dynamic segmentation",
+      "uk": "Контроль доступу Zero Trust з динамічною сегментацією",
+      "ru": "Zero Trust доступ с динамической сегментацией"
+    },
+    {
+      "en": "Vault-based secrets management and encryption orchestration",
+      "uk": "Управління секретами та шифруванням на базі Vault",
+      "ru": "Управление секретами и шифрованием на базе Vault"
+    },
+    {
+      "en": "Live traffic monitoring and real-time incident routing",
+      "uk": "Моніторинг трафіку та маршрутизація інцидентів у реальному часі",
+      "ru": "Мониторинг трафика и маршрутизация инцидентов в реальном времени"
+    },
+    {
+      "en": "Role-based access control with PAM and HSM support",
+      "uk": "Контроль доступу за ролями з PAM та HSM",
+      "ru": "Ролевой доступ с PAM и HSM"
+    }
+  ],
+  "achievements": [
+    {
+      "en": "Deployed 60+ security components in live financial system",
+      "uk": "Розгорнуто 60+ компонентів безпеки у фінансовій системі",
+      "ru": "Развернуто 60+ компонентов безопасности в финансовой системе"
+    },
+    {
+      "en": "Prevented multi-vector threats via behavioral analytics",
+      "uk": "Запобігано багатовекторним загрозам через поведінкову аналітику",
+      "ru": "Предотвращены многовекторные угрозы через поведенческую аналитику"
+    },
+    {
+      "en": "Established fully encrypted and observable infrastructure",
+      "uk": "Створено повністю зашифровану та спостережувану інфраструктуру",
+      "ru": "Построена полностью зашифрованная и наблюдаемая инфраструктура"
+    }
+  ],
+  "links": {},
+  "hasFullPage": false
+},
+
+	  {
+  "id": "vaultline-recovery",
+  "title": {
+    "en": "VaultLine Recovery – Core Infrastructure Audit",
+    "uk": "VaultLine Recovery – Аудит інфраструктури ядра",
+    "ru": "VaultLine Recovery – Аудит инфраструктуры ядра"
+  },
+  "category": "Cybersecurity",
+  "thumbnail": "assets/images/projects/vaultline/vaultline.png",
+  "description": {
+    "en": "An intensive audit and remediation of a large-scale financial microservice ecosystem with over 100 critical components.",
+    "uk": "Інтенсивний аудит і відновлення великої фінансової мікросервісної екосистеми з понад 100 критичних компонентів.",
+    "ru": "Интенсивный аудит и восстановление крупной финансовой микросервисной экосистемы с более чем 100 критическими компонентами."
+  },
+  "role": {
+    "en": "Security Analyst & Remediation Architect",
+    "uk": "Аналітик безпеки та архітектор відновлення",
+    "ru": "Аналитик безопасности и архитектор восстановления"
+  },
+  "duration": "5 months",
+  "images": [
+    "assets/images/projects/vaultline/vaultline.png"
+  ],
+  "techStack": {
+    "frontend": [],
+    "backend": ["Java", "Spring Boot", "Kafka", "PostgreSQL"],
+    "other": [
+      "Docker", "Vault", "WAF", "SIEM", "Custom Playbooks",
+      "Security Policy Design", "SOAR", "Privilege Mapping"
+    ]
+  },
+  "keyFeatures": [
+    {
+      "en": "Audited 103 microservices with architecture and threat modeling",
+      "uk": "Аудит 103 мікросервісів з архітектурним та загрозовим моделюванням",
+      "ru": "Аудит 103 микросервисов с архитектурным и угрозовым моделированием"
+    },
+    {
+      "en": "Identified flaws in privilege escalation and access isolation",
+      "uk": "Виявлено вразливості в ескалації привілеїв і ізоляції доступу",
+      "ru": "Выявлены уязвимости в эскалации привилегий и изоляции доступа"
+    },
+    {
+      "en": "Prepared detailed playbooks for post-incident hardening",
+      "uk": "Підготовлено детальні плейбуки для постінцидентного укріплення",
+      "ru": "Подготовлены детальные плейбуки для пост-инцидентного укрепления"
+    },
+    {
+      "en": "Built remediation roadmap with tactical defense strategies",
+      "uk": "Побудовано план відновлення з тактичними стратегіями захисту",
+      "ru": "Построен план восстановления с тактическими стратегиями защиты"
+    }
+  ],
+  "achievements": [
+    {
+      "en": "Stabilized and secured a previously vulnerable infrastructure",
+      "uk": "Стабілізовано та захищено вразливу інфраструктуру",
+      "ru": "Стабилизирована и защищена уязвимая инфраструктура"
+    },
+    {
+      "en": "Successfully passed 2 external audits post-remediation",
+      "uk": "Успішно пройдено 2 зовнішні аудити після відновлення",
+      "ru": "Успешно пройдены 2 внешних аудита после восстановления"
+    },
+    {
+      "en": "Improved mean incident response time by 60%",
+      "uk": "Скорочено середній час реагування на інциденти на 60%",
+      "ru": "Сокращено среднее время реагирования на инциденты на 60%"
+    }
+  ],
+  "links": {},
+  "hasFullPage": false
+}
+
+  ]
+}

@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="aurora-bg header-bg"></div>
+
+  <div class="content-wrapper">
+    <div class="text-content">
+      <h1 class="title glow">
+        <span class="name">{{ 'title' | lang }}</span>
+        <span class="role">{{ 'role' | lang }}</span>
+      </h1>
+      <p class="tagline">{{ 'tagline' | lang }}</p>
+    </div>
+
+    <div class="photo-gallery">
+      <div class="photo-container primary">
+        <div class="photo-frame">
+          <img
+            [src]="photos[0].url"
+            [alt]="photos[0].alt"
+            class="profile-photo main-photo"
+            (error)="$event.target.src='https://via.placeholder.com/400x500/4CC1F0/FFFFFF?text=Profile'"
+            style="border: 2px solid red;">
+          <div class="frame-border"></div>
+        </div>
+      </div>
+
+      <div class="photo-container secondary">
+        <div class="photo-frame">
+          <img
+            [src]="photos[1].url"
+            [alt]="photos[1].alt"
+            class="profile-photo secondary-photo"
+            (error)="$event.target.src='https://via.placeholder.com/350x450/8B5CF6/FFFFFF?text=Side'"
+            style="border: 2px solid blue;">
+          <div class="frame-border"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>

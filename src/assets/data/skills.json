@@ -1,0 +1,548 @@
+{
+  "DIGITAL_CRAFTING_ARSENAL": {
+    "en": "Digital Crafting Arsenal",
+    "uk": "Цифровий арсенал майстерності",
+    "ru": "Арсенал цифрового мастерства"
+  },
+  "EXPLORE_TECHNICAL_EXPERTISE": {
+    "en": "Explore the breadth of technical expertise",
+    "uk": "Досліджуйте широту технічних навичок",
+    "ru": "Изучите широту технической экспертизы"
+  },
+  "ALL_SKILLS": {
+    "en": "All",
+    "uk": "Всі",
+    "ru": "Все"
+  },
+  "PROGRAMMING": {
+    "en": "Programming",
+    "uk": "Програмування",
+    "ru": "Программирование"
+  },
+  "FRAMEWORKS": {
+    "en": "Frameworks",
+    "uk": "Фреймворки",
+    "ru": "Фреймворки"
+  },
+  "TOOLS": {
+    "en": "Tools",
+    "uk": "Інструменти",
+    "ru": "Инструменты"
+  },
+  "CYBERSECURITY": {
+    "en": "Cybersecurity",
+    "uk": "Кібербезпека",
+    "ru": "Кибербезопасность"
+  },
+  "SOFT_SKILLS": {
+    "en": "Soft Skills",
+    "uk": "Гнучкі навички",
+    "ru": "Гибкие навыки"
+  },
+  "RECENT_PROJECTS": {
+    "en": "Recent projects",
+    "uk": "Останні проекти",
+    "ru": "Последние проекты"
+  },
+  "VIEW_DETAILS": {
+    "en": "View details",
+    "uk": "Детальніше",
+    "ru": "Детальнее"
+  },
+  "YEARS": {
+    "en": "years",
+    "uk": "років",
+    "ru": "лет"
+  },
+  "EXPERT": {
+    "en": "Expert",
+    "uk": "Експерт",
+    "ru": "Эксперт"
+  },
+  "ADVANCED": {
+    "en": "Advanced",
+    "uk": "Просунутий",
+    "ru": "Продвинутый"
+  },
+  "INTERMEDIATE": {
+    "en": "Intermediate",
+    "uk": "Середній",
+    "ru": "Средний"
+  },
+  "BASIC": {
+    "en": "Basic",
+    "uk": "Базовий",
+    "ru": "Базовый"
+  },
+  "KEY_STRENGTHS": {
+    "en": "Key Strengths",
+    "uk": "Ключові переваги",
+    "ru": "Ключевые преимущества"
+  },
+  "TOOLS_USED": {
+    "en": "Tools & Technologies",
+    "uk": "Інструменти та технології",
+    "ru": "Инструменты и технологии"
+  },
+  "EXPERIENCE": {
+    "en": "Experience",
+    "uk": "Досвід",
+    "ru": "Опыт"
+  },
+  "skills": [
+    {
+		"id": "java_spring",
+		"name": "Java & Spring Boot",
+		"description": {
+			"en": "Advanced skills in building secure, modular Java microservices using Spring Boot, Spring Security, and Spring Cloud.",
+			"uk": "Просунуті навички побудови захищених модульних мікросервісів на Java з використанням Spring Boot, Security і Cloud.",
+			"ru": "Продвинутые навыки построения защищённых модульных микросервисов на Java с использованием Spring Boot, Security и Cloud."
+		},
+		"level": "Advanced",
+		"experience": 5,
+		"projects": ["PerfectLine Systems", "NDA Security", "NDA Audit"],
+		"category": "Programming",
+		"color": "#f89820",
+		"keyPoints": [
+			"Spring Boot microservice development with modular structure",
+			"Secure communication and API protection with Spring Security & JWT",
+			"Service discovery and config management via Spring Cloud (Eureka, Config Server)",
+			"RabbitMQ integration for secure asynchronous messaging",
+			"Prometheus monitoring integration",
+			"Role-based access, token flows, and authorization layers"
+		],
+		"tools": [
+			"Spring Boot", "Spring Cloud", "Spring Security", 
+			"JWT", "RabbitMQ", "Prometheus", "JPA", "Maven", 
+			"Keycloak", "PostgreSQL"
+		]
+	},
+	  {
+  "id": "python",
+  "name": "Python",
+  "description": {
+    "en": "Expert-level experience in Python with a focus on secure backend development, cryptography, validation, and observability.",
+    "uk": "Експертний досвід у Python з фокусом на безпечну бекенд-розробку, шифрування, валідацію та моніторинг.",
+    "ru": "Экспертный опыт в Python с упором на защищённую backend-разработку, криптографию, валидацию и мониторинг."
+  },
+  "level": "Expert",
+  "experience": 6,
+  "projects": ["Monitoring Platform", "NDA Security"],
+  "category": "Programming",
+  "color": "#3776ab",
+  "keyPoints": [
+    "FastAPI backend development with async architecture",
+    "Custom encryption/decryption layers (AES, RSA, PBKDF2, Vault)",
+    "Data validation with Pydantic v2 and custom validators",
+    "Background tasks with Celery and FastAPI workers",
+    "SQLAlchemy + Alembic migrations for PostgreSQL",
+    "Structured logging (Loguru + Prometheus + Loki stack)",
+    "Security-first design: DTO isolation, auth flows, crypto utils"
+  ],
+  "tools": [
+    "FastAPI", "Django", "SQLAlchemy", "Pydantic v2", 
+    "Vault", "Celery", "Redis", "Prometheus", "Grafana", 
+    "Loki", "Loguru", "PostgreSQL", "Alembic", "asyncio"
+  ]
+},
+	  {
+  "id": "pentest",
+  "name": "Penetration Testing & Red Teaming",
+  "description": {
+    "en": "Expertise in full-spectrum offensive security, including network, application, API, and binary-level penetration testing with real-world Red Team operations.",
+    "uk": "Експертиза в повному спектрі атакуючої безпеки: мережевий, застосунковий, API та бінарний пентест з реальними Red Team операціями.",
+    "ru": "Экспертиза в полном спектре атакующей безопасности: сетевой, прикладной, API и бинарный пентест с реальными Red Team операциями."
+  },
+  "level": "Expert",
+  "experience": 4,
+  "projects": ["FortiNet Red Team", "Quantstamp Audit", "NDA Security"],
+  "category": "Cybersecurity",
+  "color": "#e53935",
+  "keyPoints": [
+    "Web/API/Network/Binary penetration testing and zero-day analysis",
+    "Custom payload development in C++, Python, and Bash",
+    "Red Team simulations using Metasploit, Cobalt Strike, and Empire",
+    "Bypass techniques: WAF, AV, anti-debug, and obfuscation",
+    "Advanced reporting: PoC videos, vulnerability docs, visual maps",
+    "Incident response escalation (when hired as attacker-on-call)",
+    "Live security tests with full killchain execution (APT simulation)"
+  ],
+  "tools": [
+    "BurpSuite Pro", "Metasploit", "Empire", "Cobalt Strike",
+    "Nmap", "Wireshark", "Aircrack-ng", "Hydra", "Nikto",
+    "Python", "C++", "Bash", "Payload Generator", "OWASP ZAP",
+    "BloodHound", "Responder", "FoxyProxy", "Obfuscator"
+  ]
+},
+	  {
+  "id": "netsec_crypto",
+  "name": "Network Security & Cryptography",
+  "description": {
+    "en": "Advanced applied cryptography and network defense, including HSM-backed architectures, TLS layering, and custom encryption design for high-assurance systems.",
+    "uk": "Просунута прикладна криптографія та мережевий захист: HSM-архітектури, TLS-рівні, власні алгоритми шифрування для високої безпеки.",
+    "ru": "Продвинутая прикладная криптография и сетевая защита: архитектуры с HSM, многоуровневый TLS, собственные алгоритмы шифрования для систем повышенной надёжности."
+  },
+  "level": "Expert",
+  "experience": 5,
+  "projects": ["NDA Enterprise Security", "NDA Audit", "Blockchain Security"],
+  "category": "Cybersecurity",
+  "color": "#512da8",
+  "keyPoints": [
+    "Multi-layer TLS setup including onionized internal comms",
+    "End-to-end encryption using AES-256, RSA 4096+, ECIES",
+    "HashiCorp Vault, Cloud HSM, and KMS-based key management",
+    "Database encryption with tokenization and salted storage",
+    "PKI manipulation, certificate reverse-engineering, anti-MITM",
+    "Custom salting, entropy algorithms, and encryption flow design",
+    "Firewall, VPN, DPI, and onion routing implementation"
+  ],
+  "tools": [
+    "Vault", "CloudHSM", "Thales HSM", "OpenSSL", "GnuPG",
+    "RSA", "AES", "PBKDF2", "FPE", "Zeek", "Suricata", "Wireshark",
+    "TLS", "X.509", "VPN", "iptables", "FortiOS"
+  ]
+},
+{
+  "id": "solana_rust",
+  "name": "Rust & Solana Smart Contract Security",
+  "description": {
+    "en": "Expertise in offensive Solana smart contract analysis and custom exploit design using Rust and Anchor.",
+    "uk": "Експертиза у злому та аналізі смарт-контрактів Solana з використанням Rust та Anchor.",
+    "ru": "Экспертиза во взломе и анализе смарт-контрактов Solana с использованием Rust и Anchor."
+  },
+  "level": "Advanced",
+  "experience": 2,
+  "projects": ["Quantstamp Red Audit", "Solana Exploit Set"],
+  "category": "Programming",
+  "color": "#dea584",
+  "keyPoints": [
+    "Manual auditing of Anchor smart contracts",
+    "Exploited PDA collisions, CPI hijack and signer spoofing",
+    "Built attack-oriented test contracts to reverse behavior",
+    "Analyzed gas cost, instruction limits, and performance deltas",
+    "Led a Red Team squad across 24 real smart contract targets",
+    "Crafted exploit chains against DeFi, tokenomics, and oracles"
+  ],
+  "tools": [
+    "Rust", "Anchor", "Solana CLI", "solana-test-validator",
+    "cargo-audit", "CPI", "PDA", "serde", "borsh",
+    "solana-program", "spl-token", "spl-governance"
+  ]
+},
+	  {
+  "id": "docker_devops",
+  "name": "Docker & Secure DevOps",
+  "description": {
+    "en": "Deep experience in secure Docker-based system architecture with isolated services, secure network zones, and real-time observability.",
+    "uk": "Глибокий досвід у побудові безпечної Docker-архітектури з ізольованими сервісами, захищеними мережевими зонами та моніторингом у реальному часі.",
+    "ru": "Глубокий опыт в построении безопасной Docker-архитектуры с изолированными сервисами, защищёнными сетевыми зонами и мониторингом в реальном времени."
+  },
+  "level": "Advanced",
+  "experience": 4,
+  "projects": ["Monitoring Platform", "Net Sentinel"],
+  "category": "Tools",
+  "color": "#0db7ed",
+  "keyPoints": [
+    "Multi-container orchestration with Docker Compose and secure service boundaries",
+    "Network segmentation with custom bridge networks and external link layers",
+    "Vault-based secrets injection with .env hardening and mount-level protection",
+    "Role-switching strategy via DNS fallback and dynamic service flipping",
+    "Read-only volumes, firewall rules, and IPC isolation",
+    "Observability via Prometheus, Loki, Grafana, Promtail"
+  ],
+  "tools": [
+    "Docker", "Docker Compose", "Vault", "Prometheus", "Grafana", "Loki",
+    "NGINX", "Redis", "PostgreSQL", "Kafka", "iptables", "dnsmasq"
+  ]
+},
+	  {
+  "id": "angular_ts",
+  "name": "Angular & TypeScript",
+  "description": {
+    "en": "Frontend development with Angular and TypeScript for dashboards, admin panels, and monitoring interfaces.",
+    "uk": "Фронтенд-розробка з Angular та TypeScript для дашбордів, адмінок та моніторингових інтерфейсів.",
+    "ru": "Фронтенд-разработка с Angular и TypeScript для дашбордов, админок и панелей мониторинга."
+  },
+  "level": "Intermediate",
+  "experience": 2,
+  "projects": ["Monitoring Platform", "PerfectLine"],
+  "category": "Programming",
+  "color": "#dd0330",
+  "keyPoints": [
+    "Reactive forms and data-binding",
+    "WebSocket integration for real-time updates",
+    "Multilingual UI with dynamic JSON-based translations",
+    "Admin dashboards with filtering, search, and auth guards"
+  ],
+  "tools": ["Angular", "TypeScript", "RxJS", "SCSS", "html2canvas", "jsPDF"]
+},
+	  {
+  "id": "websocket",
+  "name": "WebSocket API",
+  "description": {
+    "en": "Built real-time communication pipelines using WebSockets across agent-server architecture.",
+    "uk": "Реалізував комунікацію в реальному часі через WebSocket у моделі агент-сервер.",
+    "ru": "Реализовал коммуникацию в реальном времени через WebSocket в архитектуре агент-сервер."
+  },
+  "level": "Advanced",
+  "experience": 3,
+  "projects": ["Net Sentinel", "Monitoring Platform"],
+  "category": "Tools",
+  "color": "#00c853",
+  "keyPoints": [
+    "Custom DTOs and message routing",
+    "Chunked data transmission and reassembly",
+    "Agent-to-server event streaming",
+    "Authorization with token handshake protocols"
+  ],
+  "tools": ["WebSocket", "FastAPI", "Angular RxJS", "Java Spring STOMP", "Redis pub/sub"]
+},
+	  {
+  "id": "tokenomics",
+  "name": "Tokenomics",
+  "description": {
+    "en": "Experience in auditing and stress-testing token models in DeFi and staking ecosystems.",
+    "uk": "Досвід аудиту та тестування токен-моделей у DeFi та стейкінгових системах.",
+    "ru": "Опыт аудита и нагрузочного тестирования токен-моделей в DeFi и стейкинге."
+  },
+  "level": "Intermediate",
+  "experience": 1,
+  "projects": ["Solana Audit"],
+  "category": "Cybersecurity",
+  "color": "#ffab00",
+  "keyPoints": [
+    "Emission control, vesting audits, whale-exploit simulation",
+    "Testing liquidity exit strategies under attack",
+    "Game theory analysis of staking pools",
+    "Token flow visualization and fuzzing"
+  ],
+  "tools": ["Rust", "Anchor", "solana-cli", "simulation frameworks"]
+},
+	  {
+  "id": "git_ci",
+  "name": "Git & GitHub Actions",
+  "description": {
+    "en": "Version control and basic CI/CD pipelines for development and deployment.",
+    "uk": "Контроль версій та базові CI/CD пайплайни для розробки й деплою.",
+    "ru": "Контроль версий и базовые CI/CD пайплайны для разработки и деплоя."
+  },
+  "level": "Intermediate",
+  "experience": 3,
+  "projects": ["PerfectLine", "Monitoring Platform"],
+  "category": "Tools",
+  "color": "#181717",
+  "keyPoints": [
+    "Git branching, rebasing, squashing",
+    "CI setup for formatting and linter stages",
+    "Automated builds with Docker",
+    "Secrets management and release tagging"
+  ],
+  "tools": ["Git", "GitHub", "GitHub Actions", "Docker", "dotenv"]
+},
+	{
+  "id": "ue5_cpp",
+  "name": "Unreal Engine & C++",
+  "description": {
+    "en": "Prototyped gameplay mechanics and behaviors in a commercial UE5 DLC using C++ and Blueprints.",
+    "uk": "Прототипував ігрову логіку та поведінку в комерційному DLC на UE5 з використанням C++ і Blueprint.",
+    "ru": "Прототипировал игровую логику и поведение в коммерческом DLC на UE5 с использованием C++ и Blueprint."
+  },
+  "level": "Intermediate",
+  "experience": 1,
+  "projects": ["Dead by Daylight Castlevania DLC"],
+  "category": "Programming",
+  "color": "#3f51b5",
+  "keyPoints": [
+    "Quest flow and actor behaviors in Blueprints",
+    "Custom events and gameplay triggers in C++",
+    "Debugging and gameplay balancing",
+    "Code-reviewed by senior developers"
+  ],
+  "tools": ["Unreal Engine 5", "Blueprint", "C++", "Visual Studio"]
+},
+	{
+  "id": "swift_ios",
+  "name": "Swift & Xcode",
+  "description": {
+    "en": "Developed and maintained data-layer and storage logic in an iOS application under NDA.",
+    "uk": "Розробив і підтримував шар зберігання даних у NDA iOS-додатку.",
+    "ru": "Разработал и поддерживал слой хранения данных в iOS-приложении под NDA."
+  },
+  "level": "Intermediate",
+  "experience": 1,
+  "projects": ["Mobile UI NDA"],
+  "category": "Programming",
+  "color": "#f05138",
+  "keyPoints": [
+    "Core Data integration and memory optimization",
+    "iOS app architecture (MVVM)",
+    "Xcode debugging and local simulation",
+    "Module-based design and performance tuning"
+  ],
+  "tools": ["Swift", "Xcode", "Core Data", "UIKit", "Combine"]
+},
+	  {
+  "id": "reverse_engineering",
+  "name": "Assembler & Reverse Engineering",
+  "description": {
+    "en": "Skilled in analyzing binaries, reversing cryptographic logic, and inspecting low-level security implementations via ASM.",
+    "uk": "Навички реверсу бінарних файлів, аналізу криптографії та низькорівневих реалізацій через ASM.",
+    "ru": "Навыки реверса бинарников, анализа криптографии и низкоуровневых реализаций через ASM."
+  },
+  "level": "Advanced",
+  "experience": 3,
+  "projects": ["FortiNet Red Team", "PKI Reverse", "Smart Contract Bypass"],
+  "category": "Cybersecurity",
+  "color": "#6d4c41",
+  "keyPoints": [
+    "Reversing custom C++ and Rust binaries",
+    "Disassembling and tracing cryptographic flows",
+    "Breaking PKI trust chains through manual ASM review",
+    "Understanding buffer overflows and syscall tracing"
+  ],
+  "tools": ["Ghidra", "IDA Pro", "objdump", "Radare2", "NASM", "x64dbg"]
+},
+	  {
+  "id": "golang",
+  "name": "Go (Golang)",
+  "description": {
+    "en": "Used Go for tooling, network utilities, and low-level security modules in real-world infrastructure.",
+    "uk": "Використовував Go для інструментів, мережевих утиліт та модулів безпеки.",
+    "ru": "Использовал Go для утилит, сетевых инструментов и модулей безопасности."
+  },
+  "level": "Intermediate",
+  "experience": 2,
+  "projects": ["Security Tooling", "Vault CLI Adapters"],
+  "category": "Programming",
+  "color": "#00add8",
+  "keyPoints": [
+    "Built internal CLI utilities for secrets and scanning",
+    "Used net/http and crypto libs for API and TLS testing",
+    "Developed performance-oriented parsers and wrappers",
+    "Compiled secure static binaries for deployment"
+  ],
+  "tools": ["Go", "cobra", "crypto/tls", "net/http", "gosec", "go build"]
+},
+	  {
+  "id": "malware_evasion",
+  "name": "Malware Design & Evasion",
+  "description": {
+    "en": "Crafted stealth payloads, bypassed security layers, and designed behavior-based evasions for red team operations.",
+    "uk": "Створював payload-и, що обходять захист, і розробляв поведінкові обфускації для Red Team.",
+    "ru": "Создавал payload-ы, обходящие защиту, и разрабатывал поведенческую обфускацию для Red Team."
+  },
+  "level": "Advanced",
+  "experience": 3,
+  "projects": ["FortiNet", "Privat Red Ops", "Solana Attacks"],
+  "category": "Cybersecurity",
+  "color": "#c62828",
+  "keyPoints": [
+    "WAF, AV, and endpoint detection bypass techniques",
+    "Payload obfuscation and behavioral mimicry",
+    "Anti-debugging, timing attacks, and process hiding",
+    "Simulated APT chains and live evasion campaigns"
+  ],
+  "tools": ["msfvenom", "Cobalt Strike", "Empire", "Veil", "Obfuscator-LLVM", "sigtool"]
+},
+	  {
+  "id": "incident_response",
+  "name": "Security Operations & Incident Response",
+  "description": {
+    "en": "Built and led incident response systems including SIEM, SOAR, UEBA and dynamic defense protocols.",
+    "uk": "Створив і очолив системи реагування на інциденти: SIEM, SOAR, UEBA та динамічну оборону.",
+    "ru": "Построил и руководил системами реагирования на инциденты: SIEM, SOAR, UEBA и динамическая защита."
+  },
+  "level": "Expert",
+  "experience": 4,
+  "projects": ["MonoBank SOC", "Privat Response Suite", "6× Retainer"],
+  "category": "Cybersecurity",
+  "color": "#5d4037",
+  "keyPoints": [
+    "SIEM correlation and live alerting (Splunk, QRadar)",
+    "SOAR-based automated defense with Phantom & playbooks",
+    "UEBA detection with Exabeam & Securonix",
+    "Crisis simulations, Red/Blue team coordination, reporting"
+  ],
+  "tools": ["Splunk", "QRadar", "Phantom", "Exabeam", "Securonix", "MITRE ATT&CK", "Sysmon"]
+},
+	  {
+  "id": "observability",
+  "name": "Monitoring & Observability",
+  "description": {
+    "en": "Designed and maintained full observability pipelines across applications, services, and infrastructure.",
+    "uk": "Розробив та підтримував повний стек спостережуваності для додатків, сервісів і інфраструктури.",
+    "ru": "Разработал и поддерживал полный стек наблюдаемости для приложений, сервисов и инфраструктуры."
+  },
+  "level": "Advanced",
+  "experience": 3,
+  "projects": ["Net Sentinel", "MonoBank", "FinDesk Calendar"],
+  "category": "Tools",
+  "color": "#fb8c00",
+  "keyPoints": [
+    "Prometheus metrics collection and custom exporters",
+    "Grafana dashboards for services and security posture",
+    "Loki + Promtail for real-time logging and correlation",
+    "Jaeger & Zipkin distributed tracing across microservices"
+  ],
+  "tools": ["Prometheus", "Grafana", "Loki", "Promtail", "Jaeger", "Zipkin", "OpenTelemetry"]
+},
+	  {
+  "id": "redteam_leadership",
+  "name": "Red Team Leadership & Trust",
+  "description": {
+    "en": "Led offensive security squads with empathy, precision, and high trust. Created collaborative atmospheres where deep technical work meets psychological clarity.",
+    "uk": "Очолював Red Team із довірою, точністю та підтримкою. Формував атмосферу, де технічна глибина поєднується з людяністю.",
+    "ru": "Руководил Red Team с доверием, точностью и поддержкой. Создавал атмосферу, где техническая глубина сочетается с уважением и честностью."
+  },
+  "level": "Expert",
+  "experience": 4,
+  "category": "Soft Skills",
+  "color": "#8e24aa",
+  "keyPoints": [
+    "Built tight-knit teams for high-stakes operations",
+    "Trusted by team for guidance and calm escalation",
+    "Created rituals of learning, debriefs, and async strategy syncs",
+    "Maintained full technical and ethical credibility"
+  ]
+},
+	  {
+  "id": "strategic_thinking",
+  "name": "Strategic Thinking & System Design",
+  "description": {
+    "en": "Skilled at abstracting complexity, identifying threat flows, and designing long-term resilient architectures under pressure.",
+    "uk": "Вміння бачити загальну картину, аналізувати загрози та проєктувати стійкі системи з урахуванням майбутнього.",
+    "ru": "Умение видеть стратегическую картину, анализировать угрозы и проектировать устойчивые системы с прицелом в будущее."
+  },
+  "level": "Advanced",
+  "experience": 5,
+  "category": "Soft Skills",
+  "color": "#5c6bc0",
+  "keyPoints": [
+    "Created 4+ multi-year Zero Trust architectures",
+    "Applied threat modeling to security-by-design",
+    "Balanced performance, defense, and dev experience",
+    "Trusted as top-level system planner and reviewer"
+  ]
+},
+	  {
+  "id": "mentorship",
+  "name": "Knowledge Sharing & Mentoring",
+  "description": {
+    "en": "Known for generosity in teaching and mentoring new specialists, even while leading high-pressure security teams.",
+    "uk": "Відомий щедрістю у менторстві та навчанні новачків, навіть у складних умовах Red Team.",
+    "ru": "Известен щедростью в обучении и менторстве новых специалистов, даже в рамках интенсивной Red Team."
+  },
+  "level": "Advanced",
+  "experience": 3,
+  "category": "Soft Skills",
+  "color": "#26a69a",
+  "keyPoints": [
+    "Onboarded junior red teamers and security analysts",
+    "Created personal tools and frameworks for education",
+    "Loved for creating safe space for questions and growth",
+    "Taught technical depth through dialogue, not hierarchy"
+  ]
+}
+
+  ]
+}

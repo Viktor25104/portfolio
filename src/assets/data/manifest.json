@@ -1,0 +1,11 @@
+{
+  "files": [
+    "navbar.json",
+    "header.json",
+    "biography.json",
+    "career.json",
+    "skills.json",
+    "projects.json",
+    "contact.json"
+  ]
+}

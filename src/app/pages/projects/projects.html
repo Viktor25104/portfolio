@@ -1,0 +1,71 @@
+<section id="projects" class="projects-section">
+  <div class="aurora-bg section-bg"></div>
+
+  <div class="content-wrapper">
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="title glow">{{ sectionTitle || ('PROJECTS_TITLE' | lang) }}</h2>
+      <p class="subtitle">{{ sectionSubtitle || ('PROJECTS_SUBTITLE' | lang) }}</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filters">
+      <button
+        [class.active]="selectedCategory === 'All'"
+        (click)="filterProjects('All')"
+        class="filter-btn"
+        style="--category-color: #888">
+        {{ safeTranslate('ALL_PROJECTS', 'All Projects') }}
+      </button>
+      <button
+        *ngFor="let category of categories"
+        [class.active]="selectedCategory === category.name"
+        (click)="filterProjects(category.name)"
+        class="filter-btn"
+        style="--category-color: #555">
+        {{ safeTranslate(getCategoryTranslationKey(category.name), category.name) }}
+      </button>
+    </div>
+
+    <!-- No Projects Message -->
+    <div *ngIf="filteredProjects.length === 0" style="text-align: center; padding: 40px;">
+      <p>No projects found for category: {{ selectedCategory }}</p>
+      <p>Total projects available: {{ projects.length }}</p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid" *ngIf="filteredProjects.length > 0">
+      <div
+        *ngFor="let project of filteredProjects; let i = index"
+        class="project-card"
+        [class.visible]="true"
+        (click)="viewProjectDetail(project)"
+        [attr.data-index]="i">
+
+        <img
+          [src]="project.thumbnail"
+          [alt]="getProjectTitle(project)"
+          class="project-thumbnail"
+          (error)="$event.target.src='assets/images/placeholder.jpg'">
+
+        <div class="project-overlay">
+          <h3>{{ getProjectTitle(project) }}</h3>
+          <span class="category-tag">
+            {{ safeTranslate(getCategoryTranslationKey(project.category), project.category) }}
+          </span>
+          <div class="view-details">
+            <span>{{ safeTranslate('VIEW_DETAILS', 'View Details') }}</span>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Modal -->
+  <app-project-modal
+    [project]="selectedProject"
+    (close)="closeProjectModal()">
+  </app-project-modal>
+</section>

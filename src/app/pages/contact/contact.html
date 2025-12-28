@@ -1,0 +1,196 @@
+<section id="contact" class="contact-section" itemscope itemtype="http://schema.org/Person">
+  <div class="aurora-bg section-bg"></div>
+
+  <div class="content-wrapper">
+    <div class="section-header">
+      <h2 class="title glow">{{ 'LETS_CONNECT' | lang }}</h2>
+      <p class="subtitle">{{ 'PROJECT_INVITE' | lang }}</p>
+
+      <!-- Availability Status -->
+      <div class="availability-status" [class.available]="isAvailable">
+        <span class="status-dot"></span>
+        <span class="status-text">{{ isAvailable ? ('AVAILABLE' | lang) : ('BUSY' | lang) }}</span>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="form-container">
+        <form
+          #contactForm="ngForm"
+          (ngSubmit)="onSubmit()"
+          class="contact-form"
+          [class.submitting]="isSubmitting"
+          autocomplete="on">
+
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="name">{{ 'NAME' | lang }} *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="formData.name"
+              (focus)="onFieldFocus('name')"
+              (input)="onFieldInput('name')"
+              [class.error]="shouldShowError('name')"
+              required
+              minlength="2"
+              [placeholder]="'YOUR_NAME' | lang"
+              autocomplete="name">
+            <span class="error-message" *ngIf="shouldShowError('name')">{{ errors.name }}</span>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email">{{ 'EMAIL' | lang }} *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="formData.email"
+              (focus)="onFieldFocus('email')"
+              (input)="onFieldInput('email')"
+              [class.error]="shouldShowError('email')"
+              required
+              [placeholder]="'YOUR_EMAIL' | lang"
+              autocomplete="email">
+            <span class="error-message" *ngIf="shouldShowError('email')">{{ errors.email }}</span>
+          </div>
+
+          <!-- Phone Field -->
+          <div class="form-group">
+            <label for="phone">{{ 'PHONE' | lang }} *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="formData.phone"
+              (focus)="onFieldFocus('phone')"
+              (input)="onFieldInput('phone')"
+              [class.error]="shouldShowError('phone')"
+              required
+              [placeholder]="'YOUR_PHONE' | lang"
+              autocomplete="tel">
+            <span class="error-message" *ngIf="shouldShowError('phone')">{{ errors.phone }}</span>
+          </div>
+
+          <!-- Telegram Field (Optional) -->
+          <div class="form-group">
+            <label for="telegram">{{ 'TELEGRAM' | lang }} ({{ 'OPTIONAL' | lang }})</label>
+            <input
+              type="text"
+              id="telegram"
+              name="telegram"
+              [(ngModel)]="formData.telegram"
+              [placeholder]="'YOUR_TELEGRAM' | lang"
+              autocomplete="off">
+          </div>
+
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="subject">{{ 'SUBJECT' | lang }} *</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              [(ngModel)]="formData.subject"
+              (focus)="onFieldFocus('subject')"
+              (input)="onFieldInput('subject')"
+              [class.error]="shouldShowError('subject')"
+              required
+              minlength="5"
+              [placeholder]="'WHATS_THIS_ABOUT' | lang"
+              autocomplete="off">
+            <span class="error-message" *ngIf="shouldShowError('subject')">{{ errors.subject }}</span>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message">{{ 'MESSAGE' | lang }} *</label>
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="formData.message"
+              (focus)="onFieldFocus('message')"
+              (input)="onFieldInput('message')"
+              [class.error]="shouldShowError('message')"
+              required
+              minlength="10"
+              rows="5"
+              [placeholder]="'YOUR_MESSAGE' | lang"
+              autocomplete="off"></textarea>
+            <span class="error-message" *ngIf="shouldShowError('message')">{{ errors.message }}</span>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="submit-btn"
+            [disabled]="!isFormValid() || isSubmitting">
+            <span class="btn-text">{{ isSubmitting ? ('SENDING' | lang) : ('SEND_MESSAGE' | lang) }}</span>
+            <div class="loader" *ngIf="isSubmitting"></div>
+          </button>
+
+          <!-- Debug Info (remove in production) -->
+          <div class="debug-info" *ngIf="false">
+            <p>Form Valid: {{ isFormValid() }}</p>
+            <p>Errors: {{ errors | json }}</p>
+            <p>Touched: {{ touched | json }}</p>
+          </div>
+
+          <!-- Form Messages -->
+          <div class="form-message" *ngIf="formMessage">
+            <div
+              class="message"
+              [class.success]="formMessage.type === 'success'"
+              [class.error]="formMessage.type === 'error'">
+              {{ formMessage.text }}
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Info & Social Links -->
+      <div class="contact-info">
+        <!-- Download Resume Button -->
+        <div class="resume-section">
+          <button
+            class="resume-btn"
+            (click)="downloadResume()"
+            aria-label="Download Resume">
+            <span class="resume-icon">📄</span>
+            <span class="resume-text">{{ 'DOWNLOAD_RESUME' | lang }}</span>
+          </button>
+        </div>
+
+        <!-- Email with Copy Button -->
+        <div class="email-container">
+          <span itemprop="email">viktormarimorich&#64;gmail.com</span>
+          <button
+            class="copy-btn"
+            (click)="copyEmail()"
+            [class.copied]="emailCopied"
+            aria-label="Copy email address">
+            <span class="copy-icon">📋</span>
+            <span class="copy-text">{{ emailCopied ? ('COPIED' | lang) : ('COPY' | lang) }}</span>
+          </button>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a
+            *ngFor="let link of socialLinks"
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-link"
+            [style.--platform-color]="link.color"
+            [attr.aria-label]="link.label">
+            <img [src]="link.icon" [alt]="link.platform" width="32" height="32">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

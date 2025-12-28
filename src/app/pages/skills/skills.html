@@ -1,0 +1,79 @@
+<section id="skills" class="skills-section">
+  <div class="aurora-bg section-bg"></div>
+
+  <div class="content-wrapper">
+    <div class="section-header">
+      <h2 class="title glow">{{ 'DIGITAL_CRAFTING_ARSENAL' | lang }}</h2>
+      <p class="subtitle">{{ 'EXPLORE_TECHNICAL_EXPERTISE' | lang }}</p>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filters">
+      <button
+        [class.active]="selectedCategory === 'All'"
+        (click)="filterSkills('All')"
+        class="filter-btn"
+        style="--category-color: #888">
+        {{ 'ALL_SKILLS' | lang }}
+      </button>
+      <button
+        *ngFor="let category of categories"
+        [class.active]="selectedCategory === category.name"
+        (click)="filterSkills(category.name)"
+        class="filter-btn"
+        [style.--category-color]="category.color">
+        {{ getCategoryTranslationKey(category.name) | lang }}
+      </button>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="skills-grid">
+      <div
+        *ngFor="let skill of filteredSkills; trackBy: trackBySkillId"
+        class="skill-card"
+        [class.highlight]="selectedSkill?.id === skill.id"
+        [style.--skill-color]="skill.color || getCategoryColor(skill.category)"
+        (click)="viewSkillDetail(skill)">
+        <div class="skill-header">
+          <h4>{{ skill.name }}</h4>
+          <span class="level-badge" [class]="skill.level.toLowerCase()">
+            {{ skill.level.toUpperCase() | lang }}
+          </span>
+        </div>
+
+        <div class="skill-progress">
+          <div class="progress-track">
+            <div
+              class="progress-bar"
+              [style.width.%]="getSkillLevelPercentage(skill.level)">
+            </div>
+          </div>
+          <span class="years">{{ skill.experience }}+ {{ 'YEARS' | lang }}</span>
+        </div>
+
+        <p class="skill-description">{{ skill.description }}</p>
+
+        <div class="skill-projects" *ngIf="skill.projects?.length">
+          <span class="projects-label">{{ 'RECENT_PROJECTS' | lang }}:</span>
+          <div class="project-tags">
+            <span *ngFor="let project of skill.projects" class="project-tag">
+              {{ project }}
+            </span>
+          </div>
+        </div>
+
+        <div class="view-details">
+          <span>{{ 'VIEW_DETAILS' | lang }}</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skill Modal -->
+  <app-skill-modal
+    [skill]="selectedSkill"
+    (close)="closeSkillModal()">
+  </app-skill-modal>
+
+</section>

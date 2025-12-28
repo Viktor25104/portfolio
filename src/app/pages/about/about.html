@@ -1,0 +1,23 @@
+<section id="about" class="about-section" [class.visible]="isVisible">
+  <div class="timeline-container">
+    <h2 class="section-title glow">{{ 'PROFESSIONAL_JOURNEY' | lang }}</h2>
+
+    <div *ngIf="translatedTimeline.length > 0; else loadingTemplate">
+      <div class="timeline" #timelineRef>
+        <div *ngFor="let entry of translatedTimeline" class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="date">{{ getText(entry.date) }}</div>
+            <h3>{{ getText(entry.title) }}</h3>
+            <div class="company">{{ getText(entry.company) }}</div>
+            <p class="description">{{ getText(entry.description) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #loadingTemplate>
+      <p class="loading-text">{{ 'LOADING' | lang }}</p>
+    </ng-template>
+  </div>
+</section>
