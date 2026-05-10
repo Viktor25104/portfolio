@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://marymorych.site/sitemap.xml
+Sitemap: https://example.com/sitemap.xml
